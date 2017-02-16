@@ -1,10 +1,10 @@
 import { TestAppPage } from './app.po';
 
-describe('test-app App', function() {
-  let page: TestAppPage;
+describe('angularhunt App', function() {
+  let page: AngularHuntPage;
 
   beforeEach(() => {
-    page = new TestAppPage();
+    page = new AngularHuntPage();
   });
 
   it('should display message saying app works', () => {

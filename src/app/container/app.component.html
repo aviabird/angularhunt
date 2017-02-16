@@ -1,0 +1,10 @@
+<ngrx-store-log-monitor toggleCommand="ctrl-h" positionCommand="ctrl-m"></ngrx-store-log-monitor>
+<h1>
+  {{title}}
+</h1>
+<app-header (loginClicked)="login($event)" 
+  (logoutClicked)="logout()" 
+  [user]="user$ | async">
+</app-header>
+
+<router-outlet></router-outlet>

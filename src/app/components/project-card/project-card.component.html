@@ -1,0 +1,16 @@
+<div>
+  <a [routerLink]="['/home', id]">
+    <h3>{{project.name}}</h3>
+  </a>
+
+  <div>
+    <button (click)="onToggleUpvote()">
+      {{ project.is_liked_by_current_user ? "Remove Upvote" : "Upvote" }}
+    </button>
+  </div>
+
+  <div>
+    <h4>{{ project.project_likes_count }}</h4>
+  </div>
+
+</div>
