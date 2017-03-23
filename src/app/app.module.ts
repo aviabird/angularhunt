@@ -11,8 +11,8 @@ import { MyAuthConfig } from './auth-config';
 /**NgRx Store */
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { StoreLogMonitorModule, useLogMonitor } from '@ngrx/store-log-monitor';
+// import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+// import { StoreLogMonitorModule, useLogMonitor } from '@ngrx/store-log-monitor';
 import { RouterStoreModule } from '@ngrx/router-store';
 
 /**Services */
@@ -57,13 +57,13 @@ import { ProjectComponent } from './components/project/project.component';
     routing,
     StoreModule.provideStore(reducer),
     RouterStoreModule.connectRouter(),
-    StoreDevtoolsModule.instrumentStore({
-      monitor: useLogMonitor({
-        visible: false,
-        position: 'right'
-      })
-    }),
-    StoreLogMonitorModule,
+    // StoreDevtoolsModule.instrumentStore({
+    //   monitor: useLogMonitor({
+    //     visible: false,
+    //     position: 'right'
+    //   })
+    // }),
+    // StoreLogMonitorModule,
     EffectsModule.run(ProjectEffects),
     EffectsModule.run(UserEffects),
   ],
