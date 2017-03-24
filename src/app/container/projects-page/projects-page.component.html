@@ -17,7 +17,8 @@
       <div>
         <ul class="post-list">
           <li *ngFor="let project of projects$ | async">
-            <app-project-card [project]="project" (toggleUpvoteClick)="toggleUpvote($event)"></app-project-card>
+            <app-project-card [project]="project" 
+              (toggleUpvoteClick)="toggleUpvote($event)"></app-project-card>
           </li>
         </ul>
       </div>

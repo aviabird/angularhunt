@@ -26,7 +26,7 @@
           <div class="button-base">&nbsp;SAVE</div>
         </button>-->
         <button class="vote-button-ion" (click)="onToggleUpvote()">
-          <i class="ion-arrow-up-b"></i>
+          <i [ngClass]="(project.is_liked_by_current_user)? 'ion-arrow-down-b' : 'ion-arrow-up-b'"></i>
           <div class="button-base">&nbsp;{{project.project_likes_count}}</div>
         </button>
         <!--<button class="vote-button-chat">
