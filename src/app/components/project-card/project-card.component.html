@@ -20,11 +20,11 @@
         <i class="ion-android-open"></i>
       </div>-->
       <div class="action-buttons">
-        <button class="vote-button-hidden">
+        <!--<button class="vote-button-hidden">-->
           <!--<i class="ion-navicon"></i>
           <i class="ion-android-add"></i>-->
-          <div class="button-base">&nbsp;SAVE</div>
-        </button>
+          <!--<div class="button-base">&nbsp;SAVE</div>-->
+        <!--</button>-->
         <button class="vote-button-ion" (click)="onToggleUpvote()">
           <i [ngClass]="(project.is_liked_by_current_user)? 'ion-arrow-down-b' : 'ion-arrow-up-b'"></i>
           <div class="button-base">&nbsp;{{project.project_likes_count}}</div>
