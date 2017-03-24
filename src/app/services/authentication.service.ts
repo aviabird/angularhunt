@@ -1,12 +1,13 @@
+import { environment } from './../../environments/environment';
 import { Http, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 import { AuthService } from 'ng2-ui-auth';
 @Injectable()
 export class AuthenticationService {
-  baseUrl = "http://localhost:3000/api/";
+  // baseUrl = "http://localhost:3000/api/";
+  baseUrl = environment.API_ENDPOINT;
   constructor(private auth: AuthService, private http: Http) {
-   
   }
 
   login(provider: string): Observable<any> {
