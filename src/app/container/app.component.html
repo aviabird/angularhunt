@@ -1,10 +1,15 @@
-<!--<ngrx-store-log-monitor toggleCommand="ctrl-h" positionCommand="ctrl-m"></ngrx-store-log-monitor>-->
-<h1>
-  {{title}}
-</h1>
 <app-header (loginClicked)="login($event)" 
   (logoutClicked)="logout()" 
   [user]="user$ | async">
 </app-header>
 
-<router-outlet></router-outlet>
+<div class="body-part">
+  <div></div>
+    <div class="constraintWidth-conainer-content" 
+        style="max-width: 1100px;">
+
+      <app-navigation></app-navigation>
+      <router-outlet></router-outlet>
+
+  </div>
+</div>

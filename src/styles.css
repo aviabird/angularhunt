@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+	height: 100%;
+	font-family: "proxima-nova", "Proxima Nova", helvetica, arial, sans-serif;
+}
+
+body {
+	background: #f9f9f9;
+	margin: 0;
+  min-height: 100%;
+  position: relative;
+}

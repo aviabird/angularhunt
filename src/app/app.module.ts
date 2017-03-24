@@ -4,15 +4,16 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { ModalModule } from 'ng2-bootstrap';
+
 /**Satellizer */
-import { Ng2UiAuthModule, CustomConfig } from 'ng2-ui-auth';
+import { Ng2UiAuthModule } from 'ng2-ui-auth';
 import { MyAuthConfig } from './auth-config';
 
 /**NgRx Store */
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-// import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-// import { StoreLogMonitorModule, useLogMonitor } from '@ngrx/store-log-monitor';
+
 import { RouterStoreModule } from '@ngrx/router-store';
 
 /**Services */
@@ -39,6 +40,9 @@ import { ProjectCardComponent } from './components/project-card/project-card.com
 import { ProjectDetailPageComponent } from './container/project-detail-page/project-detail-page.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { ProjectComponent } from './components/project/project.component';
+import { NewsletterCardComponent } from './components/newsletter-card/newsletter-card.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { ModalComponent } from './components/shared/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +51,10 @@ import { ProjectComponent } from './components/project/project.component';
     ProjectCardComponent,
     ProjectDetailPageComponent,
     HeaderComponent,
-    ProjectComponent
+    ProjectComponent,
+    NewsletterCardComponent,
+    NavigationComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -57,13 +64,7 @@ import { ProjectComponent } from './components/project/project.component';
     routing,
     StoreModule.provideStore(reducer),
     RouterStoreModule.connectRouter(),
-    // StoreDevtoolsModule.instrumentStore({
-    //   monitor: useLogMonitor({
-    //     visible: false,
-    //     position: 'right'
-    //   })
-    // }),
-    // StoreLogMonitorModule,
+    ModalModule.forRoot(),
     EffectsModule.run(ProjectEffects),
     EffectsModule.run(UserEffects),
   ],

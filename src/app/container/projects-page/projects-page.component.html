@@ -1,7 +1,29 @@
-<p>
-  projects-page works!
-</p>
+<div class="primary-content">
 
-<div *ngFor="let project of projects$ | async">
-  <app-project-card [project]="project" (toggleUpvoteClick)="toggleUpvote($event)"></app-project-card>
+  <app-newsletter-card></app-newsletter-card>
+
+  <!--<div *ngFor="let project of projects$ | async">
+    <app-project-card [project]="project" (toggleUpvoteClick)="toggleUpvote($event)"></app-project-card>
+  </div>-->
+  <div class="fullwidth-bottom-middle-box">
+    <div class="bottom-content">
+      <div class="bottom-header">
+        <span class="title-base">Yesterday</span>
+        <div class="feednavigation-base">
+          <a class="activelink-base" href="/">Popular</a>
+          <a class="newest" href="/newest">Newest</a>
+        </div>
+      </div>
+      <div>
+        <ul class="post-list">
+          <li *ngFor="let project of projects$ | async">
+            <app-project-card [project]="project" (toggleUpvoteClick)="toggleUpvote($event)"></app-project-card>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
