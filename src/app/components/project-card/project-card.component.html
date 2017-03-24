@@ -1,39 +1,38 @@
-
-<a [routerLink]="['/home', id]">
-  <h3>{{project.name}}</h3>
-</a>
 <div class="post-item">
   <div class="thumbsnail-bottom" href="/posts/noun-project-for-mac-2-0">
-    <img src="https://ph-files.imgix.net/8629b96b-3456-4f76-8635-a9bd9b9f11cf?auto=format&auto=compress&codec=mozjpeg&cs=strip&w=80&h=80&fit=crop"
+    <img [src]="project.image_url"
       width="80" height="80">
   </div>
   <div class="content-post-bottom">
-    <div class="title-bottom">{{project.name}}</div>
-    <div class="text-post">{{project.description}}</div>
+    <a [routerLink]="['/home', id]">
+      <div class="title-bottom">{{project.name}}</div>
+      <div class="text-post">{{project.description}}</div>
+    </a>
+
     <div class="meta">
-      <div class="topic">
-        <a class="button_smallSize" title="Tech" href="/topics/tech">
+      <!--<div class="topic">-->
+        <!--<a class="button_smallSize" title="Tech" href="/topics/tech">
           <div class="button-Container">Tech</div>
         </a>
-        <a class="more-topics">+3</a>
-      </div>
+        <a class="more-topics">+3</a>-->
+      <!--</div>-->
       <div class="hidden-icon">
         <i class="ion-android-open"></i>
       </div>
       <div class="action-buttons">
-        <button class="vote-button-hidden">
+        <!--<button class="vote-button-hidden">
           <i class="ion-navicon"></i>
           <i class="ion-android-add"></i>
           <div class="button-base">&nbsp;SAVE</div>
-      </button>
+        </button>-->
         <button class="vote-button-ion" (click)="onToggleUpvote()">
           <i class="ion-arrow-up-b"></i>
           <div class="button-base">&nbsp;{{project.project_likes_count}}</div>
         </button>
-        <button class="vote-button-chat">
+        <!--<button class="vote-button-chat">
           <i class="ion-chatbubble"></i>
           <div class="button-base">&nbsp;25</div>
-        </button>
+        </button>-->
       </div>
     </div>
   </div>

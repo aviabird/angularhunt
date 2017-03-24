@@ -229,3 +229,7 @@
     color: #999;
     cursor: pointer;
 }
+
+a {
+  text-decoration: none;
+}
