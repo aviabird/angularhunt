@@ -132,10 +132,15 @@
     width: 3px;
 }
 
+logged-in-user-area{
+  width: 200px;
+  float: left;
+}
+
 
 .login-buttons {
 	display: block;
-    margin: 0 0 0 5px;
+  margin: 0 0 0 5px;
 }
 
 .login {
@@ -214,4 +219,10 @@
 
 .overlayInactive {
 	display: block;
+}
+
+.avatar {
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
 }

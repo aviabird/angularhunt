@@ -10,7 +10,7 @@ import { User } from '../../../models';
 export class HeaderComponent implements OnInit {
   @Output() loginClicked = new EventEmitter();
   @Output() logoutClicked = new EventEmitter();
-  @Input() user: User;
+  @Input() user: User = null;
   constructor() { }
 
   ngOnInit() {
