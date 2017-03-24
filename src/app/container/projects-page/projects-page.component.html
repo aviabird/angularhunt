@@ -1,6 +1,6 @@
 <div class="primary-content">
 
-  <app-newsletter-card></app-newsletter-card>
+  <app-newsletter-card (subClickEvent)="subscribeToNewsLetter($event)"></app-newsletter-card>
 
   <!--<div *ngFor="let project of projects$ | async">
     <app-project-card [project]="project" (toggleUpvoteClick)="toggleUpvote($event)"></app-project-card>

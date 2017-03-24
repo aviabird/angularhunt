@@ -4,7 +4,7 @@ import { Http, Headers, Response } from '@angular/http';
 
 @Injectable()
 export class ProjectService {
-  baseUrl = "http://localhost:3000/api"
+  baseUrl = 'http://localhost:3000/api'
   constructor(private http: Http) { }
 
   getAllProjects(): Observable<any> {
@@ -23,18 +23,26 @@ export class ProjectService {
     let headers = new Headers({
       'Content-Type': 'application/json',
       'Authorization': this.getAccessTokenToken()
-    })
+    });
     return this.http.post(`${this.baseUrl}/projects/upvote`, { id: projectId }, { headers: headers })
       .map((data: Response) => data.json())
-			.catch((res: any) => 
-      {
-        console.log("Some Error Occured", res)
-        return res
-    });
+      .catch((res: any) => {
+        console.log('Some Error Occured', res);
+        return res;
+      });
   }
 
   getAccessTokenToken(): any {
     return localStorage.getItem('access_token');
   }
 
+  subscribeToNewsLetter(email: string): any {
+    return this.http.post(`${this.baseUrl}/projects/subscribe_to_newsletter`,
+      { email: email })
+      .map((data: Response) => data.json())
+      .catch((res: any) => {
+        console.log('Some Error Occured', res);
+        return res;
+      });
+  }
 }
