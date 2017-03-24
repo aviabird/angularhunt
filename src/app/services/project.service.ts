@@ -36,7 +36,7 @@ export class ProjectService {
     return localStorage.getItem('access_token');
   }
 
-  subscribeToNewsLetter(email: string): any {
+  subscribeToNewsLetter(email: string): Observable<any> {
     return this.http.post(`${this.baseUrl}/projects/subscribe_to_newsletter`,
       { email: email })
       .map((data: Response) => data.json())
