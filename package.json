@@ -31,6 +31,7 @@
     "@ngrx/store-devtools": "^3.2.3",
     "@ngrx/store-log-monitor": "^3.0.2",
     "core-js": "^2.4.1",
+    "firebase-tools": "^3.5.0",
     "ng2-bootstrap": "^1.4.2",
     "ng2-ui-auth": "^6.1.1",
     "reselect": "^2.5.4",
