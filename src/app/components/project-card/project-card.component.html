@@ -1,7 +1,6 @@
 <div class="post-item">
   <div class="thumbsnail-bottom" href="/posts/noun-project-for-mac-2-0">
-    <img [src]="project.image_url"
-      width="80" height="80">
+    <img [src]="project.image_url" width="80" height="80">
   </div>
   <div class="content-post-bottom">
     <a [routerLink]="['/home', id]">
@@ -27,7 +26,7 @@
         <!--</button>-->
         <button class="vote-button-ion" (click)="onToggleUpvote()">
           <i [ngClass]="(project.is_liked_by_current_user)? 'ion-arrow-down-b' : 'ion-arrow-up-b'"></i>
-          <div class="button-base">&nbsp;{{project.project_likes_count}}</div>
+          <div class="button-base"> {{ project.project_likes_count }} </div>
         </button>
         <!--<button class="vote-button-chat">
           <i class="ion-chatbubble"></i>
@@ -37,22 +36,3 @@
     </div>
   </div>
 </div>
-
-
-
-<!--<div>
-  <a [routerLink]="['/home', id]">
-    <h3>{{project.name}}</h3>
-  </a>
-
-  <div>
-    <button (click)="onToggleUpvote()">
-      {{ project.is_liked_by_current_user ? "Remove Upvote" : "Upvote" }}
-    </button>
-  </div>
-
-  <div>
-    <h4>{{ project.project_likes_count }}</h4>
-  </div>
-
-</div>-->

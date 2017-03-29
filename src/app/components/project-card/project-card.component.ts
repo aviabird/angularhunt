@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectCardComponent implements OnInit {
-  @Input() project;
+  @Input() project = null;
   @Output() toggleUpvoteClick = new EventEmitter();
 
   get id(){
@@ -20,7 +20,7 @@ export class ProjectCardComponent implements OnInit {
   ngOnInit() {
   }
 
-  onToggleUpvote(id){
+  onToggleUpvote(){
     this.toggleUpvoteClick.emit(this.project.id);
   }
 }

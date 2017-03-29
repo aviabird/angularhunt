@@ -1,4 +1,3 @@
-import { ResponseParserService } from './services/response-parser.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -14,11 +13,10 @@ import { MyAuthConfig } from './auth-config';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import { RouterStoreModule } from '@ngrx/router-store';
-
 /**Services */
 import { ProjectService } from './services/project.service';
 import { AuthenticationService } from './services/authentication.service';
+import { ResponseParserService } from './services/response-parser.service';
 
 /** All SideEffects in APP */
 import { ProjectEffects } from './effects/project.effects';
@@ -27,12 +25,12 @@ import { UserEffects } from './effects/user.effects';
 /**Global Reducer of APP */
 import reducer from './reducers';
 
-/**ALL Ngrx Actions that can be fired in app loaded as one.*/
-import actions from './actions';
-
 /**All Routes in APP */
 import { routing } from './app.routes';
 
+/**Actions */
+import { ProjectActions } from './actions/project.actions';
+import { UserActions } from './actions/user.actions';
 
 import { AppComponent } from './container/app.component';
 import { ProjectsPageComponent } from './container/projects-page/projects-page.component';
@@ -63,13 +61,13 @@ import { ModalComponent } from './components/shared/modal/modal.component';
     Ng2UiAuthModule.forRoot(MyAuthConfig),
     routing,
     StoreModule.provideStore(reducer),
-    RouterStoreModule.connectRouter(),
     ModalModule.forRoot(),
     EffectsModule.run(ProjectEffects),
     EffectsModule.run(UserEffects),
   ],
   providers: [
-    actions,
+    UserActions,
+    ProjectActions,
     ProjectService,
     AuthenticationService,
     ResponseParserService

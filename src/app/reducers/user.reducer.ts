@@ -5,7 +5,7 @@ import { User } from './../models/user';
 export type State = {
   isAuthenticated: boolean;
   user: User | null;
-  entities: {[id: string]: User};
+  entities: { [id: string]: User };
   ids: string[];
   selectedUserId: string;
   access_token: string;
@@ -20,8 +20,9 @@ const initialState: State = {
   access_token: localStorage.getItem('access_token')
 }
 
-export default function (state = initialState, action: Action): State {
-  switch (action.type) {    
+
+export const userReducer = (state = initialState, action: Action): State => {
+  switch (action.type) {
     case ActionTypes.LOGIN_SUCCESS: {
       let user = action.payload;
 
@@ -35,17 +36,17 @@ export default function (state = initialState, action: Action): State {
     }
 
     case ActionTypes.LOAD_CURRENT_USER_PROFILE_SUCCESS: {
-      let user = action.payload
-      let isAuth = false
-      
-      if(user){
-        isAuth = true
+      let user = action.payload;
+      let isAuth = false;
+
+      if (user) {
+        isAuth = true;
       }
 
       let newState = {
         isAuthenticated: isAuth,
         user: user
-      }
+      };
 
       return Object.assign({}, state, newState);
     }
@@ -55,11 +56,11 @@ export default function (state = initialState, action: Action): State {
         isAuthenticated: false,
         user: null,
         access_token: null
-      }
+      };
 
       return Object.assign({}, state, newState);
     }
-    
+
     default: {
       return state;
     }
@@ -67,5 +68,5 @@ export default function (state = initialState, action: Action): State {
 }
 
 export const getIds = (state: State) => state.ids;
-export const getEntities = (state: State) => state.entities
-export const getUser = (state: State) => state.user
+export const getEntities = (state: State) => state.entities;
+export const getUser = (state: State) => state.user;

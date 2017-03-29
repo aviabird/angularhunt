@@ -1,6 +1,6 @@
+import { ProjectActions, ActionTypes } from './../actions/project.actions';
 import { Injectable } from '@angular/core';
 import { Effect, Actions } from '@ngrx/effects';
-import { ActionTypes, ProjectActions } from '../actions/project.actions';
 import { Action } from '@ngrx/store';
 
 import { ProjectService } from './../services/project.service';

@@ -13,7 +13,7 @@ export class ProjectComponent implements OnInit {
   ngOnInit() {
   }
 
-  onToggleUpvote(id){
+  onToggleUpvote(){
     this.toggleUpvoteClick.emit(this.project.id);
   }
 }

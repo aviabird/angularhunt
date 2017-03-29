@@ -12,12 +12,11 @@ const initialState: State = {
   ids: [],
   entities: {},
   selectedProjectId: null
-}
+};
 
-export default function (state = initialState, action: Action): State {
+export const projectReducer = (state = initialState, action: Action): State  => {
   switch (action.type) {
     case ActionTypes.RETRIVE_PROJECTS_SUCCESS: {
-      console.log("projects", action.payload);
       const Projects: Project[] = action.payload;
 
       const newProjects: Project[] = Projects;
@@ -36,34 +35,32 @@ export default function (state = initialState, action: Action): State {
       return Object.assign({}, state, {
         ids: [...state.ids, ...newProjectsIds],
         entities: Object.assign({}, state.entities, newEntities)
-      })
-    }
+      });
+    };
 
     case ActionTypes.SELECT_PROJECT: {
       return Object.assign({}, state, {
         selectedProjectId: action.payload
       });
-    }
+    };
 
 
-		case ActionTypes.UPDATE_PROJECT_SUCCESS: {
-			const updatedProject = action.payload;
-			const updatedProjectId = updatedProject.id
+    case ActionTypes.UPDATE_PROJECT_SUCCESS: {
+      const updatedProject = action.payload;
+      const updatedProjectId = updatedProject.id
 
-			let newProjects = state.entities;
-			newProjects[updatedProjectId] = updatedProject;
+      let newProjects = state.entities;
+      newProjects[updatedProjectId] = updatedProject;
 
-			console.log("updated projects", newProjects[updatedProjectId]);
+      return Object.assign({}, state, {
+        entities: Object.assign({}, state.entities, newProjects)
 
-			return Object.assign({}, state, {
-				entities: Object.assign({}, state.entities, newProjects) 
-        
-			});
-		}
-    
+      });
+    };
+
     default: {
       return state;
-    }
+    };
   }
 }
 
