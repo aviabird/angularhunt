@@ -1,11 +1,103 @@
-<div>
-  <h3>{{project.name}}</h3>
-  <div>
-    <button (click)="onToggleUpvote()">
-      {{ project.is_liked_by_current_user ? "Remove Upvote" : "Upvote" }}
-    </button>
+<main class="main">
+  <div class="top">
+    <!--Image Container Here-->
+    <section class="container-gallery">
+      <div class="canvas">
+        <div>
+          <!--Image Here-->
+          <img [src]="project.image_url" style="height: 367px; width: 700px;" />
+        </div>
+      </div>
+    </section>
+
+    <!--Featured Border-->
+    <!--<div class="timestamp">
+      <span class="secondaryText-base">Featured
+        <time datetime="2017-03-24T00:01:01.000-07:00" title="2017-03-24T00:01:01.000-07:00">4 days ago</time>
+      </span>
+    </div>-->
+
   </div>
-  <div>
-    <h4>{{ project.project_likes_count }}</h4>
-  </div>
-</div>
+  <!--Image Container Ends-->
+
+  <!--Project Details Section Starts Here -->
+  <section class="information-section">
+
+    <div class="thumbnail-4">
+      <div class="container_" style="height: 120px; width: 120px;">
+        <img [src]="project.image_url" width="120" height="120">
+      </div>
+    </div>
+
+    <div class="inner_content">
+      <div class="headline_content">
+        <h1 class="headline-base">{{ project.name }}</h1>
+      </div>
+      <div class="tagline-text">
+        <h2 class="tagline-heading">{{ project.description }}</h2>
+      </div>
+
+      <!--Topic Buttons Start Here-->
+      <div>
+        <div class="topicWrap">
+          <span>
+            <a class="button_smallSize" title="AngularHunt" href="">
+              <div class="buttonContainer">AngularHunt</div>
+            </a>
+          </span>
+        </div>
+      </div>
+      <!--Topic Buttons End Here-->
+    </div>
+  </section>
+  <!--Project Details Section Ends Here -->
+
+  <!--Project Action Section Starts heres-->
+
+  <section class="action-section">
+    <div class="action-inner">
+      <main>
+        <span class="comboButton">
+            <span class="secondaryBoldText">
+              <span class="inactiveLink">
+                <a target="_blank" [href]="project.git_url">visit site</a>
+              </span>
+            <span class="inactivePopoverToggle" data-test="show-more">
+              <i class="ion-arrow-down-b"></i>
+            </span>
+          </span>
+        </span>
+          <button class="button_mediumSize">
+            <div class="buttonContainer">
+            <span class="icon">
+              <i class="ion-android-open"></i>
+              <span class="collectButtonLabel">&nbsp;Share</span>
+            </span> 
+            </div>
+          </button>
+      </main>
+
+      <aside>
+          <button class="button_mediumSize">
+            <div class="buttonContainer">
+              <span class="icon">
+                <i class="ion-android-menu"></i>
+                <i class="ion-android-add"></i>
+                <span class="collectButtonLabel">&nbsp;Save for later</span>
+              </span>
+            </div>  
+          </button>
+
+          <button class="button_mediumSize" (click)="onToggleUpvote()">
+            <div class="buttonContainer">
+              <span class="icon">
+                <i class="ion-arrow-up-b"></i>
+                <span class="collectButtonLabel">&nbsp;{{ project.project_likes_count }}</span>
+              </span>
+            </div>  
+          </button>
+      </aside>
+    </div>
+  </section>
+  <!--Project Action Section Ends heres-->
+</main>

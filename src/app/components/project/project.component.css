@@ -1,0 +1,255 @@
+.main {
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
+  min-width: 0;
+  width:702px;
+ }
+
+.top {
+  position: relative;
+}
+
+.container-gallery {
+  margin-bottom: 20px;
+}
+
+.canvas {
+  height: 360px;
+  overflow: hidden;
+}
+
+.canvas ol {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    position: relative;
+  }
+
+.canvas li {
+    height: 360px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    margin: 0 10px 20px 0;
+  }
+  
+
+.container-text {
+    position: relative;
+    height: 360px;
+    width: 202.759px
+}
+
+.thumbsnails {
+    margin-left: 40px !important;
+    display: -ms-flexbox !important;
+    display: flex !important; 
+}
+
+.thumbnail_u {
+  margin-top: 10px;
+  cursor: pointer;
+  border: 1px solid #999;
+  margin-right: 10px;
+}
+
+
+.timestamp {
+  bottom:  0;
+  padding: 5px;
+  position: absolute;
+  right: 30px;
+  text-align: right;
+}
+
+.secondaryText-base {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: .6px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.information-section {
+  margin: 30px 19px;
+  flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  display: -ms-flexbox;
+  display: flex; 
+  position: relative;
+}
+
+.thumbnail-4 {
+  margin-right: 20px;
+  min-width: 120px;
+  height: 128px;
+}
+
+.thumbnail-4 img {
+  object-fit: cover;
+}
+
+.inner_content {
+  background-color: #f1f1f1;
+  height: 120px;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.headline_content {
+  margin: 0 0 10px;
+}
+
+.headline-base {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 34px;
+  color: #000;
+  margin: 0;
+}
+
+.tagline-heading {
+  flex: 1 1 auto;
+  margin: 0 10px 10px 1px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #999;
+  margin-bottom: 21px;
+}
+
+.topicWrap {
+  display: inline-block;
+  margin: 0 15px 10px 0;
+  white-space: nowrap;
+  position: relative;
+}
+
+.button_smallSize{
+  background: #e8e8e8;
+  border-color: #e8e8e8;
+  color: #999;
+  height: 24px;
+  padding: 0 8px !important;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  text-align: center;
+  text-decoration: none!important;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: .6px;
+  line-height: 16px;
+  text-transform: uppercase;
+  outline: 0;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none!important;
+}
+
+.action-section {
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 20px 0;
+}
+
+.action-inner {
+  display: flex;
+  margin: 0 40px;
+}
+
+.action-section a {
+  margin: 0 10px 0 0;
+}
+
+.comboButton {
+  display: inline-block;
+  position: relative;
+  margin: 0 10px 0 0;
+}
+
+.secondaryBoldText {
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: .6px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.inactiveLink {
+  background: #da552f;
+  display: inline-block;
+  height: 34px;
+  line-height: 34px;
+  box-sizing: border-box;
+  border-radius: 3px 0 0 3px;
+}
+
+.inactiveLink a {
+  padding: 0 12px;
+  color: #fff;
+}
+
+.inactivePopoverToggle {
+  border-radius: 0 3px 3px 0;
+  border-left: 1px solid #fff;
+  /*cursor: pointer;*/
+  text-align: center;
+  width: 28px;
+  background: #da552f;
+  color: #fff;
+  display: inline-block;
+  height: 34px;
+  line-height: 34px;
+  box-sizing: border-box;
+  margin-left: -4px;
+}
+
+.ion-arrow-down-b {
+  font-size: 10px;
+}
+
+.button_mediumSize {
+  background: #fff;
+  color: #000;
+  height: 34px;
+  padding: 0 13px;
+  border-radius: 3px;
+  border: 1px solid #e8e8e8;
+  box-sizing: border-box;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none!important;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: .6px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.button_mediumSize:hover {
+  background-color: #f1f1f1; 
+}
+
+.ion-android-open {
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+}

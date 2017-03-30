@@ -1,2 +1,6 @@
-<app-modal></app-modal>
-<!--<app-project [project]="project$ | async" (toggleUpvoteClick)="toggleUpvote($event)"></app-project>-->
+<app-modal>
+  <app-project [project]="project$ | async" 
+    (toggleUpvoteClick)="toggleUpvote($event)"
+    style="margin: 0 auto;"></app-project>
+</app-modal>
+
