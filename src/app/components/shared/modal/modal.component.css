@@ -279,6 +279,8 @@ hr {
   overflow: hidden;
 }
 .modal {
+  display: block;
+  background: rgba(255,255,255,0.9);
   display: none;
   overflow: hidden;
   position: fixed;
@@ -299,7 +301,7 @@ hr {
   -o-transition: -o-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
   /*padding-top: 80px;*/
-  background: hsla(0,0%,97%,.8);
+  background: transparent;
   bottom: 0;
   left: 0;
   position: fixed;
@@ -329,12 +331,6 @@ hr {
 }
 .modal-content {
   position: relative;
-  background-color: #ffffff;
-  border: 1px solid #999999;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
-  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   outline: 0;
@@ -358,10 +354,17 @@ hr {
 }
 .modal-header {
   padding: 15px;
-  border-bottom: 1px solid #e5e5e5;
 }
 .modal-header .close {
   margin-top: -2px;
+  border-radius: 99px;
+  width: 40px;
+  height: 40px;
+  background: lightgray;
+  border: none;
+  font-size: 30px;
+  color: white;
+
 }
 .modal-title {
   margin: 0;
@@ -411,7 +414,7 @@ hr {
 
 @media (min-width: 992px) {
   .modal-lg {
-    width: 90%;
+    width: 100%;
   }
 }
 .clearfix:before,
