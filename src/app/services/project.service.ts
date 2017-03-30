@@ -21,7 +21,11 @@ export class ProjectService {
   getAllProjects(): Observable<any> {
     // return this.http.get(`${this.baseUrl}/projects/all_projects`)
     //   .map(response => response.json());
-    return this.db.list('/projects')
+    return this.db.list('/projects', {
+        query: {
+          limitToFirst: 5,
+        }
+      })
       .map(response => response.map(project => new Project(project)));
   }
 
