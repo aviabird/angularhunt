@@ -26,10 +26,10 @@ export class ProjectService {
     });
     return this.http.post(`${this.baseUrl}/projects/upvote`, { id: projectId }, { headers: headers })
       .map((data: Response) => data.json())
-      .catch((res: any) => {
-        console.log('Some Error Occured', res);
-        return res;
-      });
+      // .catch((res: any) => {
+      //   console.log('Some Error Occured', res);
+      //   return res;
+      // });
   }
 
   getAccessTokenToken(): any {
@@ -40,9 +40,9 @@ export class ProjectService {
     return this.http.post(`${this.baseUrl}/projects/subscribe_to_newsletter`,
       { email: email })
       .map((data: Response) => data.json())
-      .catch((res: any) => {
-        console.log('Some Error Occured', res);
-        return res;
-      });
+      // .catch((res: any) => {
+      //   console.log('Some Error Occured', res);
+      //   return res;
+      // });
   }
 }

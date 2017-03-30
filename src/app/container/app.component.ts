@@ -10,34 +10,28 @@ import { User } from '../models';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title: string;
   user$: Observable<User>;
   constructor(private userActions: UserActions,
-              private store: Store<AppState>) {
-    this.title = "Angular Heat!!!"
-    
-    let token = this.getAccessTokenToken();
-    if(token){
-      this.store.dispatch(this.userActions.loadCurrentUserProfile());
-    }
-    
+    private store: Store<AppState>) {
+
     this.user$ = this.store.select(getCurrentUser);
-   }
+  }
 
-   login(provider: string){
-     this.store.dispatch(this.userActions.login(provider));
-   }
+  login(provider: string) {
+    this.store.dispatch(this.userActions.login(provider));
+  }
 
-   logout(){
+  logout() {
     this.store.dispatch(this.userActions.logout());
-   }
+  }
 
-  ngOnInit(){
+  ngOnInit() {
+    this.store.dispatch(this.userActions.loadCurrentUserProfile());
   }
 
   getAccessTokenToken(): any {
     return localStorage.getItem('access_token');
   }
-
 }

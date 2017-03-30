@@ -6,8 +6,8 @@ import { HttpModule } from '@angular/http';
 import { ModalModule } from 'ng2-bootstrap';
 
 /**Satellizer */
-import { Ng2UiAuthModule } from 'ng2-ui-auth';
-import { MyAuthConfig } from './auth-config';
+// import { Ng2UiAuthModule } from 'ng2-ui-auth';
+// import { MyAuthConfig } from './auth-config';
 
 /**NgRx Store */
 import { StoreModule } from '@ngrx/store';
@@ -32,6 +32,21 @@ import { routing } from './app.routes';
 import { ProjectActions } from './actions/project.actions';
 import { UserActions } from './actions/user.actions';
 
+/**AngularFire */
+import { AngularFireModule, AuthMethods } from 'angularfire2';
+import { secretKeys } from './secrets';
+
+// Must export the config
+export const firebaseConfig = {
+  apiKey: secretKeys.FIREBASE_API_KEY,
+  authDomain: 'angularhunt-89db2.firebaseapp.com',
+  databaseURL: 'https://angularhunt-89db2.firebaseio.com',
+  storageBucket: 'angularhunt-89db2.appspot.com',
+  messagingSenderId: '281473446041'
+};
+
+
+/**All Components */
 import { AppComponent } from './container/app.component';
 import { ProjectsPageComponent } from './container/projects-page/projects-page.component';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
@@ -58,12 +73,14 @@ import { ModalComponent } from './components/shared/modal/modal.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    Ng2UiAuthModule.forRoot(MyAuthConfig),
     routing,
     StoreModule.provideStore(reducer),
     ModalModule.forRoot(),
     EffectsModule.run(ProjectEffects),
     EffectsModule.run(UserEffects),
+    AngularFireModule.initializeApp(firebaseConfig, {
+      method: AuthMethods.Popup
+    })
   ],
   providers: [
     UserActions,
@@ -71,7 +88,7 @@ import { ModalComponent } from './components/shared/modal/modal.component';
     ProjectService,
     AuthenticationService,
     ResponseParserService
-    ],
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

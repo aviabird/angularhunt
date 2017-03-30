@@ -33,10 +33,10 @@
 
         <div class="logged-in-user-area" *ngIf="user">
           <span>
-            <img [src]="user.image_url" class="avatar" />
+            <img [src]="user.avatar" class="avatar" />
           </span>
 
-          <span>{{user.first_name}}</span>
+          <span>{{user.name}}</span>
 
           <span class="signup" (click)="logout()">
             <span class="buttoncontainer">LogOut</span>

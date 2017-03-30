@@ -16,12 +16,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  //Login With given provider
   login(provider: string) {
     this.loginClicked.emit(provider);
   }
 
-  logout(){
+  logout() {
     this.logoutClicked.emit();
   }
 

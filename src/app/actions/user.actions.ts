@@ -17,7 +17,7 @@ export class UserActions {
     return {
       type: ActionTypes.LOGIN,
       payload: provider
-    }
+    };
   }
 
   // TODO: response should be user
@@ -25,13 +25,13 @@ export class UserActions {
     return {
       type: ActionTypes.LOGIN_SUCCESS,
       payload: response
-    }
+    };
   }
 
   logout(): Action {
     return {
       type: ActionTypes.LOGOUT
-    }
+    };
   }
 
   logoutSuccess(): Action {
@@ -43,15 +43,13 @@ export class UserActions {
   loadCurrentUserProfile(): Action {
     return {
       type: ActionTypes.LOAD_CURRENT_USER_PROFILE
-    }
+    };
   }
 
   loadCurrentUserProfileSuccess(user: User): Action {
     return {
       type: ActionTypes.LOAD_CURRENT_USER_PROFILE_SUCCESS,
       payload: user
-    }
+    };
   }
-
-
-}
+};

@@ -9,7 +9,7 @@ export type State = {
   ids: string[];
   selectedUserId: string;
   access_token: string;
-}
+};
 
 const initialState: State = {
   isAuthenticated: false,
@@ -18,7 +18,7 @@ const initialState: State = {
   ids: [],
   selectedUserId: null,
   access_token: localStorage.getItem('access_token')
-}
+};
 
 
 export const userReducer = (state = initialState, action: Action): State => {
