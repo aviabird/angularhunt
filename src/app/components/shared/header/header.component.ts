@@ -1,3 +1,4 @@
+import { ProjectService } from './../../../services/project.service';
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { User } from '../../../models';
 
@@ -11,7 +12,7 @@ export class HeaderComponent implements OnInit {
   @Output() loginClicked = new EventEmitter();
   @Output() logoutClicked = new EventEmitter();
   @Input() user: User = null;
-  constructor() { }
+  constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
   }
@@ -22,6 +23,10 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.logoutClicked.emit();
+  }
+
+  uploaData(){
+    this.projectService.sendData();
   }
 
 }

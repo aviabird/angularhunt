@@ -1,15 +1,28 @@
+import { Project } from './../models/project';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Http, Headers, Response } from '@angular/http';
+import { AngularFireDatabase } from 'angularfire2';
+import { dummyData } from './../dummyData';
 
 @Injectable()
 export class ProjectService {
-  baseUrl = 'http://localhost:3000/api'
-  constructor(private http: Http) { }
+  baseUrl = 'http://localhost:3000/api';
+
+  constructor(private http: Http, public db: AngularFireDatabase) { }
+
+  sendData() {
+    dummyData.forEach(project => {
+      this.db.list('/projects').push(project);
+    });
+  }
+
 
   getAllProjects(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/projects/all_projects`)
-      .map(response => response.json());
+    // return this.http.get(`${this.baseUrl}/projects/all_projects`)
+    //   .map(response => response.json());
+    return this.db.list('/projects')
+      .map(response => response.map(project => new Project(project)));
   }
 
 	/**
