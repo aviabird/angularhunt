@@ -1,15 +1,21 @@
 import { Project } from './../models/project';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Http, Headers, Response } from '@angular/http';
+import { Http, Headers, Response, Jsonp } from '@angular/http';
 import { AngularFireDatabase } from 'angularfire2';
 import { dummyData } from './../dummyData';
 
+
 @Injectable()
 export class ProjectService {
+  userId = '5bc67e9ba994773e66c535640';
+  listId = 'cf7d6ebd15';
+  mailChimpUrl = 'https://aviabird.us15.list-manage.com/subscribe/post-json';
   baseUrl = 'http://localhost:3000/api';
 
-  constructor(private http: Http, public db: AngularFireDatabase) { }
+  constructor(private http: Http,
+              private jsonp: Jsonp,
+              public db: AngularFireDatabase) { }
 
   sendData() {
     dummyData.forEach(project => {
@@ -53,13 +59,9 @@ export class ProjectService {
     return localStorage.getItem('access_token');
   }
 
-  subscribeToNewsLetter(email: string): Observable<any> {
-    return this.http.post(`${this.baseUrl}/projects/subscribe_to_newsletter`,
-      { email: email })
-      .map((data: Response) => data.json())
-      // .catch((res: any) => {
-      //   console.log('Some Error Occured', res);
-      //   return res;
-      // });
+  subscribeToNewsLetter(email: string)  {
+    const url = `${this.mailChimpUrl}?u=${this.userId}&id=${this.listId}&subscribe=Subscribe&EMAIL=${email}&c=JSONP_CALLBACK`;
+    return this.jsonp.request(url, { method: 'Get' })
+               .map(res => res.json());
   }
 }

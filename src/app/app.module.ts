@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 import { ModalModule } from 'ng2-bootstrap';
 
@@ -73,6 +73,7 @@ import { ModalComponent } from './components/shared/modal/modal.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    JsonpModule,
     routing,
     StoreModule.provideStore(reducer),
     ModalModule.forRoot(),

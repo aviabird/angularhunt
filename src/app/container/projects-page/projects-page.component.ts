@@ -32,10 +32,8 @@ export class ProjectsPageComponent implements OnInit {
   }
 
   subscribeToNewsLetter(email: string) {
-    this.projectsService.subscribeToNewsLetter(email).subscribe(response => {
-      console.log('Subscribed');
-    });
+    this.projectsService.subscribeToNewsLetter(email)
+      .subscribe((res) => { console.log(res);
+        });
   }
-
-
 }
