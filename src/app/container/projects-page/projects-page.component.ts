@@ -1,8 +1,10 @@
+import { User } from './../../models/user';
+import { Project } from './../../models/project';
 import { ProjectService } from './../../services/project.service';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
-import { AppState, getProjects } from '../../reducers/index';
+import { AppState, getProjects, getCurrentUser } from '../../reducers/index';
 import { ProjectActions } from '../../actions/project.actions';
 
 @Component({
@@ -13,22 +15,22 @@ import { ProjectActions } from '../../actions/project.actions';
 })
 export class ProjectsPageComponent implements OnInit {
   projects$: Observable<any>;
+  user: User;
+
   constructor(private projectsService: ProjectService,
     private projectActions: ProjectActions,
     private store: Store<AppState>) {
     this.projects$ = this.store.select(getProjects);
-
-    this.projects$.subscribe(response => {
-    });
-
+    this.store.select(getCurrentUser)
+      .subscribe((user: User) => this.user =  user);
   }
 
   ngOnInit() {
     this.store.dispatch(this.projectActions.retriveProjects());
   }
 
-  toggleUpvote(id: string) {
-    this.store.dispatch(this.projectActions.upvoteProject(id));
+  toggleUpvote(project: Project) {
+    this.store.dispatch(this.projectActions.upvoteProject(project, this.user));
   }
 
   subscribeToNewsLetter(email: string) {

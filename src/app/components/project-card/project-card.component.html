@@ -31,7 +31,7 @@
 
         <button class="vote-button-ion" (click)="onToggleUpvote()">
           <i [ngClass]="(project.is_liked_by_current_user)? 'ion-arrow-down-b' : 'ion-arrow-up-b'"></i>
-          <div class="button-base"> {{ project.project_likes_count }} </div>
+          <div class="button-base"> {{ project.upvotes }} </div>
         </button>
         <!--<button class="vote-button-chat">
           <i class="ion-chatbubble"></i>

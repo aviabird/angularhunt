@@ -10,7 +10,7 @@ export class ProjectCardComponent implements OnInit {
   @Input() project = null;
   @Output() toggleUpvoteClick = new EventEmitter();
 
-  get id(){
+  get id() {
     return this.project.id;
   }
 
@@ -20,7 +20,7 @@ export class ProjectCardComponent implements OnInit {
   ngOnInit() {
   }
 
-  onToggleUpvote(){
-    this.toggleUpvoteClick.emit(this.project.id);
+  onToggleUpvote() {
+    this.toggleUpvoteClick.emit(this.project);
   }
 }

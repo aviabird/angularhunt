@@ -32,7 +32,9 @@ export class ProjectService {
           limitToFirst: this.projectsCount,
         }
       })
-      .map(response => response.map(project => new Project(project)));
+      .map(response => {
+        return response.map(project => new Project(project));
+      });
   }
 
 	/**
@@ -42,17 +44,13 @@ export class ProjectService {
 	 * @param {string} projectId of project
 	 * @return {Observable} Observable with updated project object
 	 */
-  upvoteProject(projectId: string): Observable<any> {
-    let headers = new Headers({
-      'Content-Type': 'application/json',
-      'Authorization': this.getAccessTokenToken()
-    });
-    return this.http.post(`${this.baseUrl}/projects/upvote`, { id: projectId }, { headers: headers })
-      .map((data: Response) => data.json())
-      // .catch((res: any) => {
-      //   console.log('Some Error Occured', res);
-      //   return res;
-      // });
+  upvoteProject(payload: any) {
+    let project = payload.project;
+    let user =  payload.user;
+    let newupvote = project.upvotes + 1;
+    return this.db.list('/projects').update(project.$key,
+                { upvotes: newupvote,
+                  upvoted_by: { [user.$key]: user.email } });
   }
 
   getAccessTokenToken(): any {
@@ -65,3 +63,16 @@ export class ProjectService {
                .map(res => res.json());
   }
 }
+
+
+
+// let headers = new Headers({
+//   'Content-Type': 'application/json',
+//   'Authorization': this.getAccessTokenToken()
+// });
+// return this.http.post(`${this.baseUrl}/projects/upvote`, { id: projectId }, { headers: headers })
+//   .map((data: Response) => data.json())
+  // .catch((res: any) => {
+  //   console.log('Some Error Occured', res);
+  //   return res;
+  // });

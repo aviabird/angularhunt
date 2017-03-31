@@ -10,4 +10,6 @@ export class Project extends Base {
   twitter_id: string;
   approved: boolean;
   created_at: string;
+  upvotes: number;
+  upvoted_by: any;
 }

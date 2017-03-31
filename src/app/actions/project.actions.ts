@@ -1,3 +1,4 @@
+import { User } from './../models/user';
 import { type } from '../util';
 import { Action } from '@ngrx/store';
 import { Project } from '../models';
@@ -29,14 +30,14 @@ export class ProjectActions {
     return {
       type: ActionTypes.SELECT_PROJECT,
       payload: projectId
-    } 
+    };
   }
 
-  upvoteProject(projectId: string): Action{
+  upvoteProject(project: Project, user: User): Action{
     return {
       type: ActionTypes.UPVOTE_PROJECT,
-      payload: projectId
-    }
+      payload: {project: project, user: user}
+    };
   }
 
   updateProjectSuccess(project: any): Action {
