@@ -17,15 +17,18 @@
         </a>
         <a class="more-topics">+3</a>-->
       <!--</div>-->
-      <!--<div class="hidden-icon">
-        <i class="ion-android-open"></i>
-      </div>-->
       <div class="action-buttons">
         <!--<button class="vote-button-hidden">-->
           <!--<i class="ion-navicon"></i>
           <i class="ion-android-add"></i>-->
           <!--<div class="button-base">&nbsp;SAVE</div>-->
         <!--</button>-->
+        <a [href]="project.git_url" target="_blank">
+          <div class="hidden-icon">
+            <i class="ion-android-open"></i>
+          </div>
+        </a>
+
         <button class="vote-button-ion" (click)="onToggleUpvote()">
           <i [ngClass]="(project.is_liked_by_current_user)? 'ion-arrow-down-b' : 'ion-arrow-up-b'"></i>
           <div class="button-base"> {{ project.project_likes_count }} </div>
