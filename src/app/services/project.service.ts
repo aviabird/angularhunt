@@ -12,6 +12,7 @@ export class ProjectService {
   listId = 'cf7d6ebd15';
   mailChimpUrl = 'https://aviabird.us15.list-manage.com/subscribe/post-json';
   baseUrl = 'http://localhost:3000/api';
+  projectsCount: number = 0;
 
   constructor(private http: Http,
               private jsonp: Jsonp,
@@ -25,11 +26,10 @@ export class ProjectService {
 
 
   getAllProjects(): Observable<any> {
-    // return this.http.get(`${this.baseUrl}/projects/all_projects`)
-    //   .map(response => response.json());
+    this.projectsCount += 5;
     return this.db.list('/projects', {
         query: {
-          limitToFirst: 5,
+          limitToFirst: this.projectsCount,
         }
       })
       .map(response => response.map(project => new Project(project)));

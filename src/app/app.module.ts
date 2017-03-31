@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 
-import { ModalModule } from 'ng2-bootstrap';
+import { ModalModule, PopoverModule } from 'ng2-bootstrap';
 
 /**Satellizer */
 // import { Ng2UiAuthModule } from 'ng2-ui-auth';
@@ -45,6 +45,8 @@ export const firebaseConfig = {
   messagingSenderId: '281473446041'
 };
 
+/**Social Share Buttons */
+import {ShareButtonsModule} from 'ng2-sharebuttons';
 
 /**All Components */
 import { AppComponent } from './container/app.component';
@@ -77,6 +79,8 @@ import { ModalComponent } from './components/shared/modal/modal.component';
     routing,
     StoreModule.provideStore(reducer),
     ModalModule.forRoot(),
+    PopoverModule.forRoot(),
+    ShareButtonsModule.forRoot(),
     EffectsModule.run(ProjectEffects),
     EffectsModule.run(UserEffects),
     AngularFireModule.initializeApp(firebaseConfig, {

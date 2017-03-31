@@ -1,3 +1,4 @@
+import { Project } from './../../models/project';
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
@@ -6,8 +7,10 @@ import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
   styleUrls: ['./project.component.css']
 })
 export class ProjectComponent implements OnInit {
-  @Input() project;
+  @Input() project: Project = null;
   @Output() toggleUpvoteClick = new EventEmitter();
+  socialButtonHtml: string;
+  tags: String[] = ['angularHunt', 'projects'];
   constructor() { }
 
   ngOnInit() {

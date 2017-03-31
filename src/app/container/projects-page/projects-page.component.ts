@@ -19,7 +19,7 @@ export class ProjectsPageComponent implements OnInit {
     this.projects$ = this.store.select(getProjects);
 
     this.projects$.subscribe(response => {
-    })
+    });
 
   }
 
@@ -35,5 +35,9 @@ export class ProjectsPageComponent implements OnInit {
     this.projectsService.subscribeToNewsLetter(email)
       .subscribe((res) => { console.log(res);
         });
+  }
+
+  loadMoreProjects() {
+    this.store.dispatch(this.projectActions.retriveProjects());
   }
 }

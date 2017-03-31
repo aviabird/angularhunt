@@ -104,7 +104,7 @@
 .form_2 {
 	display: -ms-flexbox;
     display: flex;
-    ms-flex-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
     margin-left: 10px;
     -ms-flex-direction: row;
