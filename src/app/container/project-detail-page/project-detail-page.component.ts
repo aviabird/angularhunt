@@ -18,7 +18,7 @@ export class ProjectDetailPageComponent implements OnInit, OnDestroy, AfterViewI
   actionsSubscription: Subscription;
   project$: Observable<any>;
   projectId: string;
-  user: User = null;
+  user: User;
 
   constructor(private projectActions: ProjectActions,
     private store: Store<AppState>,
@@ -46,7 +46,7 @@ export class ProjectDetailPageComponent implements OnInit, OnDestroy, AfterViewI
   }
 
   toggleUpvote(project: Project) {
-    if (this.user === null) {
+    if (this.user) {
       this.store.dispatch(this.projectActions.upvoteProject(project, this.user));
     } else {
       alert('You are not LoggedIn! Please Login');
