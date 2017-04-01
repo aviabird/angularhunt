@@ -5,5 +5,11 @@
     "firebase.json",
     "**/.*",
     "**/node_modules/**"
-  ]
+  ],
+  "hosting": {
+    "public": "dist"
+  },
+  "database": {
+    "rules": "database.rules.json"
+  }
 }
