@@ -19,7 +19,7 @@ export class ProjectEffects {
     .ofType(ActionTypes.UPVOTE_PROJECT)
     .map((action: Action) => action.payload)
     .switchMap((payload) => this.projectService.upvoteProject(payload))
-    .map((data) => this.projectActions.updateProjectSuccess(data));    
+    .map((data) => this.projectActions.upvoteSuccess());
 
   constructor(private actions$: Actions,
     private projectActions: ProjectActions,

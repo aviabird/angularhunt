@@ -8,10 +8,11 @@ export const ActionTypes = {
   RETRIVE_PROJECTS_SUCCESS: type('Retrive Lists Success'),
   SELECT_PROJECT:           type('Select Project'),
   UPVOTE_PROJECT:           type('Upvote Project'),
-  UPDATE_PROJECT_SUCCESS:   type('Update Project Success')
-}
+  UPDATE_PROJECT_SUCCESS:   type('Update Project Success'),
+  UPVOTE_PROJECT_SUCCESS:   type('Upvote Project Success')
+};
 
-export class ProjectActions {  
+export class ProjectActions {
 
   retriveProjects(): Action {
     return {
@@ -37,6 +38,15 @@ export class ProjectActions {
     return {
       type: ActionTypes.UPVOTE_PROJECT,
       payload: {project: project, user: user}
+    };
+  }
+
+  /**Temp Action for deployment will be replaced by
+   * updateProjectSuccess
+   */
+  upvoteSuccess(): Action {
+    return {
+      type: ActionTypes.UPVOTE_PROJECT_SUCCESS
     };
   }
 

@@ -22,7 +22,7 @@ export class ProjectsPageComponent implements OnInit {
     private store: Store<AppState>) {
     this.projects$ = this.store.select(getProjects);
     this.store.select(getCurrentUser)
-      .subscribe((user: User) => this.user =  user);
+      .subscribe((user: User) => this.user = user);
   }
 
   ngOnInit() {
@@ -30,13 +30,19 @@ export class ProjectsPageComponent implements OnInit {
   }
 
   toggleUpvote(project: Project) {
-    this.store.dispatch(this.projectActions.upvoteProject(project, this.user));
+    if (this.user) {
+      this.store.dispatch(this.projectActions.upvoteProject(project, this.user));
+    }else {
+      alert('You are not loggedIn! Please Login');
+    }
   }
 
+  /**TODO: Replace alert with toasty */
   subscribeToNewsLetter(email: string) {
     this.projectsService.subscribeToNewsLetter(email)
-      .subscribe((res) => { console.log(res);
-        });
+      .subscribe((res) => {
+        alert(res.msg);
+      });
   }
 
   loadMoreProjects() {

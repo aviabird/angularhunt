@@ -1,7 +1,7 @@
 import { Project } from './../models/project';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Http, Headers, Response, Jsonp } from '@angular/http';
+import { Http, Jsonp } from '@angular/http';
 import { AngularFireDatabase } from 'angularfire2';
 import { dummyData } from './../dummyData';
 
@@ -12,7 +12,7 @@ export class ProjectService {
   listId = 'cf7d6ebd15';
   mailChimpUrl = 'https://aviabird.us15.list-manage.com/subscribe/post-json';
   baseUrl = 'http://localhost:3000/api';
-  projectsCount: number = 0;
+  projectsCount = 0;
 
   constructor(private http: Http,
               private jsonp: Jsonp,
@@ -39,15 +39,18 @@ export class ProjectService {
 
 	/**
 	 * User Like/Dislikes Project
-   * TODO: Needs Serious Refactoring.... 
+   * TODO: Needs Serious Refactoring....
+   *       This should retrun the updated project.
+   *       currenly only upvoting;
 	 * @method upvoteProject
-	 * @param {string} projectId of project
-	 * @return {Observable} Observable with updated project object
+	 * @param object {project: any, user: any } of project
+	 * @return { Observable } Observable with updated project object
 	 */
   upvoteProject(payload: any) {
     let project = payload.project;
     let user =  payload.user;
-    let newupvote = project.upvotes + 1;
+    let newupvote = project.upvotes ? project.upvotes + 1 : 1;
+
     return this.db.list('/projects').update(project.$key,
                 { upvotes: newupvote,
                   upvoted_by: { [user.$key]: user.email } });
@@ -63,16 +66,3 @@ export class ProjectService {
                .map(res => res.json());
   }
 }
-
-
-
-// let headers = new Headers({
-//   'Content-Type': 'application/json',
-//   'Authorization': this.getAccessTokenToken()
-// });
-// return this.http.post(`${this.baseUrl}/projects/upvote`, { id: projectId }, { headers: headers })
-//   .map((data: Response) => data.json())
-  // .catch((res: any) => {
-  //   console.log('Some Error Occured', res);
-  //   return res;
-  // });

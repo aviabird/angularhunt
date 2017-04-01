@@ -17,6 +17,6 @@ export class ProjectComponent implements OnInit {
   }
 
   onToggleUpvote(){
-    this.toggleUpvoteClick.emit(this.project.id);
+    this.toggleUpvoteClick.emit(this.project);
   }
 }
