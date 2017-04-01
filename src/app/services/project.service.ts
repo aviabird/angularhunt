@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Http, Jsonp } from '@angular/http';
 import { AngularFireDatabase } from 'angularfire2';
-import { dummyData } from './../dummyData';
+// import { dummyData } from './../dummyData';
 
 
 @Injectable()
@@ -11,18 +11,17 @@ export class ProjectService {
   userId = '5bc67e9ba994773e66c535640';
   listId = 'cf7d6ebd15';
   mailChimpUrl = 'https://aviabird.us15.list-manage.com/subscribe/post-json';
-  baseUrl = 'http://localhost:3000/api';
   projectsCount = 0;
 
   constructor(private http: Http,
               private jsonp: Jsonp,
               public db: AngularFireDatabase) { }
 
-  sendData() {
-    dummyData.forEach(project => {
-      this.db.list('/projects').push(project);
-    });
-  }
+  // sendData() {
+  //   dummyData.forEach(project => {
+  //     this.db.list('/projects').push(project);
+  //   });
+  // }
 
 
   getAllProjects(): Observable<any> {

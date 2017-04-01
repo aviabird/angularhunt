@@ -25,8 +25,8 @@ export class HeaderComponent implements OnInit {
     this.logoutClicked.emit();
   }
 
-  uploaData(){
-    this.projectService.sendData();
-  }
+  // uploaData(){
+  //   this.projectService.sendData();
+  // }
 
 }

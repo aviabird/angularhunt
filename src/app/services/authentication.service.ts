@@ -1,4 +1,3 @@
-import { environment } from './../../environments/environment';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
@@ -9,7 +8,6 @@ import {
 
 @Injectable()
 export class AuthenticationService {
-  baseUrl = environment.API_ENDPOINT;
   userAuth: Observable<any>;
 
   constructor(private af: AngularFire,
