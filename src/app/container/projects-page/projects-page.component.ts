@@ -15,7 +15,7 @@ import { ProjectActions } from '../../actions/project.actions';
 })
 export class ProjectsPageComponent implements OnInit {
   projects$: Observable<any>;
-  user: User;
+  user: User = null;
 
   constructor(private projectsService: ProjectService,
     private projectActions: ProjectActions,
@@ -30,7 +30,7 @@ export class ProjectsPageComponent implements OnInit {
   }
 
   toggleUpvote(project: Project) {
-    if (this.user) {
+    if (this.user === null) {
       this.store.dispatch(this.projectActions.upvoteProject(project, this.user));
     }else {
       alert('You are not loggedIn! Please Login');
