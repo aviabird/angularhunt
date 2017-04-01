@@ -34,4 +34,3 @@ testem.log
 Thumbs.db
 
 # Secrets
-src/app/secrets.ts
