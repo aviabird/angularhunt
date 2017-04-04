@@ -20,7 +20,7 @@
       "styles": [
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": ["../node_modules/noty/js/noty/packaged/jquery.noty.packaged.js"],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

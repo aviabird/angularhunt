@@ -5,6 +5,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
 
 import { ModalModule } from 'ng2-bootstrap';
 import {ShareButtonsModule} from 'ng2-sharebuttons';
+import {ToasterModule} from 'angular2-toaster';
 
 /**NgRx Store */
 import { StoreModule } from '@ngrx/store';
@@ -72,6 +73,7 @@ import { IsUpvotedByCurrentUserPipe } from './pipes/is-upvoted-by-current-user.p
     FormsModule,
     HttpModule,
     JsonpModule,
+    ToasterModule,
     routing,
     StoreModule.provideStore(reducer),
     ModalModule.forRoot(),

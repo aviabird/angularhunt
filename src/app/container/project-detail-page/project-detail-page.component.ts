@@ -10,6 +10,7 @@ import { AppState,
          getCurrentUser,
          getUpvotedProjectIds } from '../../reducers/index';
 import { ProjectActions } from '../../actions/project.actions';
+import {ToasterService} from 'angular2-toaster';
 
 @Component({
   selector: 'app-project-detail-page',
@@ -26,7 +27,8 @@ export class ProjectDetailPageComponent implements OnInit, OnDestroy, AfterViewI
 
   constructor(private projectActions: ProjectActions,
     private store: Store<AppState>,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private toasterService: ToasterService) {
     this.project$ = this.store.select(getSelectedProject);
 
     this.store.select(getCurrentUser)
@@ -57,7 +59,8 @@ export class ProjectDetailPageComponent implements OnInit, OnDestroy, AfterViewI
         .dispatch(this.projectActions
           .toggleUpvote(payload.project, payload.action, this.user));
     } else {
-      alert('You are not loggedIn! Please Login');
+      this.toasterService
+        .pop('error', 'Hey Guest', 'You Need To be LoggedIn to Upvote');
     }
   }
 }

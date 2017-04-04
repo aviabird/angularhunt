@@ -13,6 +13,9 @@ import {
 } from '../../reducers/index';
 import { ProjectActions } from '../../actions/project.actions';
 import { UserActions } from './../../actions/user.actions';
+import { ToasterService } from 'angular2-toaster';
+
+declare var noty: any;
 
 @Component({
   selector: 'app-projects-page',
@@ -29,7 +32,8 @@ export class ProjectsPageComponent implements OnInit {
   constructor(private projectsService: ProjectService,
     private projectActions: ProjectActions,
     private userActions: UserActions,
-    private store: Store<AppState>) {
+    private store: Store<AppState>,
+    private toasterService: ToasterService) {
 
     this.projects$ = this.store.select(getProjects);
 
@@ -54,13 +58,15 @@ export class ProjectsPageComponent implements OnInit {
     this.store.dispatch(this.projectActions.retriveProjects());
   }
 
-  toggleUpvote(payload: {project: Project, action: string }) {
+  toggleUpvote(payload: { project: Project, action: string }) {
     if (this.user) {
       this.store
         .dispatch(this.projectActions
           .toggleUpvote(payload.project, payload.action, this.user));
     } else {
-      alert('You are not loggedIn! Please Login');
+      // alert('You are not loggedIn! Please Login');
+      this.toasterService
+        .pop('error', 'Hey Guest', 'You Need To be LoggedIn to Upvote');
     }
   }
 
@@ -68,11 +74,21 @@ export class ProjectsPageComponent implements OnInit {
   subscribeToNewsLetter(email: string) {
     this.projectsService.subscribeToNewsLetter(email)
       .subscribe((res) => {
-        alert(res.msg);
+        return this.popInfo(res);
       });
   }
 
   loadMoreProjects() {
     this.store.dispatch(this.projectActions.retriveProjects());
   }
+
+  popInfo(res) {
+    let n = noty({timeout: 5000});
+    if (res.result === 'success') {
+      n.setType('info');
+    } else {
+      n.setType('error');
+    }
+    n.setText(res.msg);
+  };
 }
