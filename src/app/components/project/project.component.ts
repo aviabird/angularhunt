@@ -10,6 +10,7 @@ export class ProjectComponent {
   @Input() project: Project = null;
   @Input() isUpvotedByCurrUser: boolean;
   @Output() toggleUpvoteClick = new EventEmitter();
+  productTags: string[] = ['angularhunt', 'products'];
   action: string;
 
   onToggleUpvote() {

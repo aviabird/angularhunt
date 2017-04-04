@@ -95,6 +95,7 @@
 }
 
 .inner_content {
+  padding: 0 10px;
   background-color: #f1f1f1;
   height: 120px;
   -ms-flex-flow: column nowrap;
@@ -257,4 +258,11 @@ a {
 .active {
   background-color: #da552f !important;
   color: white;
+}
+
+share-buttons {
+  float: left;
+  padding: 10px;
+  width: 155px;
+  padding: 0px;
 }

@@ -67,18 +67,22 @@
             </span>
           </span>
         </span>
-
-          <button class="button_mediumSize">
-            <div class="buttonContainer">
-            <span class="icon">
-              <i class="ion-android-open"></i>
-              <span class="collectButtonLabel">&nbsp;Share</span>
-            </span> 
-            </div>
-          </button>
       </main>
-
       <aside>
+          <share-buttons [url]="project.git_url"
+            [image]="project.image_url" 
+            [title]="project.name" 
+            [description]="project.description"
+            [tags]="productTags"
+            [linkedIn]=false
+            [tumblr]=false
+            [google]=false
+            [pinterest]=false
+            [stumbleUpOn]=false
+            [reddit]=false
+            [whatsApp]=false
+            [defaultStyle]="false">
+          </share-buttons>
           <button class="button_mediumSize">
             <div class="buttonContainer">
               <span class="icon">

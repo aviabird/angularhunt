@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/font-awesome/css/font-awesome.min.css';
+
 html {
 	height: 100%;
 	font-family: "proxima-nova", "Proxima Nova", helvetica, arial, sans-serif;
@@ -9,4 +11,23 @@ body {
 	margin: 0;
   min-height: 100%;
   position: relative;
+}
+
+share-buttons button {
+    width: 70px;
+    height: 35px;
+    padding: none;
+    font-size: 1.2rem;
+}
+
+share-buttons .sb-buttons .facebook button {
+  background: #3B5996;
+  border-color: #3b5998;
+  color: white;
+}
+
+share-buttons .sb-buttons .twitter button {
+  background: #00b4f5;
+  border-color: #00b4f5;
+  color: white;
 }
