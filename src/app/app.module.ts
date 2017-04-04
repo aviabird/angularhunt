@@ -3,11 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 
-import { ModalModule, PopoverModule } from 'ng2-bootstrap';
-
-/**Satellizer */
-// import { Ng2UiAuthModule } from 'ng2-ui-auth';
-// import { MyAuthConfig } from './auth-config';
+import { ModalModule } from 'ng2-bootstrap';
 
 /**NgRx Store */
 import { StoreModule } from '@ngrx/store';
@@ -45,9 +41,6 @@ export const firebaseConfig = {
   messagingSenderId: '281473446041'
 };
 
-/**Social Share Buttons */
-import {ShareButtonsModule} from 'ng2-sharebuttons';
-
 /**All Components */
 import { AppComponent } from './container/app.component';
 import { ProjectsPageComponent } from './container/projects-page/projects-page.component';
@@ -81,8 +74,6 @@ import { IsUpvotedByCurrentUserPipe } from './pipes/is-upvoted-by-current-user.p
     routing,
     StoreModule.provideStore(reducer),
     ModalModule.forRoot(),
-    PopoverModule.forRoot(),
-    ShareButtonsModule.forRoot(),
     EffectsModule.run(ProjectEffects),
     EffectsModule.run(UserEffects),
     AngularFireModule.initializeApp(firebaseConfig, {

@@ -68,28 +68,7 @@
           </span>
         </span>
 
-          <ng-template #popTemplate>
-            <div>
-              <share-buttons
-              [url]="project.git_url"
-              [image]="project.image_url" 
-              [title]="project.name"
-              [tags]= "tags"
-              [description]="project.description"
-              [linkedIn]=false
-              [tumblr]=false
-              [google]=false
-              [pinterest]=false
-              [stumbleUpOn]=false
-              [reddit]=false
-              [whatsApp]=false></share-buttons>
-            </div>
-          </ng-template>
-
-          <button class="button_mediumSize"
-                  type="button" 
-                  [popover]="popTemplate" 
-                  placement="top" >
+          <button class="button_mediumSize">
             <div class="buttonContainer">
             <span class="icon">
               <i class="ion-android-open"></i>
