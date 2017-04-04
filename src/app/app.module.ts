@@ -58,6 +58,7 @@ import { ProjectComponent } from './components/project/project.component';
 import { NewsletterCardComponent } from './components/newsletter-card/newsletter-card.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { ModalComponent } from './components/shared/modal/modal.component';
+import { IsUpvotedByCurrentUserPipe } from './pipes/is-upvoted-by-current-user.pipe';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { ModalComponent } from './components/shared/modal/modal.component';
     ProjectComponent,
     NewsletterCardComponent,
     NavigationComponent,
-    ModalComponent
+    ModalComponent,
+    IsUpvotedByCurrentUserPipe
   ],
   imports: [
     BrowserModule,

@@ -7,9 +7,9 @@ export const ActionTypes = {
   RETRIVE_PROJECTS:         type('Retrive Lists'),
   RETRIVE_PROJECTS_SUCCESS: type('Retrive Lists Success'),
   SELECT_PROJECT:           type('Select Project'),
-  UPVOTE_PROJECT:           type('Upvote Project'),
+  TOGGLE_UPVOTE:            type('Toggle Upvote'),
   UPDATE_PROJECT_SUCCESS:   type('Update Project Success'),
-  UPVOTE_PROJECT_SUCCESS:   type('Upvote Project Success')
+  TOGGLE_UPVOTE_SUCCESS:    type('Toggle Upvote Success')
 };
 
 export class ProjectActions {
@@ -27,26 +27,26 @@ export class ProjectActions {
     }
   }
 
-  selectProject(projectId: any): Action{
+  selectProject(projectId: any): Action {
     return {
       type: ActionTypes.SELECT_PROJECT,
       payload: projectId
     };
   }
 
-  upvoteProject(project: Project, user: User): Action{
+  toggleUpvote(project: Project, action: string, user: User): Action {
     return {
-      type: ActionTypes.UPVOTE_PROJECT,
-      payload: {project: project, user: user}
+      type: ActionTypes.TOGGLE_UPVOTE,
+      payload: {project: project, action: action, user: user}
     };
   }
 
   /**Temp Action for deployment will be replaced by
    * updateProjectSuccess
    */
-  upvoteSuccess(): Action {
+  toggleUpvoteSuccess(): Action {
     return {
-      type: ActionTypes.UPVOTE_PROJECT_SUCCESS
+      type: ActionTypes.TOGGLE_UPVOTE_SUCCESS
     };
   }
 
@@ -54,6 +54,6 @@ export class ProjectActions {
     return {
       type: ActionTypes.UPDATE_PROJECT_SUCCESS,
       payload: project
-    }
+    };
   }
 }

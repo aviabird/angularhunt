@@ -8,7 +8,9 @@ import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy
 })
 export class ProjectCardComponent implements OnInit {
   @Input() project = null;
+  @Input() isUpvotedByCurrUser: boolean;
   @Output() toggleUpvoteClick = new EventEmitter();
+  action: string;
 
   get id() {
     return this.project.id;
@@ -21,6 +23,8 @@ export class ProjectCardComponent implements OnInit {
   }
 
   onToggleUpvote() {
-    this.toggleUpvoteClick.emit(this.project);
+    this.action = this.isUpvotedByCurrUser ? 'removote' : 'upvote';
+    this.toggleUpvoteClick
+      .emit({ project: this.project, action: this.action });
   }
 }

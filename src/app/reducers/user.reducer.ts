@@ -9,6 +9,7 @@ export type State = {
   ids: string[];
   selectedUserId: string;
   access_token: string;
+  upvotedProjectIds: Array<any>;
 };
 
 const initialState: State = {
@@ -17,7 +18,8 @@ const initialState: State = {
   entities: {},
   ids: [],
   selectedUserId: null,
-  access_token: localStorage.getItem('access_token')
+  access_token: localStorage.getItem('access_token'),
+  upvotedProjectIds: []
 };
 
 
@@ -25,7 +27,6 @@ export const userReducer = (state = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.LOGIN_SUCCESS: {
       let user = action.payload;
-
       let newState = {
         isAuthenticated: true,
         user: user,
@@ -61,12 +62,19 @@ export const userReducer = (state = initialState, action: Action): State => {
       return Object.assign({}, state, newState);
     }
 
+    case ActionTypes.LOAD_UPVOTED_PROJECT_IDS_SUCCESS: {
+      return Object.assign({},
+        state,
+        { upvotedProjectIds: action.payload });
+    }
+
     default: {
       return state;
     }
   }
-}
+};
 
 export const getIds = (state: State) => state.ids;
 export const getEntities = (state: State) => state.entities;
 export const getUser = (state: State) => state.user;
+export const getUpvotedProjectIds = (state: State) => state.upvotedProjectIds;

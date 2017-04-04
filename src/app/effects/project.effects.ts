@@ -16,10 +16,10 @@ export class ProjectEffects {
     .map((response: any) => this.projectActions.retriveProjectsSuccess(response));
 
   @Effect() upvoteProject$ = this.actions$
-    .ofType(ActionTypes.UPVOTE_PROJECT)
+    .ofType(ActionTypes.TOGGLE_UPVOTE)
     .map((action: Action) => action.payload)
-    .switchMap((payload) => this.projectService.upvoteProject(payload))
-    .map((data) => this.projectActions.upvoteSuccess());
+    .switchMap((payload) => this.projectService.toggleUpvote(payload))
+    .map((data) => this.projectActions.toggleUpvoteSuccess());
 
   constructor(private actions$: Actions,
     private projectActions: ProjectActions,

@@ -253,3 +253,8 @@
 a {
   text-decoration: none;
 }
+
+.active {
+  background-color: #da552f !important;
+  color: white;
+}

@@ -66,7 +66,7 @@
 .meta {
     left: 130px;
     right: 25px;
-    ms-flex-align: center;
+    -ms-flex-align: center;
     align-items: center;
     bottom: 23px;
     -ms-flex-pack: justify;
@@ -194,8 +194,8 @@
     cursor: poiner;
 }
 
-.vote-button-hidden:hover,
-.vote-button-ion:hover,
+/*.vote-button-hidden:hover,
+.vote-button-ion:hover,*/
 .vote-button-chat:hover,
 .hidden-icon:hover {
     background-color: #a8a8a8;
@@ -213,11 +213,17 @@
     margin-left: 6px;
     font-size: 12px;
     height: 24px;
-    background-color: transparent;
     border: 1px solid #e8e8e8;
+    background-color: transparent;
     color: #000;
     cursor: pointer;
 }
+
+.active {
+  background-color: #da552f !important;
+  color: white;
+}
+
 
 .vote-button-chat{
     display: flex;

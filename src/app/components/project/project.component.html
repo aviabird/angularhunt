@@ -109,8 +109,9 @@
               </span>
             </div>  
           </button>
-
-          <button class="button_mediumSize" (click)="onToggleUpvote()">
+          <button class="button_mediumSize" 
+            [class.active]="isUpvotedByCurrUser"
+            (click)="onToggleUpvote()">
             <div class="buttonContainer">
               <span class="icon">
                 <i class="ion-arrow-up-b"></i>

@@ -40,3 +40,4 @@ export const getSelectedProject = createSelector(getProjectsEntities, getSelecte
 export const getUsersState = (appState: AppState) => appState.users;
 
 export const getCurrentUser = createSelector(getUsersState, fromUsers.getUser);
+export const getUpvotedProjectIds = createSelector(getUsersState, fromUsers.getUpvotedProjectIds);

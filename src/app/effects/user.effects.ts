@@ -5,6 +5,7 @@ import { Action, Store } from '@ngrx/store';
 import { AppState } from '../reducers/index';
 import { ActionTypes, UserActions } from '../actions/user.actions';
 import { AuthenticationService } from './../services/authentication.service';
+import { ProjectService } from './../services/project.service';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
 
@@ -35,12 +36,18 @@ export class UserEffects {
     .map(() => this.authService.logout())
     .map(() => this.userActions.logoutSuccess());
 
+  @Effect() laodUpvotedProjectIds = this.actions$
+    .ofType(ActionTypes.LOAD_UPVOTED_PROJECT_IDS)
+    .switchMap((action: Action) => this.projectService.loadUpvotedrojectIds(action.payload))
+    .map((upvotedProjectIds: string[]) =>
+    this.userActions.loadUpvotedProjectIdsSuccess(upvotedProjectIds));
 
   constructor(private actions$: Actions,
     private userActions: UserActions,
     private authService: AuthenticationService,
     private parser: ResponseParserService,
-    private store: Store<AppState>
+    private store: Store<AppState>,
+    private projectService: ProjectService
   ) { }
 
 }

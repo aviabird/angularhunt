@@ -5,7 +5,10 @@ import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
-import { AppState, getSelectedProject, getCurrentUser } from '../../reducers/index';
+import { AppState,
+         getSelectedProject,
+         getCurrentUser,
+         getUpvotedProjectIds } from '../../reducers/index';
 import { ProjectActions } from '../../actions/project.actions';
 
 @Component({
@@ -19,6 +22,7 @@ export class ProjectDetailPageComponent implements OnInit, OnDestroy, AfterViewI
   project$: Observable<any>;
   projectId: string;
   user: User;
+  upvotedProjectIds$: Observable<any>;
 
   constructor(private projectActions: ProjectActions,
     private store: Store<AppState>,
@@ -27,6 +31,8 @@ export class ProjectDetailPageComponent implements OnInit, OnDestroy, AfterViewI
 
     this.store.select(getCurrentUser)
       .subscribe((user: User) => this.user = user);
+
+    this.upvotedProjectIds$ = this.store.select(getUpvotedProjectIds);
   }
 
   ngOnInit() {
@@ -45,12 +51,13 @@ export class ProjectDetailPageComponent implements OnInit, OnDestroy, AfterViewI
     this.actionsSubscription.unsubscribe();
   }
 
-  toggleUpvote(project: Project) {
+  toggleUpvote(payload: {project: Project, action: string }) {
     if (this.user) {
-      this.store.dispatch(this.projectActions.upvoteProject(project, this.user));
+      this.store
+        .dispatch(this.projectActions
+          .toggleUpvote(payload.project, payload.action, this.user));
     } else {
-      alert('You are not LoggedIn! Please Login');
+      alert('You are not loggedIn! Please Login');
     }
-
   }
 }

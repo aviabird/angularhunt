@@ -1,6 +1,7 @@
 <app-modal>
   <app-project [project]="project$ | async" 
     (toggleUpvoteClick)="toggleUpvote($event)"
+    [isUpvotedByCurrUser] = "projectId | isUpvotedByCurrentUser: (upvotedProjectIds$ | async)"
     style="margin: 0 auto;"></app-project>
 </app-modal>
 

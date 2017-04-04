@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
   user$: Observable<User>;
   constructor(private userActions: UserActions,
     private store: Store<AppState>) {
-
     this.user$ = this.store.select(getCurrentUser);
   }
 

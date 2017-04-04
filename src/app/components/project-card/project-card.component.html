@@ -28,9 +28,10 @@
             <i class="ion-android-open"></i>
           </div>
         </a>
-
-        <button class="vote-button-ion" (click)="onToggleUpvote()">
-          <i [ngClass]="(project.is_liked_by_current_user)? 'ion-arrow-down-b' : 'ion-arrow-up-b'"></i>
+        <button class="vote-button-ion" 
+          [class.active]="isUpvotedByCurrUser"
+          (click)="onToggleUpvote()">
+          <i  class='ion-arrow-up-b'></i>
           <div class="button-base"> {{ project.upvotes }} </div>
         </button>
         <!--<button class="vote-button-chat">

@@ -6,7 +6,7 @@ export type State = {
   ids: string[];
   entities: { [id: string]: Project };
   selectedProjectId: string;
-}
+};
 
 const initialState: State = {
   ids: [],
@@ -14,7 +14,7 @@ const initialState: State = {
   selectedProjectId: null
 };
 
-export const projectReducer = (state = initialState, action: Action): State  => {
+export const projectReducer = (state = initialState, action: Action): State => {
   switch (action.type) {
     case ActionTypes.RETRIVE_PROJECTS_SUCCESS: {
       const Projects: Project[] = action.payload;
@@ -47,7 +47,7 @@ export const projectReducer = (state = initialState, action: Action): State  => 
 
     case ActionTypes.UPDATE_PROJECT_SUCCESS: {
       const updatedProject = action.payload;
-      const updatedProjectId = updatedProject.id
+      const updatedProjectId = updatedProject.id;
 
       let newProjects = state.entities;
       newProjects[updatedProjectId] = updatedProject;

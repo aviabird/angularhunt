@@ -8,8 +8,10 @@ export const ActionTypes = {
   LOGOUT:         type('Logout'),
   LOGOUT_SUCCESS: type('Logout Success'),
   LOAD_CURRENT_USER_PROFILE: type('Load Current User Profile'),
-  LOAD_CURRENT_USER_PROFILE_SUCCESS: type('Load Current User Profile Success')
-}
+  LOAD_CURRENT_USER_PROFILE_SUCCESS: type('Load Current User Profile Success'),
+  LOAD_UPVOTED_PROJECT_IDS: type('Load Upvoted Project Ids'),
+  LOAD_UPVOTED_PROJECT_IDS_SUCCESS: type('Load Upvoted Project Ids Success')
+};
 
 export class UserActions {
 
@@ -52,4 +54,18 @@ export class UserActions {
       payload: user
     };
   }
-};
+
+  loadUpvotedProjectIds(payload: { userId: any, projectIds: String[] }): Action {
+    return {
+      type: ActionTypes.LOAD_UPVOTED_PROJECT_IDS,
+      payload: payload
+    };
+  };
+
+  loadUpvotedProjectIdsSuccess(ids: String[]): Action {
+    return {
+      type: ActionTypes.LOAD_UPVOTED_PROJECT_IDS_SUCCESS,
+      payload: ids
+    };
+  }
+}
