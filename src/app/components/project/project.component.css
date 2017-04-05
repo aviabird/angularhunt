@@ -97,7 +97,6 @@
 .inner_content {
   padding: 0 10px;
   background-color: #f1f1f1;
-  height: 120px;
   -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
   -ms-flex: 1 1 auto;

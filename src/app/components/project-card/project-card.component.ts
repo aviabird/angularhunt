@@ -1,3 +1,4 @@
+import { Project } from './../../models/project';
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectCardComponent implements OnInit {
-  @Input() project = null;
+  @Input() project: Project = null;
   @Input() isUpvotedByCurrUser: boolean;
   @Output() toggleUpvoteClick = new EventEmitter();
   action: string;

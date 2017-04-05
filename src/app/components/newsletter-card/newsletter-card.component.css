@@ -33,9 +33,9 @@
 }
 
 .background-image {
-	background-image: url("https://ph-files.imgix.net/6b848fb9-a67f-4535-91b6-1c46156f2d48?auto=format&auto=compress&codec=mozjpeg&cs=strip&w=360&h=220&fit=crop&crop=edges&fm=png");
-    background-size: cover;
-    cursor: pointer;
+  background-image: url("http://www.climate-kic.org/wp-content/uploads/2012/11/brain.jpg");
+  background-size: cover;
+  cursor: pointer;
 }
 
 .preview .background-image {

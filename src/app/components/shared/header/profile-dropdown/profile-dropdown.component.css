@@ -22,6 +22,7 @@ a {
 a:active,
 a:hover {
   outline: 0;
+  cursor: pointer;
 }
 abbr[title] {
   border-bottom: 1px dotted;

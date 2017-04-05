@@ -172,7 +172,7 @@ logged-in-user-area{
 }
 
 .signup {
-	height: 30px;
+  	height: 30px;
     margin-left: 5px;
     background: #da552f;
     border-color: #da552f;
@@ -201,7 +201,8 @@ logged-in-user-area{
 
 .signup:hover {
 	background: #ea532a;
-    border-color: #ea532a;
+  border-color: #ea532a;
+  cursor: pointer;
 }
 
 

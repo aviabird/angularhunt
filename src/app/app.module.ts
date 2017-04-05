@@ -67,6 +67,7 @@ import { NewsletterCardComponent } from './components/newsletter-card/newsletter
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { ModalComponent } from './components/shared/modal/modal.component';
 import { ProfileDropdownComponent } from './components/shared/header/profile-dropdown/profile-dropdown.component';
+import { TrimTextPipe } from './pipes/trim-text.pipe';
 
 
 @NgModule({
@@ -81,7 +82,8 @@ import { ProfileDropdownComponent } from './components/shared/header/profile-dro
     NavigationComponent,
     ModalComponent,
     ProfileDropdownComponent,
-    IsUpvotedByCurrentUserPipe
+    IsUpvotedByCurrentUserPipe,
+    TrimTextPipe
   ],
   imports: [
     BrowserModule,
