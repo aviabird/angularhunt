@@ -1,8 +1,12 @@
+.flex-display {
+  display: flex;
+}
+
 .primary-content {
+  float: left;
 	-ms-flex: 1;
   flex: 1;
   min-width: 0;
-  width: 100%; 
   height: 580px;
   cursor: pointer;
 }
@@ -83,7 +87,7 @@
 }
 
 .button_mediumSize {
-	border-radius: 3px;
+  	border-radius: 3px;
     border: 1px solid transparent;
     box-sizing: border-box;
     outline: 0;
@@ -130,4 +134,49 @@
 .loadMore-container {
   text-align: center;
   padding: 10px;
+}
+
+/*Secondary Section csss*/
+
+.secondary-section {
+  width: 260px;
+  float: left;
+}
+
+.sidebar {
+    margin-left: 20px;
+    width: 250px;
+    min-width: 250px;
+}
+
+.padded-box {
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #e8e8e8;
+  padding: 20px;
+}
+
+.featured {
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: .4px;
+  line-height: 24px;
+}
+
+.box-text {
+  display: block;
+  margin: 10px 0 20px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #999;
+}
+
+.actions{
+  text-align: center;
+}
+
+.fa {
+  padding-right: 8px;
+  font-size: 20px;
 }

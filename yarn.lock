@@ -140,10 +140,6 @@
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-2.0.2.tgz#8255e29cc0276f108784c90481e3b96e6713154b"
 
-"@ngrx/store-devtools@^3.2.3":
-  version "3.2.4"
-  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-3.2.4.tgz#2ce4d13bf34848a9e51ec87e3b125ed67b51e550"
-
 "@ngrx/store@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-2.2.1.tgz#316ec1e43aa5a0166e5e6e1aa2c34a4049386510"
@@ -251,9 +247,9 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
-angular2-fontawesome@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/angular2-fontawesome/-/angular2-fontawesome-0.9.0.tgz#f3ddf65fcf633eb0e1adc4aa907ecd5eddb85dba"
+angular2-toaster@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/angular2-toaster/-/angular2-toaster-3.0.1.tgz#8e7a33cdbfb2111f488cc2238ed2881922a637fe"
 
 angularfire2@^2.0.0-beta.8:
   version "2.0.0-beta.7-pre"
@@ -2132,10 +2128,6 @@ font-awesome@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
 
-fontawesome@^4.7.2:
-  version "4.7.2"
-  resolved "https://registry.yarnpkg.com/fontawesome/-/fontawesome-4.7.2.tgz#7f0c72ac7a6b029d3375bacb23522d9acfc50a52"
-
 for-in@^0.1.3:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-0.1.8.tgz#d8773908e31256109952b1fdb9b3fa867d2775e1"
@@ -3865,6 +3857,10 @@ normalize-url@^1.4.0:
     prepend-http "^1.0.0"
     query-string "^4.1.0"
     sort-keys "^1.0.0"
+
+noty@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/noty/-/noty-2.4.1.tgz#4327fb0985fe93f6aadb929fa6807fa3ccd86a07"
 
 "npmlog@0 || 1 || 2 || 3 || 4", npmlog@^4.0.0, npmlog@^4.0.2:
   version "4.0.2"

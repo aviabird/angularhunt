@@ -1,5 +1,5 @@
 import { ProjectService } from './../../../services/project.service';
-import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
 import { User } from '../../../models';
 
 @Component({

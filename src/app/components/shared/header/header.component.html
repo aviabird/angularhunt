@@ -34,15 +34,19 @@
         </div>
 
         <div class="logged-in-user-area" *ngIf="user">
-          <span>
-            <img [src]="user.avatar" class="avatar" />
+          <app-profile-dropdown 
+            [user]="user"
+            (logoutClicked)="logout()">
+          </app-profile-dropdown>
+          <!--<span>
+            <img [src]="user?.avatar" class="avatar" />
           </span>
 
           <span>{{user.name}}</span>
 
           <span class="signup" (click)="logout()">
             <span class="buttoncontainer">LogOut</span>
-          </span>
+          </span>-->
         </div>
       </div>
     </div>

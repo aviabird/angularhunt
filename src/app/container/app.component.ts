@@ -8,13 +8,15 @@ import { User } from '../models';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
   title: string;
   user$: Observable<User>;
   constructor(private userActions: UserActions,
     private store: Store<AppState>) {
+    this.store.dispatch(this.userActions.loadCurrentUserProfile());
     this.user$ = this.store.select(getCurrentUser);
   }
 
@@ -27,7 +29,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.store.dispatch(this.userActions.loadCurrentUserProfile());
   }
 
   getAccessTokenToken(): any {

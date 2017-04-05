@@ -29,8 +29,7 @@ export const userReducer = (state = initialState, action: Action): State => {
       let user = action.payload;
       let newState = {
         isAuthenticated: true,
-        user: user,
-        access_token: localStorage.getItem('access_token')
+        user: user
       };
 
       return Object.assign({}, state, newState);
@@ -56,7 +55,8 @@ export const userReducer = (state = initialState, action: Action): State => {
       let newState = {
         isAuthenticated: false,
         user: null,
-        access_token: null
+        access_token: null,
+        upvotedProjectIds: []
       };
 
       return Object.assign({}, state, newState);

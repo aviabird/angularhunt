@@ -3,18 +3,29 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 
-import { ModalModule } from 'ng2-bootstrap';
-import {ShareButtonsModule} from 'ng2-sharebuttons';
-import {ToasterModule} from 'angular2-toaster';
+import { ModalModule, DropdownModule } from 'ng2-bootstrap';
+import { ShareButtonsModule } from 'ng2-sharebuttons';
 
 /**NgRx Store */
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
+/**Store Moniter */
+// import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+// import { StoreLogMonitorModule, useLogMonitor } from '@ngrx/store-log-monitor';
+
+
+// export function instrumentOptions() {
+//   return {
+//     monitor: useLogMonitor({ visible: true, position: 'right' })
+//   };
+// }
+
 /**Services */
 import { ProjectService } from './services/project.service';
 import { AuthenticationService } from './services/authentication.service';
 import { ResponseParserService } from './services/response-parser.service';
+import { ToastyNotifierService } from './services/toasty-notifier.service';
 
 /** All SideEffects in APP */
 import { ProjectEffects } from './effects/project.effects';
@@ -43,6 +54,8 @@ export const firebaseConfig = {
   messagingSenderId: '281473446041'
 };
 
+import { IsUpvotedByCurrentUserPipe } from './pipes/is-upvoted-by-current-user.pipe';
+
 /**All Components */
 import { AppComponent } from './container/app.component';
 import { ProjectsPageComponent } from './container/projects-page/projects-page.component';
@@ -53,7 +66,8 @@ import { ProjectComponent } from './components/project/project.component';
 import { NewsletterCardComponent } from './components/newsletter-card/newsletter-card.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { ModalComponent } from './components/shared/modal/modal.component';
-import { IsUpvotedByCurrentUserPipe } from './pipes/is-upvoted-by-current-user.pipe';
+import { ProfileDropdownComponent } from './components/shared/header/profile-dropdown/profile-dropdown.component';
+
 
 @NgModule({
   declarations: [
@@ -66,6 +80,7 @@ import { IsUpvotedByCurrentUserPipe } from './pipes/is-upvoted-by-current-user.p
     NewsletterCardComponent,
     NavigationComponent,
     ModalComponent,
+    ProfileDropdownComponent,
     IsUpvotedByCurrentUserPipe
   ],
   imports: [
@@ -73,15 +88,17 @@ import { IsUpvotedByCurrentUserPipe } from './pipes/is-upvoted-by-current-user.p
     FormsModule,
     HttpModule,
     JsonpModule,
-    ToasterModule,
     routing,
     StoreModule.provideStore(reducer),
+    // StoreDevtoolsModule.instrumentStore(instrumentOptions),
+    // StoreLogMonitorModule,
     ModalModule.forRoot(),
+    DropdownModule.forRoot(),
     ShareButtonsModule.forRoot(),
     EffectsModule.run(ProjectEffects),
     EffectsModule.run(UserEffects),
     AngularFireModule.initializeApp(firebaseConfig, {
-      method: AuthMethods.Popup
+      method: AuthMethods.Redirect
     })
   ],
   providers: [
@@ -89,7 +106,8 @@ import { IsUpvotedByCurrentUserPipe } from './pipes/is-upvoted-by-current-user.p
     ProjectActions,
     ProjectService,
     AuthenticationService,
-    ResponseParserService
+    ResponseParserService,
+    ToastyNotifierService
   ],
   bootstrap: [AppComponent]
 })

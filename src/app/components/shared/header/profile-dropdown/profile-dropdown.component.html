@@ -1,0 +1,11 @@
+<div class="dropdown" dropdown>
+  <a href="#" class="dropdown-toggle" dropdownToggle>
+    <img class="avatar" [src]="user.avatar" alt="avatar">
+    <!--<i class="fa fa-user" aria-hidden="true"></i>-->
+    <!--<span class="caret"></span>-->
+  </a>
+  <ul class="dropdown-menu-right" dropdownMenu>
+    <li><a routerLink="/home">My Profile</a></li>
+    <li><a (click)="logout()">Logout</a></li>
+  </ul>
+</div>
