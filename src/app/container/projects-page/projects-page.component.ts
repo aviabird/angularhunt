@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { User } from './../../models/user';
 import { Project } from './../../models/project';
 import { ProjectService } from './../../services/project.service';
@@ -31,7 +32,8 @@ export class ProjectsPageComponent implements OnInit {
     private projectActions: ProjectActions,
     private userActions: UserActions,
     private store: Store<AppState>,
-    private toasterService: ToastyNotifierService) {
+    private toasterService: ToastyNotifierService,
+    private router: Router) {
 
     this.projects$ = this.store.select(getProjects);
 
@@ -62,10 +64,7 @@ export class ProjectsPageComponent implements OnInit {
         .dispatch(this.projectActions
           .toggleUpvote(payload.project, payload.action, this.user));
     } else {
-      this.toasterService.pop({
-        result: 'error',
-        msg: 'You Need To be LoggedIn to Upvote'
-      });
+      this.router.navigate(['/login']);
     }
   }
 

@@ -78,3 +78,4 @@ export const getIds = (state: State) => state.ids;
 export const getEntities = (state: State) => state.entities;
 export const getUser = (state: State) => state.user;
 export const getUpvotedProjectIds = (state: State) => state.upvotedProjectIds;
+export const getAuthStatus =  (state: State) => state.isAuthenticated;

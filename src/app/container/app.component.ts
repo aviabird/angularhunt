@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
@@ -14,14 +15,13 @@ import { User } from '../models';
 export class AppComponent implements OnInit {
   title: string;
   user$: Observable<User>;
+  loginModalHidden: Boolean = true;
+
   constructor(private userActions: UserActions,
-    private store: Store<AppState>) {
+    private store: Store<AppState>,
+    private router: Router) {
     this.store.dispatch(this.userActions.loadCurrentUserProfile());
     this.user$ = this.store.select(getCurrentUser);
-  }
-
-  login(provider: string) {
-    this.store.dispatch(this.userActions.login(provider));
   }
 
   logout() {

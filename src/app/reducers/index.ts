@@ -1,4 +1,3 @@
-import { AppState } from './index';
 import '@ngrx/core/add/operator/select';
 import 'rxjs/add/operator/let';
 import { compose } from '@ngrx/core/compose';
@@ -41,3 +40,4 @@ export const getUsersState = (appState: AppState) => appState.users;
 
 export const getCurrentUser = createSelector(getUsersState, fromUsers.getUser);
 export const getUpvotedProjectIds = createSelector(getUsersState, fromUsers.getUpvotedProjectIds);
+export const getUserAuthStatus = createSelector(getUsersState, fromUsers.getAuthStatus);

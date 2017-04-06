@@ -1,0 +1,109 @@
+.login {
+  background: url("../../../assets/images/Missing-target.png") top/300px 200px no-repeat;
+  padding: 160px 10px 50px;
+  text-align: center;
+}
+
+h1 {
+  display: block;
+  font-size: 2em;
+  -webkit-margin-before: 0.67em;
+  -webkit-margin-after: 0.67em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;  
+}
+
+.intro {
+  padding-bottom: 20px;
+  color: #444;
+  font-size: 18px;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+p {
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+
+a {
+  color: #da552f;
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.googleSolidColor {
+  background: #c53929;
+  border-color: #c53929;  
+}
+
+
+.twitterSolidColor {
+  background: #00aced;
+  border-color: #00aced;
+}
+
+.solidVariant {
+  color: #fff;
+  fill: #fff;
+}
+
+.mediumSize {
+  height: 34px;
+  padding: 0 13px;
+}
+
+.button {
+  margin-right: 10px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  outline: 0;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none!important;
+}
+
+.secondaryText {
+  letter-spacing: .3px;
+  line-height: 16px;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.facebookSolidColor {
+  background: #3b5998;
+  border-color: #3b5998;
+}
+
+.loginInfo {
+  color: #999;
+  padding-top: 10px;
+}
+
+.fa {
+  padding-right: 8px;
+  font-size: 20px;
+}

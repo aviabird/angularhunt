@@ -1,7 +1,7 @@
 import { Project } from './../../models/project';
 import { User } from './../../models/user';
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, AfterViewInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
@@ -28,7 +28,8 @@ export class ProjectDetailPageComponent implements OnInit, OnDestroy, AfterViewI
   constructor(private projectActions: ProjectActions,
     private store: Store<AppState>,
     private route: ActivatedRoute,
-    private toasterService: ToastyNotifierService) {
+    private toasterService: ToastyNotifierService,
+    private router: Router) {
     this.project$ = this.store.select(getSelectedProject);
 
     this.store.select(getCurrentUser)
@@ -59,9 +60,7 @@ export class ProjectDetailPageComponent implements OnInit, OnDestroy, AfterViewI
         .dispatch(this.projectActions
           .toggleUpvote(payload.project, payload.action, this.user));
     } else {
-      this.toasterService
-        .pop({ result: 'error',
-               msg: 'You Need To be LoggedIn to Upvote'});
+      this.router.navigate(['/login']);
     }
   }
 }

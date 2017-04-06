@@ -68,6 +68,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { ModalComponent } from './components/shared/modal/modal.component';
 import { ProfileDropdownComponent } from './components/shared/header/profile-dropdown/profile-dropdown.component';
 import { TrimTextPipe } from './pipes/trim-text.pipe';
+import { LoginComponent } from './components/login/login.component';
+import { LoginPageComponent } from './container/login-page/login-page.component';
 
 
 @NgModule({
@@ -83,7 +85,9 @@ import { TrimTextPipe } from './pipes/trim-text.pipe';
     ModalComponent,
     ProfileDropdownComponent,
     IsUpvotedByCurrentUserPipe,
-    TrimTextPipe
+    TrimTextPipe,
+    LoginComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
