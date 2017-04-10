@@ -20,7 +20,7 @@ export class ProjectService {
 
   sendData() {
     dummyData.forEach(project => {
-      this.db.list('/projects').push(project);
+      this.db.list('/topics').push(project);
     });
   }
 

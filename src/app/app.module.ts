@@ -70,6 +70,7 @@ import { ProfileDropdownComponent } from './components/shared/header/profile-dro
 import { TrimTextPipe } from './pipes/trim-text.pipe';
 import { LoginComponent } from './components/login/login.component';
 import { LoginPageComponent } from './container/login-page/login-page.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
 
 
 @NgModule({
@@ -87,7 +88,8 @@ import { LoginPageComponent } from './container/login-page/login-page.component'
     IsUpvotedByCurrentUserPipe,
     TrimTextPipe,
     LoginComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

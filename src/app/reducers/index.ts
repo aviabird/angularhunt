@@ -6,17 +6,20 @@ import { createSelector } from 'reselect';
 
 import * as fromProjects from './projects.reducer';
 import * as fromUsers from './user.reducer';
+import * as fromTopics from './topic.reducer';
 
 // Entire State of a App
 export interface AppState {
-    projects:      fromProjects.State;
-    users:         fromUsers.State;
+    projects: fromProjects.State;
+    users:    fromUsers.State;
+    topics:   fromTopics.State;
 }
 
 // Export all the reducers
 export default compose(combineReducers)({
-    projects:      fromProjects.projectReducer,
-    users:         fromUsers.userReducer,
+    projects:  fromProjects.projectReducer,
+    users:     fromUsers.userReducer,
+    topics:    fromTopics.topicReducer
 });
 
 
@@ -41,3 +44,12 @@ export const getUsersState = (appState: AppState) => appState.users;
 export const getCurrentUser = createSelector(getUsersState, fromUsers.getUser);
 export const getUpvotedProjectIds = createSelector(getUsersState, fromUsers.getUpvotedProjectIds);
 export const getUserAuthStatus = createSelector(getUsersState, fromUsers.getAuthStatus);
+
+
+/** Retrive Topics */
+export const getTopicsState = (appState: AppState ) => appState.topics;
+export const getTopicsIds = createSelector(getTopicsState, fromTopics.getIds);
+export const getTopicsEntities = createSelector(getTopicsState, fromTopics.getEntities);
+export const getTopics = createSelector(getTopicsEntities, getTopicsIds, (topics, ids) => {
+  return ids.map(id => topics[id]);
+});
