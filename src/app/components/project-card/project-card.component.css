@@ -179,7 +179,10 @@
     flex-shrink: 0;
     margin-left: auto;
     margin-right: 10px;
-    cursor: poiner;
+}
+
+.action-buttons:hover {
+  z-index: 555555 !important;
 }
 
 .vote-button-hidden {

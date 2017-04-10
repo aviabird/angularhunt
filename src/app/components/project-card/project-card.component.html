@@ -1,43 +1,39 @@
-<div class="post-item">
+<div class="post-item" [routerLink]="['/home', id]">
   <div class="thumbsnail-bottom" href="/posts/noun-project-for-mac-2-0">
-    <img [src]="project.image_url" 
-      style="object-fit: cover; object-position: center"
-      width="80" height="80">
+    <img [src]="project.image_url" style="object-fit: cover; object-position: center" width="80" height="80">
   </div>
   <div class="content-post-bottom">
-    <a [routerLink]="['/home', id]">
-      <div class="title-bottom">{{project.name}}</div>
-      <div class="text-post">{{project.description | trimText}}</div>
-    </a>
+
+    <div class="title-bottom">{{project.name}}</div>
+    <div class="text-post">{{project.description | trimText}}</div>
+
 
     <div class="meta">
       <!--<div class="topic">-->
-        <!--<a class="button_smallSize" title="Tech" href="/topics/tech">
-          <div class="button-Container">Tech</div>
-        </a>
-        <a class="more-topics">+3</a>-->
+      <!--<a class="button_smallSize" title="Tech" href="/topics/tech">
+            <div class="button-Container">Tech</div>
+          </a>
+          <a class="more-topics">+3</a>-->
       <!--</div>-->
       <div class="action-buttons">
         <!--<button class="vote-button-hidden">-->
-          <!--<i class="ion-navicon"></i>
-          <i class="ion-android-add"></i>-->
-          <!--<div class="button-base">&nbsp;SAVE</div>-->
+        <!--<i class="ion-navicon"></i>
+            <i class="ion-android-add"></i>-->
+        <!--<div class="button-base">&nbsp;SAVE</div>-->
         <!--</button>-->
         <a [href]="project.git_url" target="_blank">
           <div class="hidden-icon">
             <i class="ion-android-open"></i>
           </div>
         </a>
-        <button class="vote-button-ion" 
-          [class.active]="isUpvotedByCurrUser"
-          (click)="onToggleUpvote()">
-          <i  class='ion-arrow-up-b'></i>
-          <div class="button-base"> {{ project.upvotes }} </div>
-        </button>
+        <button class="vote-button-ion" [class.active]="isUpvotedByCurrUser" (click)="onToggleUpvote()">
+            <i  class='ion-arrow-up-b'></i>
+            <div class="button-base"> {{ project.upvotes }} </div>
+          </button>
         <!--<button class="vote-button-chat">
-          <i class="ion-chatbubble"></i>
-          <div class="button-base">&nbsp;25</div>
-        </button>-->
+            <i class="ion-chatbubble"></i>
+            <div class="button-base">&nbsp;25</div>
+          </button>-->
       </div>
     </div>
   </div>
