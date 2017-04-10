@@ -1,3 +1,4 @@
+import { TopicEffects } from './effects/topic.effects';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -40,6 +41,7 @@ import { routing } from './app.routes';
 /**Actions */
 import { ProjectActions } from './actions/project.actions';
 import { UserActions } from './actions/user.actions';
+import { TopicActions } from './actions/topic.actions';
 
 /**AngularFire */
 import { AngularFireModule, AuthMethods } from 'angularfire2';
@@ -105,11 +107,13 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     ShareButtonsModule.forRoot(),
     EffectsModule.run(ProjectEffects),
     EffectsModule.run(UserEffects),
+    EffectsModule.run(TopicEffects),
     AngularFireModule.initializeApp(firebaseConfig, {
       method: AuthMethods.Redirect
     })
   ],
   providers: [
+    TopicActions,
     UserActions,
     ProjectActions,
     ProjectService,

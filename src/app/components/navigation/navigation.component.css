@@ -122,6 +122,8 @@
 img {
     vertical-align: bottom;
     border: none;
+    height: 24px;
+    width: 24px;
 }
 
 .ion-ios-plus-empty {

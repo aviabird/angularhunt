@@ -4,12 +4,12 @@ export const dummyData = [
   {
     name: 'tech',
     description: 'Hardware or software. Invention or innovation. If someone’s pushing technology forward, you’ll find it here.',
-    image_url: 'https://ph-files.imgix.net/701fd26a-c028-48ec-a7e8-bf0f89d48e03'
+    bannerUrl: 'https://ph-files.imgix.net/701fd26a-c028-48ec-a7e8-bf0f89d48e03'
   },
     {
     name: 'Games',
     description: 'Find something new and exciting to play at home or on the go. Work can wait. Have some fun.',
-    image_url: 'https://ph-files.imgix.net/701fd26a-c028-48ec-a7e8-bf0f89d48e03'
+    bannerUrl: 'https://ph-files.imgix.net/701fd26a-c028-48ec-a7e8-bf0f89d48e03'
   },
 ];
 

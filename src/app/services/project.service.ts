@@ -1,3 +1,4 @@
+import { Topic } from './../models/topic';
 import { User } from './../models/user';
 import { Project } from './../models/project';
 import { Injectable } from '@angular/core';
@@ -17,6 +18,12 @@ export class ProjectService {
   constructor(private http: Http,
     private jsonp: Jsonp,
     public db: AngularFireDatabase) { }
+
+
+  getAllTopics(): Observable<any> {
+  return this.db.list('/topics')
+             .map(response => response.map(topic => new Topic(topic)));
+  }
 
   sendData() {
     dummyData.forEach(project => {
