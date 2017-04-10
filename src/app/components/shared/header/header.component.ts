@@ -11,6 +11,7 @@ import { User } from '../../../models';
 export class HeaderComponent {
   @Output() logoutClicked = new EventEmitter();
   @Input() user: User = null;
+  formLink = 'https://docs.google.com/forms/d/1_VG72BTaHMR4hd4P5nbONi4MThLnnbYRDRcgmKfmSrs';
   constructor(private projectService: ProjectService) { }
 
   logout() {
