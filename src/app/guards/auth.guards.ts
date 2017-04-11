@@ -14,7 +14,7 @@ export class CanActivateViaAuthGuard implements CanActivate, OnDestroy {
   isAuthenticated: boolean;
   subscription: Subscription;
   user: User;
-  validateEmailPattern: RegExp = /^[a-z][a-zA-Z0-9_.]*(\.[a-zA-Z][a-zA-Z0-9_.]*)?@aviabird.com/;
+  validEmailPattern: RegExp = /^[a-z][a-zA-Z0-9_.]*(\.[a-zA-Z][a-zA-Z0-9_.]*)?@aviabird.com/;
 
   constructor(private store: Store<fromRoot.AppState>, private router: Router) {
   }
@@ -24,7 +24,7 @@ export class CanActivateViaAuthGuard implements CanActivate, OnDestroy {
       .select(fromRoot.getCurrentUser)
       .subscribe(user => {
         this.user = user;
-        if (!this.user || !this.validateEmailPattern.test(this.user.email)) {
+        if (!this.user || !this.validEmailPattern.test(this.user.email)) {
           this.router.navigate(['/login']);
         }
       });
