@@ -1,16 +1,3 @@
-<!--<form [formGroup]="projectForm">
-  <div>
-    <label for="name">Project Name</label>
-    <input type="text" id="name" formControlName="name">
-  </div>
-  <div>
-    <label for="url">Project Url</label>
-    <input type="text" id="url" formControlName="url">
-  </div>
-  <button type="button" (click)="onSubmit()">Submit</button>
-</form>-->
-
-
 <div class="section-form">
   <form method="post" [formGroup]="projectForm">
     <div class="intro"> 
@@ -39,11 +26,20 @@
            name="author_name"
            tabindex="3"/>
 
+
+    <small *ngIf="(projectForm.get('author_name').hasError('required')
+                   || projectForm.get('git_url').errors?.url)
+              && (projectForm.get('git_url').touched || formSubmit)"
+        class="value-err show">Please enter a valid Url</small>
     <input type="text" value=""
            placeholder="Github Url"
            formControlName="git_url"
            name="git_url" tabindex="4"/>
 
+    <small *ngIf="(projectForm.get('author_name').hasError('required')
+                   || projectForm.get('demo_url').errors?.url)
+              && (projectForm.get('demo_url').touched || formSubmit)"
+        class="value-err show">Please enter a valid Url</small>
     <input type="text" value=""
            placeholder="Demo Url"
            formControlName="demo_url"
