@@ -1,3 +1,6 @@
+import { UserActions } from './../../actions/user.actions';
+import { AppState } from './../../reducers/index';
+import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
@@ -9,8 +12,13 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class AdminPageComponent implements OnInit {
   projectForm: FormGroup;
   formSubmit: Boolean = false;
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private userActions: UserActions,
+    private store: Store<AppState>,
+    private fb: FormBuilder) {
+
     this.projectForm = this.initProjectForm();
+
    }
 
   ngOnInit() {
