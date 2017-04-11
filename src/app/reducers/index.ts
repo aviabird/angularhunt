@@ -45,7 +45,6 @@ export const getCurrentUser = createSelector(getUsersState, fromUsers.getUser);
 export const getUpvotedProjectIds = createSelector(getUsersState, fromUsers.getUpvotedProjectIds);
 export const getUserAuthStatus = createSelector(getUsersState, fromUsers.getAuthStatus);
 
-
 /** Retrive Topics */
 export const getTopicsState = (appState: AppState ) => appState.topics;
 export const getTopicsIds = createSelector(getTopicsState, fromTopics.getIds);

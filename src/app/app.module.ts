@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 
 import { ModalModule, BsDropdownModule } from 'ngx-bootstrap';
-
 import { ShareButtonsModule } from 'ng2-sharebuttons';
 
 /**NgRx Store */
@@ -48,6 +47,10 @@ import { TopicActions } from './actions/topic.actions';
 import { AngularFireModule, AuthMethods } from 'angularfire2';
 import { secretKeys } from './secrets';
 
+/**AuthGuard */
+import { CanActivateViaAuthGuard } from './guards/auth.guards';
+
+
 // Must export the config
 export const firebaseConfig = {
   apiKey: secretKeys.FIREBASE_API_KEY,
@@ -74,6 +77,7 @@ import { TrimTextPipe } from './pipes/trim-text.pipe';
 import { LoginComponent } from './components/login/login.component';
 import { LoginPageComponent } from './container/login-page/login-page.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { AdminPageComponent } from './container/admin-page/admin-page.component';
 
 
 @NgModule({
@@ -92,7 +96,8 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     TrimTextPipe,
     LoginComponent,
     LoginPageComponent,
-    FooterComponent
+    FooterComponent,
+    AdminPageComponent
   ],
   imports: [
     BrowserModule,
@@ -117,6 +122,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     TopicActions,
     UserActions,
     ProjectActions,
+    CanActivateViaAuthGuard,
     ProjectService,
     AuthenticationService,
     ResponseParserService,
