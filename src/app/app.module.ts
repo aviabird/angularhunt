@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 
-import { ModalModule, DropdownModule } from 'ng2-bootstrap';
+import { ModalModule, BsDropdownModule } from 'ngx-bootstrap';
+
 import { ShareButtonsModule } from 'ng2-sharebuttons';
 
 /**NgRx Store */
@@ -103,7 +104,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     // StoreDevtoolsModule.instrumentStore(instrumentOptions),
     // StoreLogMonitorModule,
     ModalModule.forRoot(),
-    DropdownModule.forRoot(),
+    BsDropdownModule.forRoot(),
     ShareButtonsModule.forRoot(),
     EffectsModule.run(ProjectEffects),
     EffectsModule.run(UserEffects),
