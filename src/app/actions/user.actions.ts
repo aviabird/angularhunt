@@ -10,9 +10,7 @@ export const ActionTypes = {
   LOAD_CURRENT_USER_PROFILE: type('Load Current User Profile'),
   LOAD_CURRENT_USER_PROFILE_SUCCESS: type('Load Current User Profile Success'),
   LOAD_UPVOTED_PROJECT_IDS: type('Load Upvoted Project Ids'),
-  LOAD_UPVOTED_PROJECT_IDS_SUCCESS: type('Load Upvoted Project Ids Success'),
-  SAVE_NEW_PROJECT: type('Save New Project'),
-  SAVE_NEW_PROJECT_SUCCESS: type('Save New Project Success'),
+  LOAD_UPVOTED_PROJECT_IDS_SUCCESS: type('Load Upvoted Project Ids Success')
 };
 
 export class UserActions {
@@ -68,20 +66,6 @@ export class UserActions {
     return {
       type: ActionTypes.LOAD_UPVOTED_PROJECT_IDS_SUCCESS,
       payload: ids
-    };
-  }
-
-  saveNewProject(project: any): Action {
-    return {
-      type: ActionTypes.SAVE_NEW_PROJECT,
-      payload: project
-    };
-  }
-
-  saveNewProjectSuccess(project: any): Action {
-    return {
-      type: ActionTypes.SAVE_NEW_PROJECT_SUCCESS,
-      payload: project
     };
   }
 }

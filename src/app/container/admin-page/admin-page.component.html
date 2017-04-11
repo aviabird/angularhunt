@@ -1,8 +1,7 @@
 <div class="section-form">
   <form method="post" [formGroup]="projectForm">
     <div class="intro"> 
-      <h1>Ready to go?</h1>
-      <h2>Get your project started today</h2>
+      <h2>Create New Project</h2>
     </div>
     <small *ngIf="projectForm.get('name').hasError('required') 
               && (projectForm.get('name').touched || formSubmit)"

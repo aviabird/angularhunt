@@ -117,4 +117,8 @@ export class ProjectService {
       return projectIds.indexOf(u_p.project_id) !== -1 ? u_p.project_id : null;
     }));
   };
+
+  saveNewProject(project: any): firebase.Promise<any> {
+    return this.db.list('/projects').push(project);
+  }
 }

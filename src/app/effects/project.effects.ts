@@ -21,6 +21,11 @@ export class ProjectEffects {
     .switchMap((payload) => this.projectService.toggleUpvote(payload))
     .map((data) => this.projectActions.toggleUpvoteSuccess());
 
+  // @Effect() saveNewProject$ = this.actions$
+  //   .ofType(ActionTypes.SAVE_NEW_PROJECT)
+  //   .switchMap((action: Action) => this.projectService.saveNewProject(action.payload))
+  //   .map((response: any) => this.projectActions.saveNewProjectSuccess(response));
+
   constructor(private actions$: Actions,
     private projectActions: ProjectActions,
     private projectService: ProjectService

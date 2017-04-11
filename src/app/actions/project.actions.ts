@@ -10,6 +10,8 @@ export const ActionTypes = {
   TOGGLE_UPVOTE:            type('Toggle Upvote'),
   UPDATE_PROJECT_SUCCESS:   type('Update Project Success'),
   TOGGLE_UPVOTE_SUCCESS:    type('Toggle Upvote Success')
+  // SAVE_NEW_PROJECT:         type('Save New Project'),
+  // SAVE_NEW_PROJECT_SUCCESS: type('Save New Project Success'),
 };
 
 export class ProjectActions {
@@ -56,4 +58,18 @@ export class ProjectActions {
       payload: project
     };
   }
+
+  // saveNewProject(project: any): Action {
+  //   return {
+  //     type: ActionTypes.SAVE_NEW_PROJECT,
+  //     payload: project
+  //   };
+  // }
+
+  // saveNewProjectSuccess(project: any): Action {
+  //   return {
+  //     type: ActionTypes.SAVE_NEW_PROJECT_SUCCESS,
+  //     payload: project
+  //   };
+  // }
 }

@@ -30,7 +30,6 @@ export class UserEffects {
       return this.userActions.loadCurrentUserProfileSuccess(response.user);
     });
 
-
   @Effect() logout$ = this.actions$
     .ofType(ActionTypes.LOGOUT)
     .map(() => this.authService.logout())

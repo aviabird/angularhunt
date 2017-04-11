@@ -1,9 +1,8 @@
-import { UserActions } from './../../actions/user.actions';
-import { AppState } from './../../reducers/index';
-import { Store } from '@ngrx/store';
+import { ToastyNotifierService } from './../../services/toasty-notifier.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UrlValidator } from './../../Validators/url';
+import { ProjectService } from './../../services/project.service';
 
 @Component({
   selector: 'app-admin-page',
@@ -14,10 +13,9 @@ export class AdminPageComponent implements OnInit {
   projectForm: FormGroup;
   formSubmit: Boolean = false;
   constructor(
-    private userActions: UserActions,
-    private store: Store<AppState>,
-    private fb: FormBuilder) {
-
+    private projectService: ProjectService,
+    private fb: FormBuilder,
+    private toasterService: ToastyNotifierService) {
     this.projectForm = this.initProjectForm();
 
    }
@@ -36,14 +34,23 @@ export class AdminPageComponent implements OnInit {
       'caption': [''],
       'twitter_id': [''],
       'approved': [true],
-      'created_at': [new Date()],
+      'created_at': [new Date().toString()],
       'upvotes': [0]
     });
   }
 
   onSubmit() {
     this.formSubmit = true;
-    console.log("Hello",this.projectForm.value);
-  }
+    this.projectService.saveNewProject(this.projectForm.value).then(() => {
+      this.toasterService
+          .pop({ result: 'success', msg: 'Your Project is Successfully Saved'});
 
+      this.projectForm.reset();
+      return;
+      },
+      (err: Error) => {
+        return this.toasterService
+          .pop({result: 'error', msg: err.message});
+      });
+  }
 }
