@@ -1,0 +1,135 @@
+/*-----------------------LEFT PART-------------------------------*/
+
+.navigation {
+    margin-right: 20px;
+    width: 210px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.stickyNavigation {
+	position: relative;
+    width: 210px;
+}
+
+.title {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.secondaryBoldText {
+	font-weight: 600;
+	font-size: 12px;
+    font-weight: 400;
+    letter-spacing: .6px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #999;
+    margin: 0;
+}
+
+.list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.list li {
+    width: 100%;
+}
+
+.active-Item {
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+    -ms-flex-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 4px;
+    margin-bottom: 4px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.active-Item:hover,
+.item:hover {
+    border: 1px solid #e5e5e5;
+    background-color: #fbfbfb;
+}
+
+.greyIcon {
+    background-color: #e8e8e8;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    border-radius: 3px;
+    height: 24px;
+    margin-right: 10px;
+    width: 24px;
+}
+
+.item {
+	-ms-flex-align: center;
+    align-items: center;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 4px;
+    margin-bottom: 4px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.containericon {
+    border-radius: 3px;
+    margin-right: 10px;
+    position: relative;
+}
+
+
+.item-text {
+        display: block;
+        color: #000;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 140px;
+        font-size: 14px;
+        line-height: 18px;
+        margin: 0;
+}
+
+.lazyLoadContainer {
+    border-radius: inherit;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: inherit;
+}
+
+img {
+    vertical-align: bottom;
+    border: none;
+    height: 24px;
+    width: 24px;
+}
+
+.ion-ios-plus-empty {
+	font-size: 24px;
+}
+
+li:last-child .item-text {
+	color: #da552f;
+}

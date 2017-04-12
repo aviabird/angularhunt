@@ -79,6 +79,7 @@ import { LoginPageComponent } from './container/login-page/login-page.component'
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { AdminPageComponent } from './container/admin-page/admin-page.component';
 import { UrlValidatorDirective } from './Validators/url-validator.directive';
+import { AdminNavigationComponent } from './components/admin-navigation/admin-navigation.component';
 
 
 @NgModule({
@@ -100,6 +101,7 @@ import { UrlValidatorDirective } from './Validators/url-validator.directive';
     FooterComponent,
     AdminPageComponent,
     UrlValidatorDirective,
+    AdminNavigationComponent,
   ],
   imports: [
     BrowserModule,

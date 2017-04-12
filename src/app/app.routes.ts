@@ -25,7 +25,8 @@ const routes: Routes = [
     ]
   },
   { path: 'login', component: LoginPageComponent },
-  { path: 'admin', component: AdminPageComponent, canActivate: [ CanActivateViaAuthGuard ]  }
+  { path: 'admin', component: AdminPageComponent }
 ];
 
 export const routing = RouterModule.forRoot(routes);
+// , canActivate: [ CanActivateViaAuthGuard ] 

@@ -1,74 +1,79 @@
-<div class="section-form">
-  <form method="post" [formGroup]="projectForm">
-    <div class="intro"> 
-      <h2>Create New Project</h2>
-    </div>
-    <small *ngIf="projectForm.get('name').hasError('required') 
-              && (projectForm.get('name').touched || formSubmit)"
-        class="value-err show">* This is a mandatory field</small>
-    <input type="text" value="" 
-           placeholder="Name"
-           formControlName="name"
-           name="name" tabindex="1"/>
+<div class="constraintWidth-conainer-content" style="max-width: 1100px;">
 
-    <input type="text" value=""
-           placeholder="Caption"
-           formControlName="caption"
-           name="caption" tabindex="2"/>
+  <app-admin-navigation></app-admin-navigation>
 
-    <small *ngIf="projectForm.get('author_name').hasError('required') 
-              && (projectForm.get('author_name').touched || formSubmit)"
-        class="value-err show">* This is a mandatory field</small>
-    <input type="text" value=""
-           placeholder="Author Name"
-           formControlName="author_name"
-           name="author_name"
-           tabindex="3"/>
+  <div class="section-form">
+    <form method="post" [formGroup]="projectForm">
+      <div class="intro"> 
+        <h2>Create New Project</h2>
+      </div>
+      <small *ngIf="projectForm.get('name').hasError('required') 
+                && (projectForm.get('name').touched || formSubmit)"
+          class="value-err show">* This is a mandatory field</small>
+      <input type="text" value="" 
+            placeholder="Name"
+            formControlName="name"
+            name="name" tabindex="1"/>
+
+      <input type="text" value=""
+            placeholder="Caption"
+            formControlName="caption"
+            name="caption" tabindex="2"/>
+
+      <small *ngIf="projectForm.get('author_name').hasError('required') 
+                && (projectForm.get('author_name').touched || formSubmit)"
+          class="value-err show">* This is a mandatory field</small>
+      <input type="text" value=""
+            placeholder="Author Name"
+            formControlName="author_name"
+            name="author_name"
+            tabindex="3"/>
 
 
-    <small *ngIf="(projectForm.get('author_name').hasError('required')
-                   || projectForm.get('git_url').errors?.url)
-              && (projectForm.get('git_url').touched || formSubmit)"
-        class="value-err show">Please enter a valid Url</small>
-    <input type="text" value=""
-           placeholder="Github Url"
-           formControlName="git_url"
-           name="git_url" tabindex="4"/>
+      <small *ngIf="(projectForm.get('author_name').hasError('required')
+                    || projectForm.get('git_url').errors?.url)
+                && (projectForm.get('git_url').touched || formSubmit)"
+          class="value-err show">Please enter a valid Url</small>
+      <input type="text" value=""
+            placeholder="Github Url"
+            formControlName="git_url"
+            name="git_url" tabindex="4"/>
 
-    <small *ngIf="(projectForm.get('author_name').hasError('required')
-                   || projectForm.get('demo_url').errors?.url)
-              && (projectForm.get('demo_url').touched || formSubmit)"
-        class="value-err show">Please enter a valid Url</small>
-    <input type="text" value=""
-           placeholder="Demo Url"
-           formControlName="demo_url"
-           name="demo_url" tabindex="5"/>
+      <small *ngIf="(projectForm.get('author_name').hasError('required')
+                    || projectForm.get('demo_url').errors?.url)
+                && (projectForm.get('demo_url').touched || formSubmit)"
+          class="value-err show">Please enter a valid Url</small>
+      <input type="text" value=""
+            placeholder="Demo Url"
+            formControlName="demo_url"
+            name="demo_url" tabindex="5"/>
 
-    <small *ngIf="projectForm.get('image_url').hasError('required') 
-              && (projectForm.get('image_url').touched || formSubmit)"
-        class="value-err show">* This is a mandatory field</small>
-    <input type="text" value=""
-           placeholder="Image Url"
-           formControlName="image_url"
-           name="image_url" tabindex="6"/>
+      <small *ngIf="projectForm.get('image_url').hasError('required') 
+                && (projectForm.get('image_url').touched || formSubmit)"
+          class="value-err show">* This is a mandatory field</small>
+      <input type="text" value=""
+            placeholder="Image Url"
+            formControlName="image_url"
+            name="image_url" tabindex="6"/>
 
-    <input type="text" value=""
-           placeholder="Twitter Id"
-           formControlName="twitter_id"
-           name="twitter_id" tabindex="7"/>
+      <input type="text" value=""
+            placeholder="Twitter Id"
+            formControlName="twitter_id"
+            name="twitter_id" tabindex="7"/>
 
-    <small *ngIf="projectForm.get('description').hasError('required') 
-              && (projectForm.get('description').touched || formSubmit)"
-        class="value-err show">* This is a mandatory field</small>
-    <textarea placeholder="Description"
-              name="description" tabindex="8"
-              formControlName="description" 
-              rows="10"></textarea>
+      <small *ngIf="projectForm.get('description').hasError('required') 
+                && (projectForm.get('description').touched || formSubmit)"
+          class="value-err show">* This is a mandatory field</small>
+      <textarea placeholder="Description"
+                name="description" tabindex="8"
+                formControlName="description" 
+                rows="10"></textarea>
 
-    <input type="button" 
-           value="Save Project"
-           [disabled]="!projectForm.valid"
-           (click)="onSubmit()"
-           tabindex="9"/>
-  </form>
+      <input type="button" 
+            value="Save Project"
+            [disabled]="!projectForm.valid"
+            (click)="onSubmit()"
+            tabindex="9"/>
+    </form>
+  </div>
 </div>
