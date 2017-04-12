@@ -1,3 +1,4 @@
+import { AllProjectsComponent } from './components/all-projects/all-projects.component';
 import { ProjectCreateComponent } from './components/project-create/project-create.component';
 /**Required Angular 2 Modules for Router */
 import { Routes, RouterModule } from '@angular/router';
@@ -29,7 +30,8 @@ const routes: Routes = [
   { path: 'admin', component: AdminPageComponent,
     children: [
       { path: '', redirectTo: 'create-project', pathMatch: 'full' },
-      { path: 'create-project', component: ProjectCreateComponent }
+      { path: 'create-project', component: ProjectCreateComponent },
+      { path: 'all-projects', component: AllProjectsComponent }
     ]
   }
 ];

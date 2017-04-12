@@ -81,6 +81,8 @@ import { AdminPageComponent } from './container/admin-page/admin-page.component'
 import { UrlValidatorDirective } from './Validators/url-validator.directive';
 import { AdminNavigationComponent } from './components/admin-navigation/admin-navigation.component';
 import { ProjectCreateComponent } from './components/project-create/project-create.component';
+import { AllProjectsComponent } from './components/all-projects/all-projects.component';
+import { SearchFilterPipe } from './pipes/search-filter.pipe';
 
 
 @NgModule({
@@ -104,6 +106,8 @@ import { ProjectCreateComponent } from './components/project-create/project-crea
     UrlValidatorDirective,
     AdminNavigationComponent,
     ProjectCreateComponent,
+    AllProjectsComponent,
+    SearchFilterPipe,
   ],
   imports: [
     BrowserModule,
