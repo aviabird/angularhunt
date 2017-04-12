@@ -20,9 +20,9 @@
       <td>{{project.author_name}}</td>
       <td>{{project.approved}}</td>
       <td>
-        <a href="#">Edit</a>
+        <a [routerLink]="['/admin/edit', project.id]">Edit</a>
         <span class="divider"></span>
-        <a href="#">Delete</a>
+        <a class="link" (click)="deleteProject(project.id)">Delete</a>
       </td>
     </tr>
   </table>

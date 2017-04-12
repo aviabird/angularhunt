@@ -1,6 +1,6 @@
+import { ProjectService } from './../../services/project.service';
 import { Component, OnInit } from '@angular/core';
 import { Project } from './../../models/project';
-import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import {
   AppState,
@@ -19,12 +19,13 @@ export class AllProjectsComponent implements OnInit {
   searchQuery = '';
 
   constructor(
+    private projectService: ProjectService,
     private projectActions: ProjectActions,
     private store: Store<AppState>,
     private toasterService: ToastyNotifierService) {
-      this.store.select(getProjects)
-        .subscribe(projects => this.projects = projects);
-    }
+    this.store.select(getProjects)
+      .subscribe(projects => this.projects = projects);
+  }
 
   ngOnInit() {
     this.store.dispatch(this.projectActions.retriveProjects());
@@ -33,5 +34,11 @@ export class AllProjectsComponent implements OnInit {
 
   loadMoreProjects() {
     this.store.dispatch(this.projectActions.retriveProjects());
+  }
+
+  deleteProject(id) {
+    this.projectService.deleteProject(id).then(() =>
+      this.toasterService.pop({ result: 'success', msg: 'Project Deleted Succesfully' })
+    )
   }
 }

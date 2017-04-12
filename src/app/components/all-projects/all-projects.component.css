@@ -17,3 +17,9 @@ td, th {
   height: 13px;
   width: 3px;
 }
+
+.link {
+  cursor: pointer;
+  text-decoration: underline;
+  color: blue;
+}

@@ -80,7 +80,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { AdminPageComponent } from './container/admin-page/admin-page.component';
 import { UrlValidatorDirective } from './Validators/url-validator.directive';
 import { AdminNavigationComponent } from './components/admin-navigation/admin-navigation.component';
-import { ProjectCreateComponent } from './components/project-create/project-create.component';
+import { ProjectEditComponent } from './components/project-edit/project-edit.component';
 import { AllProjectsComponent } from './components/all-projects/all-projects.component';
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
 
@@ -105,7 +105,7 @@ import { SearchFilterPipe } from './pipes/search-filter.pipe';
     AdminPageComponent,
     UrlValidatorDirective,
     AdminNavigationComponent,
-    ProjectCreateComponent,
+    ProjectEditComponent,
     AllProjectsComponent,
     SearchFilterPipe,
   ],

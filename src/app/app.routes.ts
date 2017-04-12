@@ -1,5 +1,5 @@
 import { AllProjectsComponent } from './components/all-projects/all-projects.component';
-import { ProjectCreateComponent } from './components/project-create/project-create.component';
+import { ProjectEditComponent } from './components/project-edit/project-edit.component';
 /**Required Angular 2 Modules for Router */
 import { Routes, RouterModule } from '@angular/router';
 /** Componets required for routing */
@@ -29,8 +29,9 @@ const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: 'admin', component: AdminPageComponent,
     children: [
-      { path: '', redirectTo: 'create-project', pathMatch: 'full' },
-      { path: 'create-project', component: ProjectCreateComponent },
+      { path: '', redirectTo: 'new-project', pathMatch: 'full' },
+      { path: 'new-project', component: ProjectEditComponent },
+      { path: 'edit/:id', component: ProjectEditComponent },
       { path: 'all-projects', component: AllProjectsComponent }
     ]
   }
