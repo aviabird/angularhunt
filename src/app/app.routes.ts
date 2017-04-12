@@ -1,3 +1,4 @@
+import { ProjectCreateComponent } from './components/project-create/project-create.component';
 /**Required Angular 2 Modules for Router */
 import { Routes, RouterModule } from '@angular/router';
 /** Componets required for routing */
@@ -25,7 +26,12 @@ const routes: Routes = [
     ]
   },
   { path: 'login', component: LoginPageComponent },
-  { path: 'admin', component: AdminPageComponent }
+  { path: 'admin', component: AdminPageComponent,
+    children: [
+      { path: '', redirectTo: 'create-project', pathMatch: 'full' },
+      { path: 'create-project', component: ProjectCreateComponent }
+    ]
+  }
 ];
 
 export const routing = RouterModule.forRoot(routes);
