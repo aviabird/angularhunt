@@ -6,7 +6,7 @@
   </a>
   <ul *dropdownMenu class="dropdown-menu pull-right">
     <li><a routerLink="/home">My Profile</a></li>
-    <li>
+    <li [hidden]="!isAdmin()">
       <a routerLink="/admin">
         Admin Dashboard
       </a>
@@ -15,4 +15,3 @@
   </ul>
 </div>
 
-<!--[hidden]="!isAdmin()"-->

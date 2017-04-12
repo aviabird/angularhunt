@@ -28,6 +28,7 @@ const routes: Routes = [
   },
   { path: 'login', component: LoginPageComponent },
   { path: 'admin', component: AdminPageComponent,
+    canActivate: [ CanActivateViaAuthGuard ],
     children: [
       { path: '', redirectTo: 'new-project', pathMatch: 'full' },
       { path: 'new-project', component: ProjectEditComponent },
@@ -38,4 +39,4 @@ const routes: Routes = [
 ];
 
 export const routing = RouterModule.forRoot(routes);
-// , canActivate: [ CanActivateViaAuthGuard ] 
+ 
