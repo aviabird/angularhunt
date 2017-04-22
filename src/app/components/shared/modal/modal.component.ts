@@ -1,4 +1,4 @@
-import { ModalDirective } from 'ng2-bootstrap/ng2-bootstrap';
+import { ModalDirective } from 'ngx-bootstrap';
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { Location } from '@angular/common';
 
