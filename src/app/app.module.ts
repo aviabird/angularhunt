@@ -12,15 +12,16 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
 /**Store Moniter */
-// import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 // import { StoreLogMonitorModule, useLogMonitor } from '@ngrx/store-log-monitor';
 
 
-// export function instrumentOptions() {
-//   return {
-//     monitor: useLogMonitor({ visible: true, position: 'right' })
-//   };
-// }
+export function instrumentOptions() {
+  return {
+    // monitor: useLogMonitor({ visible: true, position: 'right' })
+     maxAge: 5
+  };
+}
 
 /**Services */
 import { ProjectService } from './services/project.service';
@@ -109,7 +110,7 @@ import { UrlValidatorDirective } from './Validators/url-validator.directive';
     JsonpModule,
     routing,
     StoreModule.provideStore(reducer),
-    // StoreDevtoolsModule.instrumentStore(instrumentOptions),
+    StoreDevtoolsModule.instrumentStore(instrumentOptions),
     // StoreLogMonitorModule,
     ModalModule.forRoot(),
     BsDropdownModule.forRoot(),
