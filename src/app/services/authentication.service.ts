@@ -1,7 +1,8 @@
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
-import { User } from './../models/user';
+import 'rxjs/add/observable/of';
+
 import {
   AngularFire, AngularFireDatabase, AuthProviders
 } from 'angularfire2';
@@ -47,22 +48,24 @@ export class AuthenticationService {
         }
         return this.updateUserAuth(userAuth);
       }
-    )
-      .switchMap(_userAuth => _userAuth)
+    );
   }
 
   findbyUID(uid: string) {
-    return this.db.object(`users/${uid}`)
+    return this.db.object(`users/${uid}`);
   }
 
   updateUserAuth(userAuth) {
-    let user = userAuth.user;
 
-    return this.findbyUID(user.uid).map(
-      user => {
-        return Object.assign({}, userAuth, {
-          user: new User(user)
-        });
+    return this.findbyUID(userAuth.user.uid).switchMap(() => {
+        // User is logged in good time to update
+        // the user here in case user updates info(image)
+        this.db
+            .object(`users/${userAuth.user.uid}`)
+            .set(userAuth.user)
+            .then(() => console.log('User added/updated in DB'))
+            .catch(() => console.clear());
+        return Observable.of(userAuth);
       }
     );
   }

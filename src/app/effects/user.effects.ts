@@ -26,9 +26,7 @@ export class UserEffects {
     .switchMap(() => this.authService.authStatus())
     .filter((payload) => payload.user != null)
     .switchMap((payload) => this.authService.updateUserAuth(payload))
-    .map((response) => {
-      return this.userActions.loadCurrentUserProfileSuccess(response.user);
-    });
+    .map((response) => this.userActions.loadCurrentUserProfileSuccess(response.user));
 
   @Effect() logout$ = this.actions$
     .ofType(ActionTypes.LOGOUT)
