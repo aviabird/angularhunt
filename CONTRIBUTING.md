@@ -2,11 +2,11 @@
 
 There are many different ways to contribute to AngularHunt's development, just find the one that best fits with your skills. Examples of contributions we would love to receive include:
 
-Mobile compatibility (Responsiveness)
-Documentation improvements
-Bug reports
-Patch reviews
-UI enhancements
+* Mobile compatibility (Responsiveness)[]
+* Documentation improvements
+* Bug reports
+* Patch reviews
+* UI enhancements
 
 Responsiveness get's the highest priority so we'd love to PS's related to that.
 
