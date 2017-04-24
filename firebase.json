@@ -1,8 +1,17 @@
 {
-  "database": {
-    "rules": "database.rules.json"
+  "firebase": "AngularHunt",
+  "public": "dist",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ],
+  "rewrites": [{
+    "source": "/public/**",
+    "destination": "/public.html"
   },
-  "hosting": {
-    "public": "dist"
-  }
+  {
+    "source": "**",
+    "destination": "/index.html"
+  }]
 }
