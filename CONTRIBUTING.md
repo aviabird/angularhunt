@@ -8,6 +8,8 @@ There are many different ways to contribute to AngularHunt's development, just f
 * Patch reviews
 * UI enhancements
 
-Responsiveness get's the highest priority so we'd love to PS's related to that.
+Responsiveness get's the highest priority so we'd love PR's related to that.
 
 We’ll be more than happy to list your name/link in our README and give credits. It’s a nice opportunity for developers who want to experience how open source works or get more experience with this technology or just to connect with cool people and teams.
+
+Let's build something cool together.
