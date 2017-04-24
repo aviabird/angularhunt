@@ -11,18 +11,6 @@ import { ShareButtonsModule } from 'ng2-sharebuttons';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-/**Store Moniter */
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-// import { StoreLogMonitorModule, useLogMonitor } from '@ngrx/store-log-monitor';
-
-
-export function instrumentOptions() {
-  return {
-    // monitor: useLogMonitor({ visible: true, position: 'right' })
-     maxAge: 5
-  };
-}
-
 /**Services */
 import { ProjectService } from './services/project.service';
 import { AuthenticationService } from './services/authentication.service';
@@ -118,8 +106,6 @@ import { SearchFilterPipe } from './pipes/search-filter.pipe';
     JsonpModule,
     routing,
     StoreModule.provideStore(reducer),
-    StoreDevtoolsModule.instrumentStore(instrumentOptions),
-    // StoreLogMonitorModule,
     ModalModule.forRoot(),
     BsDropdownModule.forRoot(),
     ShareButtonsModule.forRoot(),
