@@ -54,6 +54,7 @@ export class ProjectService {
 	 * @return { Observable } Observable with updated project object
 	 */
   toggleUpvote(payload: any): firebase.Promise<any> {
+    console.log('payload', payload.action);
     let project: Project = payload.project;
     let user: User = payload.user;
     let action: string = payload.action;
