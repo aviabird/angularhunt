@@ -80,7 +80,7 @@ import { LoginPageComponent } from './container/login-page/login-page.component'
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { AdminPageComponent } from './container/admin-page/admin-page.component';
 import { UrlValidatorDirective } from './Validators/url-validator.directive';
-
+import { AdsenseModule } from 'ng2-adsense';
 
 @NgModule({
   declarations: [
@@ -120,6 +120,10 @@ import { UrlValidatorDirective } from './Validators/url-validator.directive';
     EffectsModule.run(TopicEffects),
     AngularFireModule.initializeApp(firebaseConfig, {
       method: AuthMethods.Redirect
+    }),
+    AdsenseModule.forRoot({
+      adClient: 'ca-pub-4777776799828571',
+      adSlot: 8056586640
     })
   ],
   providers: [
