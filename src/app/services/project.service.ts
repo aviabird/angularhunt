@@ -31,7 +31,6 @@ export class ProjectService {
     });
   }
 
-
   getAllProjects(): Observable<any> {
     this.projectsCount += 5;
     return this.db.list('/projects', {
@@ -46,15 +45,15 @@ export class ProjectService {
 
 	/**
 	 * User Like/Dislikes Project
-   * TODO: Needs Serious Refactoring....
+   * TODO: Needs Serious Refactoring.... 
    *       This should retrun the updated project.
    *       currenly only upvoting;
+   * Lol.. @voizero why so serious ? - @ashish173
 	 * @method upvoteProject
 	 * @param object {project: any, user: any } of project
 	 * @return { Observable } Observable with updated project object
 	 */
   toggleUpvote(payload: any): firebase.Promise<any> {
-    console.log('payload', payload.action);
     let project: Project = payload.project;
     let user: User = payload.user;
     let action: string = payload.action;
@@ -68,8 +67,8 @@ export class ProjectService {
 
   upvote(project, user): firebase.Promise<any> {
     let newupvote = project.upvotes ? project.upvotes + 1 : 1;
-    let user_projects = { user_id: user.$key, project_id: project.$key }
-    let customKey = `${user.$key}_${project.$key}`;
+    let user_projects = { user_id: user.uid, project_id: project.$key }
+    let customKey = `${user.uid}_${project.$key}`;
 
     return this.db.list('/projects').update(project.$key,
       { upvotes: newupvote }).then(() => {
@@ -78,9 +77,8 @@ export class ProjectService {
       });
   }
 
-
   removeVote(project, user): firebase.Promise<any> {
-    let key = `${user.id}_${project.id}`;
+    let key = `${user.uid}_${project.id}`;
 
     let newUpvote = project.upvotes - 1;
 
@@ -89,10 +87,6 @@ export class ProjectService {
         this.db.list('/users_projects').remove(key);
       });
   }
-
-
-
-
 
   getAccessTokenToken(): any {
     return localStorage.getItem('access_token');
@@ -104,19 +98,25 @@ export class ProjectService {
       .map(res => res.json());
   }
 
-
   loadUpvotedrojectIds(payload: any): Observable<any> {
     let userId = payload.userId;
     let projectIds = payload.projectIds;
-
     return this.db.list('/users_projects', {
       query: {
         orderByChild: 'user_id',
         equalTo: userId
       }
-    }).map((users_projects: any) => users_projects.map(u_p => {
-      return projectIds.indexOf(u_p.project_id) !== -1 ? u_p.project_id : null;
-    }));
+    }).map((users_projects: any) => {
+      return users_projects.map(u_p => {
+        let presence = projectIds.indexOf(u_p.project_id);
+        if (presence !== -1) {
+          return u_p.project_id;
+        } else {
+          return null;
+        }
+        // return projectIds.indexOf(u_p.project_id) !== -1 ? u_p.project_id : null;
+      });
+    });
   };
 
   saveNewProject(project: any): firebase.Promise<any> {

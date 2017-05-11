@@ -47,7 +47,7 @@ export class ProjectsPageComponent implements OnInit {
         if (this.user) {
           this.projectIds.subscribe((ids: string[]) => {
             this.store.dispatch(this.userActions.loadUpvotedProjectIds(
-              { userId: this.user.$key, projectIds: ids }
+              { userId: this.user.uid, projectIds: ids }
             ));
           });
         }

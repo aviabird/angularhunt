@@ -4,4 +4,5 @@ export class User extends Base {
   avatar: string;
   email: string;
   provider: string;
+  uid: string;
 }
