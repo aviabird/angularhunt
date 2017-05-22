@@ -132,7 +132,7 @@
     width: 3px;
 }
 
-logged-in-user-area{
+.logged-in-user-area{
   width: 200px;
   float: left;
 }
@@ -226,4 +226,65 @@ logged-in-user-area{
     border-radius: 50%;
     height: 32px;
     width: 32px;
+}
+
+@media only screen and (min-width: 769px) {
+  .mobile-header {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .header{
+    display: none;
+  }
+
+  .mobile-header {
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    position: relative;
+    max-width: 768px;
+    min-width: 320px;
+    padding: 15px 10px;
+    }
+
+  .mobile-content {
+    display: flex;
+    height: 32px;
+    position: relative;
+  }
+
+  .ion-ios-search {
+    color: #999;
+    height: 14px;
+    left: 8px;
+    position: absolute;
+    top: 8px;
+    width: 14px;
+  }
+
+  .mobile-logo {
+    position: absolute;
+    left: 50%;
+    margin-left: -17px;
+  }
+
+  .mobile-icon {
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    right: 0;
+    top: 7px;
+  }
+
+  .ion-ios-search-strong{
+    color: #999;
+    font-size: 20px;
+    height: 14px;
+    position: absolute;
+    top: 8px;
+    width: 14px;
+    padding-left: 14px;
+  }
 }
