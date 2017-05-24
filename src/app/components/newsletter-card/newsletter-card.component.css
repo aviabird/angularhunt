@@ -194,3 +194,29 @@
     padding: 20px 5%;
   } 
 }
+
+
+@media only screen and (max-width: 414px) {
+  .preview {
+    margin-bottom: 0;
+    padding-right: 0;
+  }
+  .background-image {
+    margin-right: 15px!important;
+  } 
+  .form_2 {
+    padding: 6% 4%;
+    width: 100%;
+    margin-left: 0px;
+  }
+  .field_base {
+    margin-right: 20px;
+    width: auto;
+    margin-left: 0px;
+  }
+  .featured-text {
+    font-size: 18px;
+  }
+}
+
+

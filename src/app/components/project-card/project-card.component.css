@@ -247,5 +247,22 @@ a {
   .post-item {
     width: 90%;
     padding: 0 5%;
+  }
+  .button-base {
+    margin-left: 10px;
   }  
 }
+
+@media only screen and (max-width: 414px) {
+  .post-item {
+    padding-top: 5%;
+  }
+  .meta {
+    top: 110px;
+  }
+  .button-base {
+    margin-left: 10px;
+  }
+}
+
+

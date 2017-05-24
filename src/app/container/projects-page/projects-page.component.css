@@ -191,4 +191,9 @@
   .bottom-content {
     width: 100%;
   }
+ 
+  .loadMore-container {
+    text-align: center;
+  }
+
 }
