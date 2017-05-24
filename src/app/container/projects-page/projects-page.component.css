@@ -180,3 +180,15 @@
   padding-right: 8px;
   font-size: 20px;
 }
+
+@media only screen and (max-width: 768px) {
+  .secondary-section {
+    display: none;
+  }
+  .fullwidth-bottom-middle-box {
+    width: 100%;
+  }
+  .bottom-content {
+    width: 100%;
+  }
+}

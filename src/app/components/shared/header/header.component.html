@@ -22,14 +22,9 @@
       </div>
 
       <div class="rightside">
-        <!--<button (click)= "uploaData()">UploadData</button>-->
         <a class="signup" [href]="formLink" target='_blank'>
           <div class="buttoncontainer">Submit Your Project</div>
         </a>
-        <!--<div>
-          <button (click)= "uploaData()">UploadData</button>
-        </div>-->
-        <!--<i class="ion-ios-more"></i>-->
         <span class="divider"></span>
         <div class="login-buttons" *ngIf="!(user)">
           <div class="signup" routerLink="/login">
@@ -42,17 +37,26 @@
             [user]="user"
             (logoutClicked)="logout()">
           </app-profile-dropdown>
-          <!--<span>
-            <img [src]="user?.avatar" class="avatar" />
-          </span>
-
-          <span>{{user.name}}</span>
-
-          <span class="signup" (click)="logout()">
-            <span class="buttoncontainer">LogOut</span>
-          </span>-->
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<div class="mobile-header">
+  <div class="mobile-content">
+    <form class="mobile-form" method="GET" action="/search/posts">
+      <label class="mobile-text">
+        <i class="ion-ios-search-strong"></i>
+        <!--<input autocomplete="off" class="input" data-test="search-input" name="q" placeholder="Discover your next favorite things..." value="">-->
+      </label>
+    </form>
+    <div class="mobile-logo">
+      <img src="./../../../../assets/images/logo.png" alt="product hunt icon" height="32" width="32">  
+    </div>
+    <div class="mobile-icon">
+      <i class="ion-ios-more-outline"></i>
+    </div>
+  </div>
+</div>
+<div>
