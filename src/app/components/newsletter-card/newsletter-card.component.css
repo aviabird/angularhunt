@@ -2,17 +2,17 @@
 
 
 .top-middle-container {
-	width: 567px;
-	height: 210px;
-	position: relative;
+	  width: 567px;
+	  height: 210px;
+	  position: relative;
     cursor: pointer;
 }
 
 .fullwidth-top-middle-box {
-	width: 526px; 
-	height: 170px;
-	padding: 20px;
-	background: #fff;
+	  padding: 20px;
+    width: 526px;
+    height: 170px;
+	  background: #fff;
     border-radius: 3px;
     border: 1px solid rgba(0,0,0,.09);
     box-shadow: 0 1px 4px 0 rgba(0,0,0,.04);
@@ -182,4 +182,15 @@
     justify-content: center;
     width: inherit;
     cursor: pointer;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .top-middle-container {
+    width: 100%;
+  } 
+  .fullwidth-top-middle-box {
+    width: 90%;
+    padding: 20px 5%;
+  } 
 }

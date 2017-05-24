@@ -181,27 +181,14 @@
   font-size: 20px;
 }
 
-/* Big tablet to 1200px (widths smaller than the 1140px row) */
-
-@media only screen and (max-width: 1200px) {
-  
-
-}
-
-/* small tablets to big tablets: from 767px to 1023px */
-
-@media only screen and (max-width: 1023px) {
-
-}
-
-/* small phones to small tablets: from 481 to 767 */
-
-@media only screen and (max-width: 767px) {
-
-}
-
-/* small phones: from 0 to 480px */
-
-@media only screen and (max-width: 480px) {
-
+@media only screen and (max-width: 768px) {
+  .secondary-section {
+    display: none;
+  }
+  .fullwidth-bottom-middle-box {
+    width: 100%;
+  }
+  .bottom-content {
+    width: 100%;
+  }
 }
