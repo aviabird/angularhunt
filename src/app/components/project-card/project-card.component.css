@@ -243,32 +243,15 @@ a {
   text-decoration: none;
 }
 
-/*@media only screen and (max-width: 768px) {
-  .button-base {
-    margin-left: 10px;
-  }  
-}*/
 
-/*@media only screen and (max-width: 414px) {
-  
-}*/
-
-/*@media only screen and (max-width: 320px) {
-  .content-post-bottom {
-    margin-top: 0px;
-  } 
-  .text-post {
-    margin: 5px 0;
-    height: 36px;
-    overflow: hidden;
-  } 
-  .thumbsnail-bottom {
-    margin-right: 20px;
-  }
+@media only screen and (max-width: 480px) {
   .meta {
     position: static;
   }
-}*/
+  .action-buttons {
+    margin: 0;
+  }
+}
 
 
 
