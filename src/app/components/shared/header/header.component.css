@@ -289,5 +289,11 @@
   }
 }
 
+@media only screen and (max-width: 320px) {
+  .mobile-header {
+    padding: 10px 5px; 
+  }       
+}
+
 
 

@@ -24,4 +24,10 @@
   .main-container {
     width: 100%;
   }
+}
+
+@media only screen and (max-width: 320px) {
+  .constraintWidth-conainer-content {
+    margin-top: 20px !important;  
+  }  
 } 
