@@ -191,8 +191,33 @@
   }
   .fullwidth-top-middle-box {
     width: auto;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .fieldWrap {
+    width: 70%;
+  }
+  .button_mediumSize {
+    width: 28%;
   } 
 }
+
+@media only screen and (max-width: 320px) {
+  .preview {
+    padding-right: 5px;
+  }
+  .fieldWrap {
+    width: 60%;
+  }
+  .button_mediumSize {
+    width: 37%;
+  }   
+}
+
+
+
+
 
 
 
