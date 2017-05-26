@@ -3,7 +3,6 @@
 
 .top-middle-container {
 	  width: 567px;
-	  height: 210px;
 	  position: relative;
     cursor: pointer;
 }
@@ -11,7 +10,6 @@
 .fullwidth-top-middle-box {
 	  padding: 20px;
     width: 526px;
-    height: 170px;
 	  background: #fff;
     border-radius: 3px;
     border: 1px solid rgba(0,0,0,.09);
@@ -38,17 +36,18 @@
   cursor: pointer;
 }
 
-.preview .background-image {
+.background-image {
     width: 180px;
-    height: 110px;
     margin-right: 20px;
     border-right: 1px solid #e8e8e8;
 }
 
-.preview .main-text {
+ .main-text {
 	-ms-flex-item-align: center;
-    -ms-grid-row-align: center;
-    align-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
 } 
 
 .featured-text {
@@ -98,125 +97,132 @@
 .emoji {
 	height: 14px;
 	width: 14px;
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .form_2 {
-	display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
-    margin-left: 10px;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    cursor: pointer;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  cursor: pointer;
+  width: 100%;
+  position: relative;
 }
 
 .fieldWrap {
-	position: relative;
+	width: 78%;
+  padding-right: 2%;
 	display: -ms-flexbox;
-    display: flex;
-    cursor: pointer;
+  display: flex;
+  cursor: pointer;
 }
 
 .field_base {
-	border-radius: 3px;
-    border: 1px solid #e8e8e8;
-    box-sizing: border-box;
-    padding: 0 10px;
-    width: 350px;
-    margin-left: 10px;
-    margin-right: 10px;
-    color: #000;
-    font-size: 14px !important;
-    font-weight: 400 !important;
-    line-height: 18px !important;
-    font: inherit;
-    cursor: pointer;
+	width: 100%;
+  border-radius: 3px;
+  border: 1px solid #e8e8e8;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 18px !important;
+  font: inherit;
+  cursor: pointer;
+  padding-left: 10px;
 }
 
 .field_base::placeholder {
-    color: #999;
+  color: #999;
 }
 
 .button_mediumSize {
-	border-radius: 3px;
-    border: 1px solid transparent;
-    box-sizing: border-box;
-    outline: 0;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    text-align: center;
-    text-decoration: none !important;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: .6px;
-    line-height: 16px;
-    text-transform: uppercase;
-    color: #fff;
-    fill: #fff;
-    background: #da552f;
-    border-color: #da552f;
-    height: 34px;
-    padding: 0 13px;
-    cursor: pointer;
+	width: 20%;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  outline: 0;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none !important;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .6px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #fff;
+  fill: #fff;
+  background: #da552f;
+  border-color: #da552f;
+  height: 34px;
+  padding: 0 13px;
+  cursor: pointer;
 }
 
 .button_mediumSize:hover {
 	background: #ea532a;
-    border-color: #ea532a;
+  border-color: #ea532a;
 }
 
 .buttonContainer {
 	-ms-flex-align: center;
-    align-items: center;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -ms-flex-pack: center;
-    justify-content: center;
-    width: inherit;
-    cursor: pointer;
+  align-items: center;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: inherit;
+  cursor: pointer;
 }
 
 
 @media only screen and (max-width: 768px) {
   .top-middle-container {
-    width: 100%;
-  } 
+    width: auto;
+  }
   .fullwidth-top-middle-box {
-    width: 90%;
-    padding: 20px 5%;
-  } 
+    width: auto;
+  }
 }
-
 
 @media only screen and (max-width: 414px) {
-  .preview {
-    margin-bottom: 0;
-    padding-right: 0;
+  .fieldWrap {
+    width: 70%;
   }
-  .background-image {
-    margin-right: 15px!important;
+  .button_mediumSize {
+    width: 28%;
   } 
-  .form_2 {
-    padding: 6% 4%;
-    width: 100%;
-    margin-left: 0px;
-  }
-  .field_base {
-    margin-right: 20px;
-    width: auto;
-    margin-left: 0px;
-  }
-  .featured-text {
-    font-size: 18px;
-  }
 }
+
+@media only screen and (max-width: 320px) {
+  .preview {
+    padding-right: 5px;
+  }
+  .fieldWrap {
+    width: 60%;
+  }
+  .button_mediumSize {
+    width: 37%;
+  }   
+}
+
+
+
+
+
+
+
+
+
+  
 
 
