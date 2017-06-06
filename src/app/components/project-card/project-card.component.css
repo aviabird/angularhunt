@@ -1,117 +1,116 @@
 .post-item {
-	overflow: hidden;
-    position: relative;
-    border-bottom: 1px solid #e8e8e8;
-    padding: 0 24px;
-    background-color: transparent;
-    display: flex;
-    display: -ms-flexbox;
-    align-items: center;
-    width: 516px;
-    height: 122px;
-    cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 20px 20px;
+  background-color: transparent;
+  display: flex;
+  display: -ms-flexbox;
+  align-items: center;
+  cursor: pointer;
 }
 
 .post-item:hover {
-    background-color: #f9f9f9;
+  background-color: #f9f9f9;
 }
 
 .post-item:hover .hidden-icon,
 .post-item:hover .vote-button-hidden,
 .post-item:hover .vote-button-ion,
 .post-item:hover .vote-button-chat {
-    background-color: white;
+  background-color: white;
 }
 
 .thumbsnail-bottom {
-	margin-right: 25px;
+	margin-right: 20px;
 	position: relative;
-	height: 80px;
-    width: 80px;
-    border-radius: 3px;
-    vertical-align: bottom;
-    border: none;
-    cursor: pointer;
+  width: 80px;
+  height: 80px;
+  border-radius: 3px;
+  vertical-align: bottom;
+  border: none;
+  cursor: pointer;
 }
 
 .content-post-bottom {
 	display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-pack: center;
-    justify-content: center;
-    margin-top: -20px;
-    cursor: pointer; 
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: -20px;
+  cursor: pointer; 
 }
 
 .title-bottom {
-	font-size: 17px;
-    font-weight: 200;
-    letter-spacing: .2px;
-    color: #000;
-    cursor: pointer; 
+	font-size: 20px;
+  font-weight: 300;
+  letter-spacing: .4px;
+  line-height: 24px;
+  color: #000;
+  cursor: pointer; 
 }
 
 .text-post {
-	font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    color: #999;
-    margin-top: 3px;
-    margin-bottom: 15px;
-    cursor: pointer; 
+	font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #999;
+  margin: 5px 0;
+  cursor: pointer;
+  overflow: hidden;
+  height: 39px; 
 }
 
 .meta {
-    left: 130px;
-    right: 25px;
-    -ms-flex-align: center;
-    align-items: center;
-    bottom: 23px;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    position: absolute;
-    display: -ms-flexbox;
-    display: flex;  
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: absolute;
+  display: -ms-flexbox;
+  display: flex;
+  height: 24px;
+  bottom: 20px;
 }
 
 .topic {
-    display: flex;
-    display: -ms-flexbox;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-negative: 0;
-    flex-shrink: 0;
-    white-space: nowrap;
-    cursor: pointer; 
+  display: flex;
+  display: -ms-flexbox;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  white-space: nowrap;
+  cursor: pointer; 
 }
 
 .hidden-icon {
 	background-color: transparent;
-    display: -ms-flexbox;
-    -ms-flex-align: center;
-    align-items: center !important;
-    -ms-flex-pack: distribute;
-    justify-content: space-around !important;
-    border-radius: 3px;
-    height: 24px;
-    width: 22px;
-    color: #999;
-    fill: #999;
-    border: 1px solid #e8e8e8;
-    box-sizing: border-box;
-    outline: 0;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -ms-flex-pack: center;
-    justify-content: center !important;
-    text-align: center;
-    text-decoration: none !important;
-    margin-left: 126px;
-    display: none;
-    padding: 1px;
-    cursor: pointer; 
+  display: -ms-flexbox;
+  -ms-flex-align: center;
+  align-items: center !important;
+  -ms-flex-pack: distribute;
+  justify-content: space-around !important;
+  border-radius: 3px;
+  height: 24px;
+  width: 22px;
+  color: #999;
+  fill: #999;
+  border: 1px solid #e8e8e8;
+  box-sizing: border-box;
+  outline: 0;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: center;
+  justify-content: center !important;
+  text-align: center;
+  text-decoration: none !important;
+  margin-left: 126px;
+  display: none;
+  padding: 1px;
+  cursor: pointer; 
 }
 
 .button_smallSize {
@@ -179,6 +178,7 @@
     flex-shrink: 0;
     margin-left: auto;
     margin-right: 10px;
+    margin-top: 15px;
 }
 
 .action-buttons:hover {
@@ -243,26 +243,19 @@ a {
   text-decoration: none;
 }
 
-@media only screen and (max-width: 768px) {
-  .post-item {
-    width: 90%;
-    padding: 0 5%;
+
+@media only screen and (max-width: 480px) {
+  .meta {
+    position: static;
   }
-  .button-base {
-    margin-left: 10px;
-  }  
+  .action-buttons {
+    margin: 0;
+  }
 }
 
-@media only screen and (max-width: 414px) {
-  .post-item {
-    padding-top: 5%;
-  }
-  .meta {
-    top: 110px;
-  }
-  .button-base {
-    margin-left: 10px;
-  }
-}
+
+
+
+
 
 
