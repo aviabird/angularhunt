@@ -36,8 +36,9 @@ export class UserEffects {
   @Effect() laodUpvotedProjectIds = this.actions$
     .ofType(ActionTypes.LOAD_UPVOTED_PROJECT_IDS)
     .switchMap((action: Action) => this.projectService.loadUpvotedrojectIds(action.payload))
-    .map((upvotedProjectIds: string[]) =>
-    this.userActions.loadUpvotedProjectIdsSuccess(upvotedProjectIds));
+    .map((upvotedProjectIds: string[]) => {
+      return this.userActions.loadUpvotedProjectIdsSuccess(upvotedProjectIds)
+    });
 
   constructor(private actions$: Actions,
     private userActions: UserActions,

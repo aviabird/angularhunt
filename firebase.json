@@ -6,12 +6,11 @@
     "**/.*",
     "**/node_modules/**"
   ],
-  "rewrites": [{
-    "source": "/public/**",
-    "destination": "/public.html"
-  },
-  {
-    "source": "**",
-    "destination": "/index.html"
-  }]
+  "hosting": {
+    "public": "dist",
+    "rewrites": [{
+      "source": "**",
+      "destination": "/index.html"
+    }]
+  }
 }

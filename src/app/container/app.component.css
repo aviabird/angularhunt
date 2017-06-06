@@ -1,3 +1,33 @@
 .body-part {
-	width: 100%;
+	width: 1291px;
+}	
+
+.constraintWidth-conainer-content {
+  max-width: 1100px;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 1;
+  flex: 1;
+  margin-top: 30px !important;
+  padding: 0 15px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  min-width: 320px;
+}
+
+@media only screen and (max-width: 768px) {
+  .body-part {
+    width: 100%;
+  }
+  .main-container {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .constraintWidth-conainer-content {
+    margin-top: 20px !important;  
+  }  
 }

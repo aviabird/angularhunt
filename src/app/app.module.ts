@@ -72,7 +72,7 @@ import { AdminNavigationComponent } from './components/admin-navigation/admin-na
 import { ProjectEditComponent } from './components/project-edit/project-edit.component';
 import { AllProjectsComponent } from './components/all-projects/all-projects.component';
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
-
+import { AdComponent } from './components/shared/ad/ad.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +97,7 @@ import { SearchFilterPipe } from './pipes/search-filter.pipe';
     ProjectEditComponent,
     AllProjectsComponent,
     SearchFilterPipe,
+    AdComponent,
   ],
   imports: [
     BrowserModule,
@@ -114,7 +115,7 @@ import { SearchFilterPipe } from './pipes/search-filter.pipe';
     EffectsModule.run(TopicEffects),
     AngularFireModule.initializeApp(firebaseConfig, {
       method: AuthMethods.Redirect
-    })
+    }),
   ],
   providers: [
     TopicActions,

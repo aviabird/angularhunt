@@ -4,7 +4,14 @@
 </app-header>
 
 <div class="body-part">
-  <router-outlet></router-outlet>
+  <div></div>
+    <div class="constraintWidth-conainer-content" 
+        style="max-width: 1100px;">
+    <app-navigation [topics]="topics$ | async"></app-navigation>
+    <div class="main-container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
 
 <!--<app-footer></app-footer>-->
