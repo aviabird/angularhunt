@@ -5,30 +5,28 @@
 }
 .constraintWidth {
 	padding: 0 15px;
-	box-sizing: border-box;
-    margin: 0 auto;
-    min-width: 320px;
-
+	box-sizing: border-box;a
+  margin: 0 auto;
 }
 .content {
 	display: -ms-flexbox;
 	display: flex;
-    padding: 15px 0;
-    position: relative;
-    height: 32px;
-    justify-content: space-between;
-    -ms-flex-pack: justify;
+  padding: 15px 0;
+  position: relative;
+  height: 32px;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
 }
 
 /*---------------LEFT SIDE--------------------*/
 
 .leftside {
 	ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    display: -ms-flexbox;
-    display: flex;
+  align-items: center;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .logo {
@@ -132,7 +130,6 @@
 }
 
 .logged-in-user-area{
-  width: 200px;
   float: left;
 }
 
@@ -199,7 +196,7 @@
 }
 
 .signup:hover {
-	background: #ea532a;
+  background: #ea532a;
   border-color: #ea532a;
   cursor: pointer;
 }
@@ -207,14 +204,14 @@
 
 .buttoncontainer {
 	-ms-flex-align: center;
-    align-items: center;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -ms-flex-pack: center;
-    justify-content: center;
-    width: inherit;
+  align-items: center;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: inherit;
 }
 
 .overlayInactive {
@@ -222,9 +219,9 @@
 }
 
 .avatar {
-    border-radius: 50%;
-    height: 32px;
-    width: 32px;
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
 }
 
 @media only screen and (min-width: 769px) {
