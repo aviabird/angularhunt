@@ -32,3 +32,11 @@ share-buttons .sb-buttons .twitter button {
   border-color: #00b4f5;
   color: white;
 }
+
+
+@media only screen and (max-width: 414px) { 
+  share-buttons button {
+    width: 30px;
+  }
+
+}

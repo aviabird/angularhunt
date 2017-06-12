@@ -498,3 +498,9 @@ hr {
   position: relative;
 }
 
+@media only screen and (max-width: 414px) {
+  .modal-dialog {
+    width: 96%;
+  } 
+}
+

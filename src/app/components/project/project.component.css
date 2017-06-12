@@ -3,7 +3,7 @@
   border: 1px solid #e8e8e8;
   min-width: 0;
   width:702px;
- }
+}
 
 .top {
   position: relative;
@@ -19,35 +19,34 @@
 }
 
 .canvas ol {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    position: relative;
-  }
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  position: relative;
+}
 
 .canvas li {
-    height: 360px;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    margin: 0 10px 20px 0;
-  }
+  height: 360px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin: 0 10px 20px 0;
+}
   
-
 .container-text {
-    position: relative;
-    height: 360px;
-    width: 202.759px
+  position: relative;
+  height: 360px;
+  width: 202.759px
 }
 
 .thumbsnails {
-    margin-left: 40px !important;
-    display: -ms-flexbox !important;
-    display: flex !important; 
+  margin-left: 40px !important;
+  display: -ms-flexbox !important;
+  display: flex !important; 
 }
 
 .thumbnail_u {
@@ -56,7 +55,6 @@
   border: 1px solid #999;
   margin-right: 10px;
 }
-
 
 .timestamp {
   bottom:  0;
@@ -264,4 +262,117 @@ share-buttons {
   padding: 10px;
   width: 155px;
   padding: 0px;
+}
+
+@media only screen and (max-width: 414px) {
+  .image-div {
+    height: 300px;
+    width: 375px;
+ }
+
+  .image-canvas {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  } 
+
+  .canvas {
+    height: 310px;
+  } 
+
+  .information-section {
+    margin: 20px;
+    width: 49%;
+  }
+
+  .thumbnail-4 {
+    margin-right: 20px;
+  }
+
+  .tagline-text {
+    height: 40px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .headline-base {
+    font-size: 24px;
+  }
+
+ .tagline-heading {
+    font-size: 15px;
+ }
+  .action-section {
+    padding: 10px 0;
+  }
+  .action-inner {
+    margin: 0 15px;
+  }
+  .share-buttons {
+      width: 30px;
+  }
+  .inactiveLink a {
+    padding: 0 4px;
+  }
+  .inactivePopoverToggle {
+    width: 15px;
+  }
+  share-buttons {
+    width: 70px;
+  }
+  .button_mediumSize {
+    padding: 0 5px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .image-div {
+    width: 312px;
+    height: 280px;
+  }
+
+  .canvas {
+    height: 300px;
+  }
+
+  .information-section {
+    margin: 10px;
+    width: 45%; 
+  }
+
+  .headline-base {
+    font-size: 20px;
+  }
+
+  .headline_content {
+    margin: 0 0 5px;
+  }
+
+  .thumbnail-4 {
+    margin-right: 15px;
+  }
+  .tagline-heading[_ngcontent-c10] {
+    font-size: 13px;
+  }
+  .action-inner {
+    margin: 0 5px;
+  }
+  .comboButton {
+    margin: 0 5px 0 0;
+  }
+  .inactivePopoverToggle {
+    visibility: hidden;
+  }
+  .ion-android-menu {
+    visibility: hidden;
+  }
+  .ion-android-add {
+    visibility: hidden;
+  }
+  .action-inner main {
+    margin-right: -16px
+  }
+  collectButtonLabel {
+    margin-left: -2px;
+  }
 }
