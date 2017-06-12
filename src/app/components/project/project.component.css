@@ -351,26 +351,26 @@ share-buttons {
   .thumbnail-4 {
     margin-right: 15px;
   }
+  
   .tagline-heading[_ngcontent-c10] {
     font-size: 13px;
   }
+
   .action-inner {
     margin: 0 5px;
   }
+
   .comboButton {
     margin: 0 5px 0 0;
   }
+
   .inactivePopoverToggle {
     visibility: hidden;
   }
-  .ion-android-menu {
-    visibility: hidden;
-  }
-  .ion-android-add {
-    visibility: hidden;
-  }
+  
   .action-inner main {
     margin-right: -16px
+
   }
   collectButtonLabel {
     margin-left: -2px;
