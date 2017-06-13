@@ -375,4 +375,10 @@ share-buttons {
   collectButtonLabel {
     margin-left: -2px;
   }
+  share-buttons {
+      width: 67px;
+  }
+  .button_icon {
+    visibility: hidden;
+  }
 }
