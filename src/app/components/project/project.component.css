@@ -264,71 +264,16 @@ share-buttons {
   padding: 0px;
 }
 
-@media only screen and (max-width: 414px) {
-  .image-div {
-    height: 300px;
-    width: 375px;
- }
-
-  .image-canvas {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  } 
-
-  .canvas {
-    height: 310px;
-  } 
-
-  .information-section {
-    margin: 20px;
-    width: 49%;
-  }
-
-  .thumbnail-4 {
-    margin-right: 20px;
-  }
-
-  .tagline-text {
-    height: 40px;
-    overflow: hidden;
-    margin-bottom: 10px;
-  }
-
-  .headline-base {
-    font-size: 24px;
-  }
-
- .tagline-heading {
-    font-size: 15px;
- }
-  .action-section {
-    padding: 10px 0;
-  }
-  .action-inner {
-    margin: 0 15px;
-  }
-  .share-buttons {
-      width: 30px;
-  }
-  .inactiveLink a {
-    padding: 0 4px;
-  }
-  .inactivePopoverToggle {
-    width: 15px;
-  }
-  share-buttons {
-    width: 70px;
-  }
-  .button_mediumSize {
-    padding: 0 5px;
-  }
-}
-
 @media only screen and (max-width: 320px) {
   .image-div {
-    width: 312px;
+    width: 100vw;
     height: 280px;
+  }
+
+  .image-canvas {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .canvas {
@@ -352,8 +297,10 @@ share-buttons {
     margin-right: 15px;
   }
   
-  .tagline-heading[_ngcontent-c10] {
+  .tagline-heading {
     font-size: 13px;
+    height: 40px;
+    overflow: hidden;
   }
 
   .action-inner {
@@ -361,7 +308,7 @@ share-buttons {
   }
 
   .comboButton {
-    margin: 0 5px 0 0;
+    margin: 0 -8px 0 0;
   }
 
   .inactivePopoverToggle {
@@ -375,10 +322,136 @@ share-buttons {
   collectButtonLabel {
     margin-left: -2px;
   }
+
   share-buttons {
-      width: 67px;
+    width: 67px;
   }
   .button_icon {
     visibility: hidden;
+  }
+  .inactiveLink a {
+    padding: 0 4px;
+    margin: 0 3px;
+  }
+ 
+  .button-add-label {
+    padding: 0 7px;
+  }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+
+  .canvas {
+    height: 310px;
+  }
+
+  .image-div {
+    height: 100%;
+    width: 100vw;
+  }
+
+  .image-canvas {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  } 
+
+  .information-section {
+    width: 49%;
+  }
+
+  .thumbnail-4 {
+    margin-right: 20px;
+  }
+
+  .tagline-text {
+    height: 40px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .headline-base {
+    font-size: 24px;
+  }
+
+  .tagline-heading {
+    font-size: 15px;
+  }
+
+  .action-section {
+    padding: 10px 0;
+  }
+
+  .action-inner {
+    margin: 0 7px;
+  }
+  
+  .inactiveLink a {
+    padding: 0 4px;
+    margin: 0 4px;
+  }
+
+  .inactivePopoverToggle {
+    width: 23px;
+  }
+
+  share-buttons {
+    width: 68px;
+  }
+
+  .button-add-label {
+    padding: 0 10px;
+    margin-left: 6px; 
+  }
+
+  .button-icon {
+    padding: 0 2px;
+  }
+  .ion-arrow-up-b {
+    margin-left: 1px;
+  }
+  .collectButtonLabel {
+    margin-left: -4px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  .headline-base {
+    font-size: 25px;
+  }
+  .tagline-heading {
+    font-size: 15px;
+    height: 40px;
+    overflow: hidden;
+  }
+  .image-div {
+    width: 100vw;
+  }
+  .image-canvas {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .image-div {
+    width: 63vw;
+    height: 100%;
+  } 
+  .image-canvas {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .tagline-heading {
+    height: 40px;
+    overflow: hidden;
+    font-size: 15px;
+  }
+  .action-inner {
+    margin: 0 10px;
+  }
+  share-buttons {
+    width: 98px;
   }
 }

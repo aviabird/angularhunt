@@ -8,17 +8,17 @@ html {
 }
 
 body {
-	background: #f9f9f9;
-	margin: 0;
+  background: #f9f9f9;
+  margin: 0;
   min-height: 100%;
   position: relative;
 }
 
 share-buttons button {
-    width: 70px;
-    height: 35px;
-    padding: none;
-    font-size: 1.2rem;
+  width: 70px;
+  height: 35px;
+  padding: none;
+  font-size: 1.2rem;
 }
 
 share-buttons .sb-buttons .facebook button {
@@ -38,5 +38,10 @@ share-buttons .sb-buttons .twitter button {
   share-buttons button {
     width: 30px;
   }
+}
 
+@media only screen and (min-width: 768px){
+  share-buttons button {
+    width: 42px;
+  }
 }
