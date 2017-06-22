@@ -34,9 +34,9 @@ share-buttons .sb-buttons .twitter button {
 }
 
 
-@media only screen and (max-width: 414px) { 
+@media only screen and (min-width: 1024px) {
   share-buttons button {
-    width: 30px;
+    width: 90px;
   }
 }
 
@@ -46,8 +46,14 @@ share-buttons .sb-buttons .twitter button {
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 481px) and (max-width: 767px){
   share-buttons button {
-    width: 90px;
+    width: 30px;
+  }  
+} 
+
+@media only screen and (min-width: 0) and (max-width: 480px) {
+  share-buttons button {
+    width: 30px;
   }
 }

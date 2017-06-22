@@ -1,8 +1,7 @@
 .main {
   background-color: #fff;
   border: 1px solid #e8e8e8;
-  min-width: 0;
-  width:702px;
+  font-size: 15px;
 }
 
 .top {
@@ -57,11 +56,9 @@
 }
 
 .timestamp {
-  bottom:  0;
   padding: 5px;
   position: absolute;
-  right: 30px;
-  text-align: right;
+  right: 280px;
 }
 
 .secondaryText-base {
@@ -159,15 +156,10 @@
   text-decoration: none!important;
 }
 
-.action-section {
-  border-top: 1px solid #e8e8e8;
-  border-bottom: 1px solid #e8e8e8;
-  padding: 20px 0;
-}
-
 .action-inner {
+  width: 80%;
+  margin: 0 auto;
   display: flex;
-  margin: 0 40px;
 }
 
 .action-section a {
@@ -177,12 +169,12 @@
 .comboButton {
   display: inline-block;
   position: relative;
-  margin: 0 10px 0 0;
+  margin: 0 25px 0 0;
 }
 
 .secondaryBoldText {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 17px;
   letter-spacing: .6px;
   line-height: 16px;
   text-transform: uppercase;
@@ -191,14 +183,14 @@
 .inactiveLink {
   background: #da552f;
   display: inline-block;
-  height: 34px;
+  height: 35px;
   line-height: 34px;
   box-sizing: border-box;
   border-radius: 3px 0 0 3px;
 }
 
 .inactiveLink a {
-  padding: 0 12px;
+  padding: 0 20px;
   color: #fff;
 }
 
@@ -207,12 +199,11 @@
   border-left: 1px solid #fff;
   /*cursor: pointer;*/
   text-align: center;
-  width: 28px;
+  width: 40px;
   background: #da552f;
   color: #fff;
   display: inline-block;
-  height: 34px;
-  line-height: 34px;
+  line-height: 33px;
   box-sizing: border-box;
   margin-left: -4px;
 }
@@ -224,7 +215,7 @@
 .button_mediumSize {
   background: #fff;
   color: #000;
-  height: 34px;
+  height: 35px;
   padding: 0 13px;
   border-radius: 3px;
   border: 1px solid #e8e8e8;
@@ -234,7 +225,7 @@
   text-align: center;
   text-decoration: none!important;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 17px;
   letter-spacing: .6px;
   line-height: 16px;
   text-transform: uppercase;
@@ -260,255 +251,8 @@ a {
 share-buttons {
   float: left;
   padding: 10px;
-  width: 155px;
+  width: 210px;
   padding: 0px;
-}
-
-@media only screen and (max-width: 320px) {
-  .image-div {
-    width: 100vw;
-    height: 280px;
-  }
-
-  .image-canvas {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .canvas {
-    height: 300px;
-  }
-
-  .information-section {
-    margin: 10px;
-    width: 45%; 
-  }
-
-  .headline-base {
-    font-size: 20px;
-  }
-
-  .headline_content {
-    margin: 0 0 5px;
-  }
-
-  .thumbnail-4 {
-    margin-right: 15px;
-  }
-
-  .tagline-heading {
-    font-size: 13px;
-    height: 40px;
-    overflow: hidden;
-  }
-  .action-inner {
-    margin: 0 5px;
-  }
-
-  .comboButton {
-    margin: 0 -8px 0 0;
-  }
-
-  .inactivePopoverToggle {
-    visibility: hidden;
-  }
-
-  .action-inner main {
-    margin-right: -16px
-  }
-
-  collectButtonLabel {
-    margin-left: -2px;
-  }
-
-  share-buttons {
-    width: 67px;
-  }
-  .button_icon {
-    visibility: hidden;
-  }
-  .inactiveLink a {
-    padding: 0 4px;
-    margin: 0 3px;
-  }
- 
-  .button-add-label {
-    padding: 0 7px;
-  }
-}
-
-@media only screen and (min-width: 321px) and (max-width: 480px) {
-
-  .canvas {
-    height: 310px;
-  }
-
-  .image-div {
-    height: 100%;
-    width: 100vw;
-  }
-
-  .image-canvas {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  } 
-
-  .information-section {
-    width: 49%;
-  }
-
-  .thumbnail-4 {
-    margin-right: 20px;
-  }
-
-  .tagline-text {
-    height: 40px;
-    overflow: hidden;
-    margin-bottom: 10px;
-  }
-
-  .headline-base {
-    font-size: 24px;
-  }
-
-  .tagline-heading {
-    font-size: 15px;
-  }
-
-  .action-section {
-    padding: 10px 0;
-  }
-
-  .action-inner {
-    margin: 0 7px;
-  }
-  
-  .inactiveLink a {
-    padding: 0 4px;
-    margin: 0 4px;
-  }
-
-  .inactivePopoverToggle {
-    width: 23px;
-  }
-
-  share-buttons {
-    width: 68px;
-  }
-
-  .button-add-label {
-    padding: 0 10px;
-    margin-left: 6px; 
-  }
-
-  .button-icon {
-    padding: 0 2px;
-  }
-
-  .ion-arrow-up-b {
-    margin-left: 1px;
-  }
-
-  .collectButtonLabel {
-    margin-left: -4px;
-  }
-
-}
-
-@media only screen and (min-width: 481px) and (max-width: 767px) {
-  .headline-base {
-    font-size: 25px;
-  }
-
-  .tagline-heading {
-    font-size: 15px;
-    height: 40px;
-    overflow: hidden;
-  }
-
-  .image-div {
-    width: 100vw;
-  }
-
-  .image-canvas {
-    height: 100%;
-    width: 100%;
-  }
-  
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-  .image-div {
-    width: 63vw;
-    height: 100%;
-  }
-
-  .image-canvas {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-
-  .tagline-heading {
-    height: 40px;
-    overflow: hidden;
-    font-size: 15px;
-  }
-
-  .action-inner {
-    margin: 0 10px;
-  }
-
-  share-buttons {
-    width: 98px;
-  }
-
-}
-
-@media only screen and (min-width: 1024px) {
-  .main {
-    width: auto;
-    font-size: 15px;
-  }
-
-  .action-inner {
-    margin: 0 125px;
-  }
-
-  .comboButton {
-    margin: 0 20px 0 0;
-  }
-
-  .secondaryBoldText {
-    font-size: 15px;
-  }
-
-  .inactiveLink a {
-    padding: 0 20px;
-  }
-
-  .inactivePopoverToggle {
-    width: 40px;
-  }
-
-  share-buttons {
-    width: 205px;
-  }
-
-  .button-add-label {
-    padding: 0 35px;
-    font-size: 15px;
-  }
-
-  .buttonContainer {
-    font-size: 15px;
-  }
-
-  .button-icon {
-    padding: 0 35px;
-  }
 }
 
 
@@ -518,7 +262,6 @@ share-buttons {
   border: 1px solid #e8e8e8;
   margin-top: 20px;
   border-radius: 3px;
-  max-width: 800px;
   background-color: #fff;
 }
 
@@ -711,18 +454,14 @@ share-buttons {
   margin: 0 5px 0 0;
 }
 
-.timestamp {
+.timestamphere {
   text-decoration: none;
   display: inline-block;
   color: #c9c9c9;
-  bottom: 0;
-  padding: 5px;
-  position: absolute;
-  right: 45px;
-  text-align: right;
+  margin: 0 0 10px 20px;
 }
 
-.timestamp:hover {
+.timestamphere:hover {
   text-decoration: underline;
 }
 
@@ -742,89 +481,334 @@ share-buttons {
 }
 
 .show-more-comments-container:hover {
-  background: #e8e8e8; 
+  background: #e8e8e8;
 }
 
-@media only screen and (max-width: 320px) {
- 
-  .comment-part {
+/*@media only screen and (max-width: 320px) {
+  .image-div {
     width: 100vw;
+    height: 280px;
   }
-  .wrapper {
-    padding: 0 10px;
+
+  .image-canvas { 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
-  .item {
-    margin-right: 0;
+
+  .canvas {
+    height: 300px;
   }
-  .user-image {
-    margin: 0 10px 0 0; 
+
+  .information-section {
+    margin: 10px;
+    width: 45%; 
   }
-  .userName_text {
-    margin-left: 0;
-    margin-right: 5px;
+
+  .headline-base {
+    font-size: 20px;
   }
-  .heading-title {
+
+  .headline_content {
+    margin: 0 0 5px;
+  }
+
+  .thumbnail-4 {
+    margin-right: 15px;
+  }
+
+  .tagline-heading {
     font-size: 13px;
-    margin: 0 0 15px;
-  }
-  .boldtext_heading {
-    font-size: 13px;
-  }
-  .text_subtle_base {
-    font-size: 13px;
+    height: 40px;
     overflow: hidden;
-    margin-top: 2px;
   }
-  .show-more-body-text {
-    font-size: 13px;
+  .action-inner {
+    margin: 0 5px;
   }
-  .timestamp {
+
+  .comboButton {
+    margin: 0 -8px 0 0;
+  }
+
+  .inactivePopoverToggle {
     visibility: hidden;
   }
-  .show-more-comments-container {
-    width: 95%;
-    height: 30px
+
+  .action-inner main {
+    margin-right: -16px
+  }
+
+  collectButtonLabel {
+    margin-left: -2px;
+  }
+
+  share-buttons {
+    width: 67px;
+  }
+  .button_icon {
+    visibility: hidden;
+  }
+  .inactiveLink a {
+    padding: 0 4px;
+    margin: 0 3px;
+  }
+ 
+  .button-add-label {
+    padding: 0 7px;
   }
 }
 
 @media only screen and (min-width: 321px) and (max-width: 480px) {
 
-   .comment-part {
-     width: 100vw;
-   } 
-   .wrapper {
-     padding: 0 15px;
-   }
-   .userName_text {
-     margin-left: 0;
-   }
-   .heading-title {
-     font-size: 13px;
-   }
-   .boldtext_heading {
-     font-size: 13px;
-   }
-   .text_subtle_base {
-     font-size: 13px;
-     overflow: hidden;
-     margin-top: 2px;
-   }
-   .show-more-body-text {
-     font-size: 13px;
-   }
-   .timestamp {
-     visibility: hidden;
-   }
-   .show-more-comments-container {
-     width: 95%;
-     height: 35px;
-   }
+  .canvas {
+    height: 310px;
+  }
+
+  .image-div {
+    height: 100%;
+    width: 100vw;
+  }
+
+  .image-canvas {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  } 
+
+  .information-section {
+    width: 49%;
+  }
+
+  .thumbnail-4 {
+    margin-right: 20px;
+  }
+
+  .tagline-text {
+    height: 40px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .headline-base {
+    font-size: 24px;
+  }
+
+  .tagline-heading {
+    font-size: 15px;
+  }
+
+  .action-section {
+    padding: 10px 0;
+  }
+
+  .action-inner {
+    margin: 0 7px;
+  }
+  
+  .inactiveLink a {
+    padding: 0 4px;
+    margin: 0 4px;
+  }
+
+  .inactivePopoverToggle {
+    width: 23px;
+  }
+
+  share-buttons {
+    width: 68px;
+  }
+
+  .button-add-label {
+    padding: 0 10px;
+    margin-left: 6px; 
+  }
+
+  .button-icon {
+    padding: 0 2px;
+  }
+
+  .ion-arrow-up-b {
+    margin-left: 1px;
+  }
+
+  .collectButtonLabel {
+    margin-left: -4px;
+  }
+
 }
 
 @media only screen and (min-width: 481px) and (max-width: 767px) {
-   .comment-part {
-     width: 100vw;
-   }   
+  .headline-base {
+    font-size: 25px;
+  }
+
+  .tagline-heading {
+    font-size: 15px;
+    height: 40px;
+    overflow: hidden;
+  }
+
+  .image-div {
+    width: 100vw;
+  }
+
+  .image-canvas {
+    height: 100%;
+    width: 100%;
+  }
+  
+}*/
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .image-div {
+    height: 360px;
+  }
+  .image-canvas {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .action-inner {
+    width: 90%; 
+  }
+  .action-inner main {
+    width: 33%;
+  }
+  .comboButton {
+    float: right;
+    margin: 0 8% 0 0;
+  }
+  .action-inner aside {
+    width: 66%;
+  }
+  
+  share-buttons {
+    width: 103px;
+  }
 }
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  .image-div {
+    height: 360px;
+  }
+  .image-canvas {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .headline-base {
+    font-size: 26px;
+  }
+  .tagline-heading {
+    height: 40px;
+    overflow: hidden;
+    font-size: 15px;
+  }
+  .action-section a {
+    margin: 0;
+  }
+  .action-inner {
+    width: 96%; 
+  }
+  .action-inner main {
+    width: 30%; 
+  }
+  .action-inner aside {
+    width: 70%;
+  }
+  .inactivePopoverToggle {
+    width: 25px;
+    line-height: 34px;
+  }
+  .inactiveLink a {
+    padding: 0 10px;
+  }
+  .comboButton {
+    float: right;
+    margin: 0 10% 0 0;
+  }
+  .secondaryBoldText {
+    font-size: 11px;  
+  }
+  .button_mediumSize {
+    font-size: 11px;
+    padding: 0 10px;
+  }
+  share-buttons {
+    width: 73px;
+  }
+  .boldtext_heading {
+    font-size: 14px;
+  }
+  .text_subtle_base {
+    font-size: 14px;
+  }
+  .show-more-body-text {
+    font-size: 14px;
+  }
+  .timestamphere {
+    margin: 0 0 10px 10px;
+  }
+}
+
+@media only screen and (min-width: 0) and (max-width: 480px){
+  .image-div {
+    height: 360px;
+  }
+  .image-canvas {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .headline-base {
+    font-size: 26px;
+  }
+  .tagline-heading {
+    height: 40px;
+    overflow: hidden;
+    font-size: 15px;
+  }
+   .action-section a {
+    margin: 0;
+  }
+  .action-inner {
+    width: 96%; 
+  }
+  .action-inner main {
+    width: 30%; 
+  }
+  .action-inner aside {
+    width: 70%;
+  }
+  .inactivePopoverToggle {
+    width: 25px;
+    line-height: 34px;
+  }
+  .inactiveLink a {
+    padding: 0 10px;
+  }
+  .comboButton {
+    float: right;
+    margin: 0 10% 0 0;
+  }
+  .secondaryBoldText {
+    font-size: 11px;  
+  }
+  .button_mediumSize {
+    font-size: 11px;
+    padding: 0 10px;
+  }
+  share-buttons {
+    width: 73px;
+  }
+
+} 
+
+
+ 
+
+
+
+
 
 
