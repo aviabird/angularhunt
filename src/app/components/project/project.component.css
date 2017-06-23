@@ -782,21 +782,21 @@ share-buttons {
     line-height: 34px;
   }
   .inactiveLink a {
-    padding: 0 4px;
+    padding: 0 3px;
   }
   .comboButton {
     float: right;
-    margin: 0 5% 0 0;
+    margin: 0 3% 0 0;
   }
   .secondaryBoldText {
     font-size: 11px;  
   }
   .button_mediumSize {
     font-size: 11px;
-    padding: 0 3px;
+    padding: 0 2px;
   }
   share-buttons {
-    width: 60px;
+    width: 55px;
   }
   .main-icons {
     display: none;
@@ -812,13 +812,16 @@ share-buttons {
   }
   .userName_text {
     margin-left: 0;
-    font-size: 12px;
+    font-size: 11px;
   }
   .remaining-text {
     font-size: 14px;
   }
   .timestamphere {
-    margin: 0 0 10px 10px;
+    display: none;
+  }
+  .action-secondary-buttons {
+    font-size: 12px;
   }
 }
 
