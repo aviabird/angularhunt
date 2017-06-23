@@ -505,5 +505,19 @@ hr {
   }
 } 
 
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  .modal-dialog {
+    width: 90vw;
+    margin: 20px 5vw;
+  }
+} 
+
+@media only screen and (min-width: 0) and (max-width: 480px) {
+  .modal-dialog {
+    width: 96vw;
+    margin: 20px 2vw;
+  }
+} 
+
 
 

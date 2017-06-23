@@ -737,13 +737,7 @@ share-buttons {
   share-buttons {
     width: 73px;
   }
-  .boldtext_heading {
-    font-size: 14px;
-  }
-  .text_subtle_base {
-    font-size: 14px;
-  }
-  .show-more-body-text {
+  .remaining-text {
     font-size: 14px;
   }
   .timestamphere {
@@ -760,8 +754,11 @@ share-buttons {
     width: 100%;
     object-fit: cover;
   }
+  .information-section {
+    margin: 30px 10px;
+  }
   .headline-base {
-    font-size: 26px;
+    font-size: 20px;
   }
   .tagline-heading {
     height: 40px;
@@ -772,37 +769,62 @@ share-buttons {
     margin: 0;
   }
   .action-inner {
-    width: 96%; 
+    width: 100%; 
   }
   .action-inner main {
-    width: 30%; 
+    width: 29%; 
   }
   .action-inner aside {
-    width: 70%;
+    width: 71%;
   }
   .inactivePopoverToggle {
-    width: 25px;
+    width: 12px;
     line-height: 34px;
   }
   .inactiveLink a {
-    padding: 0 10px;
+    padding: 0 4px;
   }
   .comboButton {
     float: right;
-    margin: 0 10% 0 0;
+    margin: 0 5% 0 0;
   }
   .secondaryBoldText {
     font-size: 11px;  
   }
   .button_mediumSize {
     font-size: 11px;
-    padding: 0 10px;
+    padding: 0 3px;
   }
   share-buttons {
-    width: 73px;
+    width: 60px;
   }
+  .main-icons {
+    display: none;
+  }
+  .wrapper {
+    padding: 0 10px;
+  }
+  .item {
+    margin-right: 10px;
+  }
+  .user-image {
+    margin: 0 10px 0 0;
+  }
+  .userName_text {
+    margin-left: 0;
+    font-size: 12px;
+  }
+  .remaining-text {
+    font-size: 14px;
+  }
+  .timestamphere {
+    margin: 0 0 10px 10px;
+  }
+}
 
-} 
+
+
+ 
 
 
  

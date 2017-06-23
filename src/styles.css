@@ -54,6 +54,6 @@ share-buttons .sb-buttons .twitter button {
 
 @media only screen and (min-width: 0) and (max-width: 480px) {
   share-buttons button {
-    width: 30px;
+    width: 25px;
   }
 }
