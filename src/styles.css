@@ -33,7 +33,6 @@ share-buttons .sb-buttons .twitter button {
   color: white;
 }
 
-
 @media only screen and (min-width: 1024px) {
   share-buttons button {
     width: 90px;
@@ -57,4 +56,19 @@ share-buttons .sb-buttons .twitter button {
     width: 24px;
     font-size: 16px;
   }
+}
+
+.constraintWidth-conainer-content {
+  max-width: 90%;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 1;
+  flex: 1;
+  margin-top: 30px !important;
+  padding: 0 15px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  min-width: 320px;
 }

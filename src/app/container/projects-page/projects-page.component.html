@@ -1,74 +1,75 @@
-<div class="flex-display">
+<div class="constraintWidth-conainer-content" style="max-width: 1100px;">
+  <div class="flex-display">
 
-  <!--=======================Middle Section========================-->
-    <div class="primary-content">
+    <!--=======================Middle Section========================-->
+      <div class="primary-content">
 
-      <app-newsletter-card (subClickEvent)="subscribeToNewsLetter($event)"></app-newsletter-card>
+        <app-newsletter-card (subClickEvent)="subscribeToNewsLetter($event)"></app-newsletter-card>
 
-      <div class="fullwidth-bottom-middle-box">
-        <div class="bottom-content">
-          <div class="bottom-header">
-            <span class="title-base">Projects</span>
-            <!--<div class="feednavigation-base">
-              <a class="activelink-base" href="/">Popular</a>
-              <a class="newest" href="/newest">Newest</a>
-            </div>-->
-          </div>
-          <div>
-            <ul class="post-list">
-              <li *ngFor="let project of projects$ | async">
-                <app-project-card [project]="project" 
-                  (toggleUpvoteClick)="toggleUpvote($event)"
-                  [isUpvotedByCurrUser] = "project.id | isUpvotedByCurrentUser: (upvotedProjectIds$ | async)"
-                  ></app-project-card>
-              </li>
-            </ul>
-          </div>
-          <div class="loadMore-container">
-            <button (click)="loadMoreProjects()" 
-                    class="button_mediumSize">
-              <div class="buttonContainer">
-                Load More
-              </div>
-            </button>
+        <div class="fullwidth-bottom-middle-box">
+          <div class="bottom-content">
+            <div class="bottom-header">
+              <span class="title-base">Projects</span>
+              <!--<div class="feednavigation-base">
+                <a class="activelink-base" href="/">Popular</a>
+                <a class="newest" href="/newest">Newest</a>
+              </div>-->
+            </div>
+            <div>
+              <ul class="post-list">
+                <li *ngFor="let project of projects$ | async">
+                  <app-project-card [project]="project" 
+                    (toggleUpvoteClick)="toggleUpvote($event)"
+                    [isUpvotedByCurrUser] = "project.id | isUpvotedByCurrentUser: (upvotedProjectIds$ | async)"
+                    ></app-project-card>
+                </li>
+              </ul>
+            </div>
+            <div class="loadMore-container">
+              <button (click)="loadMoreProjects()" 
+                      class="button_mediumSize">
+                <div class="buttonContainer">
+                  Load More
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  <!--=======================Middle Section End====================-->
+    <!--=======================Middle Section End====================-->
 
-  <!--======================Secondary Section======================-->
-  <div class="secondary-section">
-    <div class="sidebar">
-      <div class="padded-box">
-        <div class="content">
-          <span class="featured">
-            AngularHunt
-          </span>
-          <p class="box-text">
-            Check out this project on github and contribute.
-          </p>
+    <!--======================Secondary Section======================-->
+    <div class="secondary-section">
+      <div class="sidebar">
+        <div class="padded-box">
+          <div class="content">
+            <span class="featured">
+              AngularHunt
+            </span>
+            <p class="box-text">
+              Check out this project on github and contribute.
+            </p>
 
-          <div class="actions">
-            <a href="https://github.com/aviabird/angularhunt"
-               target="_blank" 
-               class="button_mediumSize">
-              <div class="buttonContainer">
-                <i class="fa fa-github" aria-hidden="true"></i>
-                Contribute
-              </div>
-            </a>
+            <div class="actions">
+              <a href="https://github.com/aviabird/angularhunt"
+                target="_blank" 
+                class="button_mediumSize">
+                <div class="buttonContainer">
+                  <i class="fa fa-github" aria-hidden="true"></i>
+                  Contribute
+                </div>
+              </a>
+            </div>
+
           </div>
-
         </div>
       </div>
-      <div class="padded-box">
+      <!--<div class="padded-box">-->
         <!--<ng2-adsense></ng2-adsense>-->
-        <app-ad></app-ad>
-      </div>
+        <!--<app-ad></app-ad>-->
+      <!--</div>-->
     </div>  
   </div>
-  <!--======================Secondary Section End==================-->
 </div>
 
 
@@ -82,4 +83,3 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>-->
-

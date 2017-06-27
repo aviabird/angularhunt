@@ -21,8 +21,8 @@ export class ProjectService {
 
 
   getAllTopics(): Observable<any> {
-  return this.db.list('/topics')
-             .map(response => response.map(topic => new Topic(topic)));
+    return this.db.list('/topics')
+      .map(response => response.map(topic => new Topic(topic)));
   }
 
   sendData() {
@@ -73,7 +73,7 @@ export class ProjectService {
     return this.db.list('/projects').update(project.$key,
       { upvotes: newupvote }).then(() => {
         let toSend = this.db.object(`/users_projects`);
-        toSend.update({[customKey]: user_projects });
+        toSend.update({ [customKey]: user_projects });
       });
   }
 
@@ -83,9 +83,10 @@ export class ProjectService {
     let newUpvote = project.upvotes - 1;
 
     return this.db.list('/projects').update(project.$key, {
-       upvotes: newUpvote }).then(() => {
-        this.db.list('/users_projects').remove(key);
-      });
+      upvotes: newUpvote
+    }).then(() => {
+      this.db.list('/users_projects').remove(key);
+    });
   }
 
   getAccessTokenToken(): any {
@@ -122,4 +123,13 @@ export class ProjectService {
   saveNewProject(project: any): firebase.Promise<any> {
     return this.db.list('/projects').push(project);
   }
+
+  updateProject(key: string, project: any): firebase.Promise<any> {
+    return this.db.list('/projects').update(key, project);
+  }
+
+  deleteProject(id: string): firebase.Promise<any> {
+    return this.db.list('/projects').remove(id);
+  }
+
 }

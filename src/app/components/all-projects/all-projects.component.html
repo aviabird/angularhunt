@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      Search:
+    </div>
+    <div class="col-md-10">
+      <input type="text" class="search" [(ngModel)]="searchQuery"/>
+    </div>
+  </div>
+  <br/>
+  <table *ngIf="projects">
+    <tr>
+      <th>Project Name</th>
+      <th>Project Author Name</th>
+      <th>Approved Status</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let project of projects | searchFilter:searchQuery " >
+      <td>{{project.name}}</td>
+      <td>{{project.author_name}}</td>
+      <td>{{project.approved}}</td>
+      <td>
+        <a [routerLink]="['/admin/edit', project.id]">Edit</a>
+        <span class="divider"></span>
+        <a class="link" (click)="deleteProject(project.id)">Delete</a>
+      </td>
+    </tr>
+  </table>
+</div>
