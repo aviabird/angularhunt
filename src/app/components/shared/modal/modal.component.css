@@ -398,7 +398,7 @@ hr {
   height: 50px;
   overflow: scroll;
 }
-@media (min-width: 500px) {
+/*@media (min-width: 500px) {
   .modal-dialog {
     width: 500px;
     margin: 30px auto;
@@ -410,13 +410,13 @@ hr {
   .modal-sm {
     width: 300px;
   }
-}
+}*/
 
-@media (min-width: 992px) {
+/*@media (min-width: 992px) {
   .modal-lg {
     width: 100%;
   }
-}
+}*/
 .clearfix:before,
 .clearfix:after,
 .modal-header:before,
@@ -497,4 +497,27 @@ hr {
   width: 100%;
   position: relative;
 }
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .modal-dialog {
+    width: 90vw;
+    margin: 20px 5vw;
+  }
+} 
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  .modal-dialog {
+    width: 90vw;
+    margin: 20px 5vw;
+  }
+} 
+
+@media only screen and (min-width: 0) and (max-width: 480px) {
+  .modal-dialog {
+    width: 96vw;
+    margin: 20px 2vw;
+  }
+} 
+
+
 

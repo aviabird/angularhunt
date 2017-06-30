@@ -8,17 +8,17 @@ html {
 }
 
 body {
-	background: #f9f9f9;
-	margin: 0;
+  background: #f9f9f9;
+  margin: 0;
   min-height: 100%;
   position: relative;
 }
 
 share-buttons button {
-    width: 70px;
-    height: 35px;
-    padding: none;
-    font-size: 1.2rem;
+  width: 70px;
+  height: 35px;
+  padding: none;
+  font-size: 1.2rem;
 }
 
 share-buttons .sb-buttons .facebook button {
@@ -31,6 +31,31 @@ share-buttons .sb-buttons .twitter button {
   background: #00b4f5;
   border-color: #00b4f5;
   color: white;
+}
+
+@media only screen and (min-width: 1024px) {
+  share-buttons button {
+    width: 90px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  share-buttons button {
+    width: 42px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px){
+  share-buttons button {
+    width: 30px;
+  }  
+} 
+
+@media only screen and (min-width: 0) and (max-width: 480px) {
+  share-buttons button {
+    width: 24px;
+    font-size: 16px;
+  }
 }
 
 .constraintWidth-conainer-content {

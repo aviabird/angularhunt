@@ -1,9 +1,8 @@
 .main {
   background-color: #fff;
   border: 1px solid #e8e8e8;
-  min-width: 0;
-  width:702px;
- }
+  font-size: 15px;
+}
 
 .top {
   position: relative;
@@ -19,35 +18,34 @@
 }
 
 .canvas ol {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    position: relative;
-  }
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  position: relative;
+}
 
 .canvas li {
-    height: 360px;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    margin: 0 10px 20px 0;
-  }
+  height: 360px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin: 0 10px 20px 0;
+}
   
-
 .container-text {
-    position: relative;
-    height: 360px;
-    width: 202.759px
+  position: relative;
+  height: 360px;
+  width: 202.759px
 }
 
 .thumbsnails {
-    margin-left: 40px !important;
-    display: -ms-flexbox !important;
-    display: flex !important; 
+  margin-left: 40px !important;
+  display: -ms-flexbox !important;
+  display: flex !important; 
 }
 
 .thumbnail_u {
@@ -57,13 +55,10 @@
   margin-right: 10px;
 }
 
-
 .timestamp {
-  bottom:  0;
   padding: 5px;
   position: absolute;
-  right: 30px;
-  text-align: right;
+  right: 280px;
 }
 
 .secondaryText-base {
@@ -161,15 +156,10 @@
   text-decoration: none!important;
 }
 
-.action-section {
-  border-top: 1px solid #e8e8e8;
-  border-bottom: 1px solid #e8e8e8;
-  padding: 20px 0;
-}
-
 .action-inner {
+  width: 80%;
+  margin: 0 auto;
   display: flex;
-  margin: 0 40px;
 }
 
 .action-section a {
@@ -179,12 +169,12 @@
 .comboButton {
   display: inline-block;
   position: relative;
-  margin: 0 10px 0 0;
+  margin: 0 25px 0 0;
 }
 
 .secondaryBoldText {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 17px;
   letter-spacing: .6px;
   line-height: 16px;
   text-transform: uppercase;
@@ -193,14 +183,14 @@
 .inactiveLink {
   background: #da552f;
   display: inline-block;
-  height: 34px;
+  height: 35px;
   line-height: 34px;
   box-sizing: border-box;
   border-radius: 3px 0 0 3px;
 }
 
 .inactiveLink a {
-  padding: 0 12px;
+  padding: 0 20px;
   color: #fff;
 }
 
@@ -209,12 +199,11 @@
   border-left: 1px solid #fff;
   /*cursor: pointer;*/
   text-align: center;
-  width: 28px;
+  width: 40px;
   background: #da552f;
   color: #fff;
   display: inline-block;
-  height: 34px;
-  line-height: 34px;
+  line-height: 33px;
   box-sizing: border-box;
   margin-left: -4px;
 }
@@ -226,7 +215,7 @@
 .button_mediumSize {
   background: #fff;
   color: #000;
-  height: 34px;
+  height: 35px;
   padding: 0 13px;
   border-radius: 3px;
   border: 1px solid #e8e8e8;
@@ -236,7 +225,7 @@
   text-align: center;
   text-decoration: none!important;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 17px;
   letter-spacing: .6px;
   line-height: 16px;
   text-transform: uppercase;
@@ -262,6 +251,414 @@ a {
 share-buttons {
   float: left;
   padding: 10px;
-  width: 155px;
+  width: 210px;
   padding: 0px;
 }
+
+
+/* Comment Section CSS and its Media Queries here*/
+
+.comment-part {
+  border: 1px solid #e8e8e8;
+  margin-top: 20px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.wrapper {
+  padding: 0 20px;
+  border-bottom: 1px solid #e8e8e8;
+  display: flex;
+}
+
+.hunter {
+  border-right: 1px solid #e8e8e8;
+  display: flex;
+  padding: 45px 0 20px 5px;
+  position: relative;
+}
+
+.makers {
+  padding-left: 0;
+  margin-left: 20px;
+  position: relative;
+  padding: 45px 0 20px 5px;
+}
+
+.title {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: .3px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.item {
+  display: flex;
+  margin-right: 20px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.user-image-v {
+ 
+  border: 1px solid white;
+  border-radius: 50%;
+  color: white;
+  font-size: 10px;
+  font-weight: 400;
+  height: 16px;
+  width: 15px;
+  position: absolute;
+  text-align: center;
+  line-height: 16px;
+  box-sizing: border-box;
+  top: 41px;
+  left: 0px;
+}
+
+.H-hunter {
+  background: black;
+}
+
+.M-maker {
+  background: green;  
+}
+
+.comment-section {
+  padding: 20px;
+}
+
+.discussion {
+  position: relative;
+}
+
+.heading-title {
+  font-size: 15px;
+  margin: 0 0 20px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+  color: #999
+}
+
+.comment {
+  margin: 0 0 10px;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  margin: 0 0 10px;
+}
+
+.user-image {
+  margin: 0 15px 0 0;
+  display: inline-flex;
+  text-align: center;
+}
+
+.user-image img {
+  border-radius: 50%;
+}
+
+.boldtext_heading {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  color: #000;
+  text-decoration: none;
+  letter-spacing: .3px;
+}
+
+.boldtext_heading:hover {
+  text-decoration: underline;
+}
+
+.userName_text {
+  font-weight: 700;
+  margin-left: 10px;
+  line-height: 30px;
+  font-size: 14px;
+  color: #000;
+  text-decoration: none;
+}
+
+.userName_text:hover {
+  text-decoration: underline;
+}
+
+.text_subtle_base {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #999;
+  letter-spacing: .3px;
+}
+
+.show-more-body-text {
+  line-height: 20px;
+  margin: 0 0 10px 47px;
+  font-size: 15px;
+  font-weight: 400;
+  /*white-space: pre-line;*/
+  word-wrap: break-word;
+  letter-spacing: .3px;
+}
+
+.action-secondary-buttons {
+  margin: 0 0 10px 47px;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .3px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.upvote-action {
+  color: #999;
+}
+
+.upvote-action:hover {
+  text-decoration: underline;  
+}
+
+.facebookShare {
+  margin: 0 0 10px 20px;
+  color: #999;
+}
+
+.facebookShare:hover {
+  color:  #3b5998;
+  text-decoration: underline;
+}
+
+.twitterShare {
+  margin: 0 0 10px 20px;
+  color: #999;  
+}
+
+.twitterShare:hover {
+  color:  #55acee;
+  text-decoration: underline;
+}
+
+.action {
+  margin: 0 5px 0 0;
+}
+
+.timestamphere {
+  text-decoration: none;
+  display: inline-block;
+  color: #c9c9c9;
+  margin: 0 0 10px 20px;
+}
+
+.timestamphere:hover {
+  text-decoration: underline;
+}
+
+.show-more-comments-container {
+  width: 100%;
+  height: 46px;
+  border: 1px solid #e8e8e8;
+  margin: 0 auto 20px;
+  border-radius: 3px;
+  background: #fff;
+  color: #000;
+  padding: 0 13px;
+  font-weight: 600;
+  letter-spacing: .3px;
+  line-height: 16px;
+  font-size: 13px;
+}
+
+.show-more-comments-container:hover {
+  background: #e8e8e8;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .image-div {
+    height: 360px;
+  }
+  .image-canvas {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .action-inner {
+    width: 90%; 
+  }
+  .action-inner main {
+    width: 33%;
+  }
+  .comboButton {
+    float: right;
+    margin: 0 8% 0 0;
+  }
+  .action-inner aside {
+    width: 66%;
+  }
+  
+  share-buttons {
+    width: 103px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  .image-div {
+    height: 360px;
+  }
+  .image-canvas {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .headline-base {
+    font-size: 26px;
+  }
+  .tagline-heading {
+    height: 40px;
+    overflow: hidden;
+    font-size: 15px;
+  }
+  .action-section a {
+    margin: 0;
+  }
+  .action-inner {
+    width: 96%; 
+  }
+  .action-inner main {
+    width: 30%; 
+  }
+  .action-inner aside {
+    width: 70%;
+  }
+  .inactivePopoverToggle {
+    width: 25px;
+    line-height: 34px;
+  }
+  .inactiveLink a {
+    padding: 0 10px;
+  }
+  .comboButton {
+    float: right;
+    margin: 0 10% 0 0;
+  }
+  .secondaryBoldText {
+    font-size: 11px;  
+  }
+  .button_mediumSize {
+    font-size: 11px;
+    padding: 0 10px;
+  }
+  share-buttons {
+    width: 73px;
+  }
+  .remaining-text {
+    font-size: 14px;
+  }
+  .timestamphere {
+    margin: 0 0 10px 10px;
+  }
+}
+
+@media only screen and (min-width: 0) and (max-width: 480px){
+  .image-div {
+    height: 360px;
+  }
+  .image-canvas {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .information-section {
+    margin: 30px 10px;
+  }
+  .headline-base {
+    font-size: 20px;
+  }
+  .tagline-heading {
+    height: 40px;
+    overflow: hidden;
+    font-size: 15px;
+  }
+   .action-section a {
+    margin: 0;
+  }
+  .action-inner {
+    width: 100%; 
+  }
+  .action-inner main {
+    width: 30%; 
+  }
+  .action-inner aside {
+    width: 70%;
+  }
+  .inactivePopoverToggle {
+    width: 12px;
+    line-height: 34px;
+  }
+  .inactiveLink a {
+    padding: 0 3px;
+  }
+  .comboButton {
+    float: right;
+    margin: 0 10% 0 0;
+  }
+  .secondaryBoldText {
+    font-size: 10px;  
+  }
+  .button_mediumSize {
+    font-size: 10px;
+    padding: 0 2px;
+  }
+  share-buttons {
+    width: 60px;
+  }
+  .main-icons {
+    display: none;
+  }
+  .wrapper {
+    padding: 0 10px;
+  }
+  .item {
+    margin-right: 10px;
+  }
+  .user-image {
+    margin: 0 10px 0 0;
+  }
+  .userName_text {
+    margin-left: 0;
+    font-size: 11px;
+  }
+  .remaining-text {
+    font-size: 14px;
+  }
+  .timestamphere {
+    display: none;
+  }
+  .action-secondary-buttons {
+    font-size: 12px;
+  }
+}
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+

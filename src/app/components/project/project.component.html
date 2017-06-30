@@ -3,13 +3,12 @@
     <!--Image Container Here-->
     <section class="container-gallery">
       <div class="canvas">
-        <div>
+        <div class="image-div">
           <!--Image Here-->
-          <img [src]="project.image_url" style="height: 367px; width: 700px;" />
+          <img class="image-canvas" [src]="project.image_url" />
         </div>
       </div>
     </section>
-
     <!--Featured Border-->
     <!--<div class="timestamp">
       <span class="secondaryText-base">Featured
@@ -58,10 +57,10 @@
     <div class="action-inner">
       <main>
         <span class="comboButton">
-            <span class="secondaryBoldText">
-              <span class="inactiveLink">
-                <a target="_blank" [href]="project.git_url">visit site</a>
-              </span>
+          <span class="secondaryBoldText">
+            <span class="inactiveLink">
+              <a target="_blank" [href]="project.git_url">visit site</a>
+            </span>
             <span class="inactivePopoverToggle" data-test="show-more">
               <i class="ion-arrow-down-b"></i>
             </span>
@@ -69,41 +68,108 @@
         </span>
       </main>
       <aside>
-          <share-buttons [url]="project.git_url"
-            [image]="project.image_url" 
-            [title]="project.name" 
-            [description]="project.description"
-            [tags]="productTags"
-            [linkedIn]=false
-            [tumblr]=false
-            [google]=false
-            [pinterest]=false
-            [stumbleUpOn]=false
-            [reddit]=false
-            [whatsApp]=false
-            [defaultStyle]="false">
-          </share-buttons>
-          <button class="button_mediumSize">
-            <div class="buttonContainer">
-              <span class="icon">
-                <i class="ion-android-menu"></i>
-                <i class="ion-android-add"></i>
-                <span class="collectButtonLabel">&nbsp;Save for later</span>
-              </span>
-            </div>  
-          </button>
-          <button class="button_mediumSize" 
-            [class.active]="isUpvotedByCurrUser"
-            (click)="onToggleUpvote()">
-            <div class="buttonContainer">
-              <span class="icon">
-                <i class="ion-arrow-up-b"></i>
+        <share-buttons [url]="project.git_url" [image]="project.image_url" [title]="project.name" [description]="project.description"
+          [tags]="productTags" [linkedIn]=false [tumblr]=false [google]=false [pinterest]=false [stumbleUpOn]=false [reddit]=false
+          [whatsApp]=false [defaultStyle]="false">
+        </share-buttons>
+        <button class="button_mediumSize button-add-label">
+          <div class="buttonContainer">
+            <span class="icon">
+              <i class="ion-android-menu main-icons"></i>
+              <i class="ion-android-add main-icons"></i>
+              <span class="collectButtonLabel">&nbsp;Save for later</span>
+            </span>
+          </div>  
+        </button>
+        <button class="button_mediumSize button-icon" [class.active]="isUpvotedByCurrUser" (click)="onToggleUpvote()">
+          <div class="buttonContainer">
+            <span class="icon">
+              <i class="ion-arrow-up-b"></i>
                 <span class="collectButtonLabel">&nbsp;{{ project.upvotes }}</span>
-              </span>
-            </div>  
-          </button>
+            </span>
+          </div>  
+        </button>
       </aside>
     </div>
   </section>
   <!--Project Action Section Ends heres-->
+
+  <!--Discussion and Author Detail Section-->
+  <section class="comment-part">
+    <div class="wrapper">
+      <div class="hunter">
+        <span class="title">Hunter</span>
+        <div class="item">
+          <a class="link" href="/@nitishkmrk">
+            <span class="user-image">
+              <div class="container-user-image" style="height:30px;width:30px;">
+                <img height="30" src="https://ph-avatars.imgix.net/717573/original?auto=format&amp;auto=compress&amp;codec=mozjpeg&amp;cs=strip&amp;w=30&amp;h=30&amp;fit=crop" srcset="https://ph-avatars.imgix.net/717573/original?auto=format&amp;auto=compress&amp;codec=mozjpeg&amp;cs=strip&amp;w=30&amp;h=30&amp;fit=crop&amp;dpr=2 2x, https://ph-avatars.imgix.net/717573/original?auto=format&amp;auto=compress&amp;codec=mozjpeg&amp;cs=strip&amp;w=30&amp;h=30&amp;fit=crop&amp;dpr=3 3x" width="30">
+              </div>
+              <div class="user-image-v H-hunter">H</div>
+            </span>
+          </a>
+          <a class="userName_text" href="/@nitishkmrk">Nitish Kumar</a>
+        </div>
+      </div>
+      <div class="makers">
+        <span class="title">Makers</span>
+        <div class="item">
+          <a class="link" href="/@nitishkmrk">
+            <span class="user-image">
+              <div class="container-user-image" style="height:30px;width:30px;">
+                <img height="30" src="https://ph-avatars.imgix.net/717573/original?auto=format&amp;auto=compress&amp;codec=mozjpeg&amp;cs=strip&amp;w=30&amp;h=30&amp;fit=crop" srcset="https://ph-avatars.imgix.net/717573/original?auto=format&amp;auto=compress&amp;codec=mozjpeg&amp;cs=strip&amp;w=30&amp;h=30&amp;fit=crop&amp;dpr=2 2x, https://ph-avatars.imgix.net/717573/original?auto=format&amp;auto=compress&amp;codec=mozjpeg&amp;cs=strip&amp;w=30&amp;h=30&amp;fit=crop&amp;dpr=3 3x" width="30">
+              </div>
+              <div class="user-image-v M-maker">M</div>
+            </span>
+          </a>
+          <a class="userName_text" href="/@nitishkmrk">Nitish Kumar</a>
+        </div>
+      </div>
+    </div>
+    <div class="comment-section">
+      <div class="discussion">
+        <h2 class="heading-title">discussion</h2>
+        <div class="comment">
+          <div class="heading">
+            <a class="user-image" href="">
+              <img height="32" width="32" src="https://pbs.twimg.com/profile_images/719715136634765314/XKBwV5Qd.jpg">
+            </a>
+            <div>
+              <a class="boldtext_heading remaining-text" href="">Yigit Pinarbasi</a>
+              <div class="text_subtle_base remaining-text">@yigitpinarbasi . Product Designer, Design Lead @epcsht</div>
+            </div>
+          </div>
+          <div class="show-more-body-text remaining-text">
+            <span>Never say "no" to icon packs!</span>
+          </div>
+          <div class="action-secondary-buttons">
+            <a class="upvote-action">
+              <span>
+                <i class="ion-arrow-up-b action"></i>
+              </span> 27
+            </a>
+            <a class="facebookShare">
+              <span>
+                <i class="ion-social-facebook action"></i>
+              </span>
+              <span class="sharelabel">Share</span>
+            </a>
+            <a class="twitterShare">
+              <span>
+                <i class="ion-social-twitter action"></i>
+              </span>
+              <span class="share-label">tweet</span>
+            </a>
+            <a class="timestamphere">
+              <span class="action">.</span>
+              <span class="times">11 days ago</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <button class="show-more-comments-container">
+        <div class="buttonContainer">Show all comments</div>
+      </button>
+    </div>
+  </section>
 </main>

@@ -1,5 +1,5 @@
 <app-modal>
-  <app-project [project]="project$ | async" 
+  <app-project class="app-project-component" [project]="project$ | async" 
     (toggleUpvoteClick)="toggleUpvote($event)"
     [isUpvotedByCurrUser] = "projectId | isUpvotedByCurrentUser: (upvotedProjectIds$ | async)"
     style="margin: 0 auto;"></app-project>
