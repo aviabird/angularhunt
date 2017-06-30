@@ -1,32 +1,29 @@
 <div class="navigation">
-  <div class="stickyNavigation" style="position: relative;">
-    <div class="title">
-      <span class="secondaryBoldText">FEEDS</span>
-    </div>
-
-    <ul class="list">
-      <li>
-        <a class="active-Item" routerLink="/home">
-          <div class="greyIcon">
-            <i class="ion-ios-home-outline"></i>
-          </div>
-          <span class="item-text" style="font-weight: 600;">Home</span>
-        </a>
-      </li>
-      <li *ngFor="let topic of topics">
-        <a class="item">
-          <div class="containericon" style="height: 24px; width: 24px;">
-            <div class="lazyLoadContainer">
-              <img [src]="topic.bannerUrl">
-            </div>
-          </div>
-          <span class="item-text" style="font-weight: 400;">{{topic.name | uppercase}}</span>
-        </a>
-      </li>
-    </ul>
-
-
-    <!--<ul class="list">
+    <div class="stickyNavigation" style="position: relative;">
+        <div class="title">
+            <span class="secondaryBoldText">FEEDS</span>
+        </div>
+        <ul class="list">
+            <li>
+                <a class="active-Item" routerLink="/home">
+                    <div class="greyIcon">
+                        <i class="ion-ios-home-outline"></i>
+                    </div>
+                    <span class="item-text" style="font-weight: 600;">Home</span>
+                </a>
+            </li>
+            <li *ngFor="let topic of topics">
+                <a class="item">
+                    <div class="containericon" style="height: 24px; width: 24px;">
+                        <div class="lazyLoadContainer">
+                            <img [src]="topic.bannerUrl">
+                        </div>
+                    </div>
+                    <span class="item-text" style="font-weight: 400;">{{topic.name | uppercase}}</span>
+                </a>
+            </li>
+        </ul>
+        <!--<ul class="list">
       <li>
         <a class="active-Item" href="/">
           <div class="greyIcon">
@@ -152,5 +149,5 @@
         </a>
       </li>
     </ul>-->
-  </div>
+    </div>
 </div>
