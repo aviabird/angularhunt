@@ -11,18 +11,6 @@ import { ShareButtonsModule } from 'ng2-sharebuttons';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-/**Store Moniter */
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-// import { StoreLogMonitorModule, useLogMonitor } from '@ngrx/store-log-monitor';
-
-
-export function instrumentOptions() {
-  return {
-    // monitor: useLogMonitor({ visible: true, position: 'right' })
-     maxAge: 5
-  };
-}
-
 /**Services */
 import { ProjectService } from './services/project.service';
 import { AuthenticationService } from './services/authentication.service';
@@ -80,6 +68,10 @@ import { LoginPageComponent } from './container/login-page/login-page.component'
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { AdminPageComponent } from './container/admin-page/admin-page.component';
 import { UrlValidatorDirective } from './Validators/url-validator.directive';
+import { AdminNavigationComponent } from './components/admin-navigation/admin-navigation.component';
+import { ProjectEditComponent } from './components/project-edit/project-edit.component';
+import { AllProjectsComponent } from './components/all-projects/all-projects.component';
+import { SearchFilterPipe } from './pipes/search-filter.pipe';
 import { AdComponent } from './components/shared/ad/ad.component';
 
 @NgModule({
@@ -101,6 +93,10 @@ import { AdComponent } from './components/shared/ad/ad.component';
     FooterComponent,
     AdminPageComponent,
     UrlValidatorDirective,
+    AdminNavigationComponent,
+    ProjectEditComponent,
+    AllProjectsComponent,
+    SearchFilterPipe,
     AdComponent,
   ],
   imports: [
@@ -111,8 +107,6 @@ import { AdComponent } from './components/shared/ad/ad.component';
     JsonpModule,
     routing,
     StoreModule.provideStore(reducer),
-    StoreDevtoolsModule.instrumentStore(instrumentOptions),
-    // StoreLogMonitorModule,
     ModalModule.forRoot(),
     BsDropdownModule.forRoot(),
     ShareButtonsModule.forRoot(),
